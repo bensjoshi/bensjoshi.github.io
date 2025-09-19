@@ -2,124 +2,130 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ben Joshi | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-<header style="display: flex; align-items: center; justify-content: center; gap: 30px; padding: 20px;">
-  <div style="flex-shrink: 0;">
-    <img src="picture1.jpg" alt="Ben Joshi" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; box-shadow: 0 0 10px rgba(0,0,0,0.1);" />
-  </div>
+  <header class="site-header">
+    <div class="profile-img">
+      <img src="picture1.jpg" alt="Ben Joshi profile photo" />
+    </div>
+    <div class="intro-text">
+      <h1>Ben Joshi</h1>
+      <p>Computer Science Graduate | Software Developer</p>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#music">Music</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/bensjoshi/My-Projects" target="_blank" rel="noopener">GitHub</a>
+      </nav>
+    </div>
+  </header>
 
-  <div style="text-align: left;">
-    <h1 style="margin: 0;">Ben Joshi</h1>
-    <p style="margin: 5px 0;">Computer Science Graduate | Software Developer</p>
-    <nav style="margin-top: 10px;">
-      <a href="#about" style="margin-right: 10px;">About</a>
-      <a href="#skills" style="margin-right: 10px;">Skills</a>
-      <a href="#projects" style="margin-right: 10px;">Projects</a>
-      <a href="#contact" style="margin-right: 10px;">Contact</a>
-      <a href="https://github.com/bensjoshi/My-Projects" target="_blank">GitHub</a>
-    </nav>
-  </div>
-</header>
+  <main>
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a software developer and musician with a BSc (Hons) in Computer Science from Nottingham Trent University (2025).  
+        I specialise in mobile development, artificial intelligence, and building intuitive, user-focused applications.
+      </p>
+      <p>
+        My passion lies in solving real-world problems — especially at the intersection of technology and creativity.  
+        Whether I'm building an AI-powered chatbot or a social platform for musicians, I aim to create software that connects and empowers people.
+      </p>
+    </section>
 
-<section id="about">
-  <h2>About Me</h2>
-  <p>
-    I'm a software developer and musician with a BSc (Hons) in Computer Science from Nottingham Trent University (2025).  
-    I specialise in mobile development, artificial intelligence, and building intuitive, user-focused applications.  
-    My passion lies in solving real-world problems — especially at the intersection of technology and creativity.  
-    Whether I'm building an AI-powered chatbot or a social platform for musicians, I aim to create software that connects and empowers people.
-  </p>
-</section>
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul>
+        <li><strong>Languages:</strong> C++, Python, Java, JavaScript, HTML, CSS, SQL</li>
+        <li><strong>Mobile Development:</strong> Android Studio, Firebase, Figma (Material 3 Design)</li>
+        <li><strong>AI & Machine Learning:</strong> NLP, speech recognition, image classification, logical reasoning, fuzzy logic</li>
+        <li><strong>Tools & Cloud:</strong> Docker, AWS, Git, Tomcat, RESTful APIs</li>
+        <li><strong>Development Methodologies:</strong> Agile, Scrum, Waterfall</li>
+        <li><strong>IDEs:</strong> NetBeans, Visual Studio, Eclipse, Spyder</li>
+        <li><strong>Soft Skills:</strong> Communication, leadership, and teamwork — developed through a year of industry experience</li>
+      </ul>
+    </section>
 
-<section id="skills">
-  <h2>Skills</h2>
-  <ul>
-    <li><strong>Languages:</strong> C++, Python, Java, JavaScript, HTML, CSS, SQL</li>
-    <li><strong>Mobile Development:</strong> Android Studio, Firebase, Figma (Material 3 Design)</li>
-    <li><strong>AI & Machine Learning:</strong> NLP, speech recognition, image classification, logical reasoning, fuzzy logic</li>
-    <li><strong>Tools & Cloud:</strong> Docker, AWS, Git, Tomcat, RESTful APIs</li>
-    <li><strong>Development Methodologies:</strong> Agile, Scrum, Waterfall</li>
-    <li><strong>IDEs:</strong> NetBeans, Visual Studio, Eclipse, Spyder</li>
-    <li><strong>Soft Skills:</strong> Communication, leadership, and teamwork — developed through a year of industry experience</li>
-  </ul>
-</section>
+    <section id="projects">
+      <h2>Projects</h2>
 
-<section id="projects">
-  <h2>Projects</h2>
+      <article class="project">
+        <h3>SoundWave – A Social Space for Musicians</h3>
+        <p>
+          <em>Final Year Project | Android, Firebase, Figma</em><br>
+          A mobile social networking app designed to connect musicians for collaboration and discovery.  
+          Built in response to gaps in existing platforms, SoundWave offers features for finding collaborators, sharing music, and exploring new genres.
+          Developed using Android Studio, Firebase Authentication, and Firestore. UI/UX prototyped in Figma with Material 3 design.
+        </p>
+      </article>
 
-  <div class="project">
-    <h3>SoundWave – A Social Space for Musicians</h3>
-    <p>
-      <em>Final Year Project | Android, Firebase, Figma</em><br><br>
-      A mobile social networking app designed to connect musicians for collaboration and discovery.  
-      Built in response to gaps in existing platforms, SoundWave offers features for finding collaborators, sharing music, and exploring new genres.<br><br>
-      Developed in Android Studio using Firebase Authentication and Firestore. UI/UX was prototyped in Figma following Material 3 guidelines.
-    </p>
-  </div>
+      <article class="project">
+        <h3>Property Management App</h3>
+        <p>
+          <em>Android, Java</em><br>
+          A mobile application for landlords to manage rental properties, tenant records, and maintenance requests.  
+          Emphasis on efficient UI, data persistence, and offline-first features.
+        </p>
+      </article>
 
-  <div class="project">
-    <h3>Property Management App</h3>
-    <p>
-      <em>Android, Java</em><br><br>
-      A mobile application for landlords to manage rental properties, tenant records, and maintenance requests.  
-      Focused on efficient UI, data handling, and offline support.
-    </p>
-  </div>
+      <article class="project">
+        <h3>Dorm Room Booking System</h3>
+        <p>
+          <em>Java, Tomcat, RESTful API</em><br>
+          A distributed system that enables international and exchange students to find and book accommodation in the UK.  
+          The Java client interacts with a RESTful backend hosted on Tomcat.
+        </p>
+      </article>
 
-  <div class="project">
-    <h3>Dorm Room Booking System</h3>
-    <p>
-      <em>Java, Tomcat, RESTful API</em><br><br>
-      A distributed system enabling international and exchange students to find and book UK accommodation.  
-      The Java client communicates with a RESTful backend hosted on Tomcat.
-    </p>
-  </div>
+      <article class="project">
+        <h3>AI Chatbot for Musical Instruments</h3>
+        <p>
+          <em>AI, NLP, Voice/Image Input</em><br>
+          A chatbot that answers questions about brass instruments using natural language processing, logical reasoning, and image/voice input.
+        </p>
+      </article>
 
-  <div class="project">
-    <h3>AI Chatbot for Musical Instruments</h3>
-    <p>
-      <em>AI, NLP, Image & Voice Input</em><br><br>
-      A conversational chatbot designed to answer questions about brass instruments using natural language understanding, logical reasoning, and image/voice input.
-    </p>
-  </div>
+      <article class="project">
+        <h3>Smart Fridge App (Team Project)</h3>
+        <p>
+          <em>Agile, Collaborative Tools</em><br>
+          A mobile app for a smart fridge startup. Collaborated in an Agile team using Jira and GitHub, focused on user-centered design and rapid iteration.
+        </p>
+      </article>
+    </section>
 
-  <div class="project">
-    <h3>Smart Fridge App (Team Project)</h3>
-    <p>
-      <em>Agile, Collaborative Tools</em><br><br>
-      Designed a mobile app for a smart fridge startup. Worked in a team using Agile methodology, collaborative tools (Jira, GitHub), and user-centered design principles.
-    </p>
-  </div>
-</section>
-  
-<section id="music" class="music">
-  <h2>Music</h2>
-  <h3>Trombonist | Jazz, Big Band & Ska</h3>
-  <p>
-    As a dedicated trombonist, music plays a huge part in my life and creative identity. I regularly perform in a variety of musical settings including jazz ensembles, big bands, and brass sections.
-  </p>
-  <p>
-    I'm currently a member of <strong>The Hoplites</strong>, a local ska band known for our energetic live performances and brass-driven sound. Beyond ska, I enjoy playing across genres — from improvisational jazz to modern brass band arrangements.
-  </p>
-  <p>
-    Music and software often intersect in my projects, inspiring creative thinking and collaborative problem-solving.
-  </p>
-</section>
-<section id="contact">
-  <h2>Contact</h2>
-  <p>Email: <a href="mailto:bensjoshi@gmail.com">bensjoshi@gmail.com</a></p>
-  <p>LinkedIn: <a href="https://www.linkedin.com/in/ben-joshi-576559261/" target="_blank">linkedin.com/in/ben-joshi</a></p>
-  <p>Location: Nottingham, UK</p>
-</section>
+    <section id="music" class="music">
+      <h2>Music</h2>
+      <h3>Trombonist | Jazz, Big Band & Ska</h3>
+      <p>
+        As a dedicated trombonist, music is a vital part of my creative identity. I perform regularly with jazz ensembles, big bands, and brass sections.
+      </p>
+      <p>
+        I'm currently a member of <strong>The Hoplites</strong>, a local ska band known for its high-energy performances and distinctive brass-driven sound.  
+        Beyond ska, I explore a wide range of genres including improvisational jazz and modern brass arrangements.
+      </p>
+      <p>
+        My experience in both music and tech often overlap — sparking creative problem-solving, teamwork, and unique projects that bridge the two worlds.
+      </p>
+    </section>
 
-<footer>
-  <p>© 2025 Ben Joshi</p>
-</footer>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>Email: <a href="mailto:bensjoshi@gmail.com">bensjoshi@gmail.com</a></p>
+      <p>LinkedIn: <a href="https://www.linkedin.com/in/ben-joshi-576559261/" target="_blank" rel="noopener">linkedin.com/in/ben-joshi</a></p>
+      <p>Location: Nottingham, UK</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Ben Joshi</p>
+  </footer>
 
 </body>
 </html>
