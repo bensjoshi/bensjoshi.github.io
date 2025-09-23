@@ -183,6 +183,23 @@ h2 {
   color: #7F8C8D;
 }
 
+/* Project Images */
+.project-img {
+  display: block;
+  width: 60%;        /* smaller size (60% of container) */
+  max-width: 300px;  /* cap so it doesn’t get too large */
+  height: auto;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
 /* Music Section */
 .music {
   background: #FFFFFF;
@@ -236,25 +253,15 @@ footer {
   .site-header {
     flex-direction: column;
   }
-  .about-content, .skills-content {
+  .about-content,
+  .skills-content {
     flex-direction: column;
   }
   nav a {
     margin: 8px 6px;
   }
   .project-img {
-  display: block;
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-  margin: 15px auto;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-img:hover {
-  transform: scale(1.02);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
-}
+    width: 80%;        /* larger on mobile for readability */
+    max-width: 250px;  /* keep it smaller than full width */
+  }
 }
