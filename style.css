@@ -186,10 +186,10 @@ h2 {
 /* Project Images */
 .project-img {
   display: block;
-  width: 60%;        /* smaller size (60% of container) */
-  max-width: 300px;  /* cap so it doesn’t get too large */
+  width: 60%;          /* makes it smaller on desktop */
+  max-width: 300px;    /* caps the size */
   height: auto;
-  margin: 15px auto;
+  margin: 15px auto;   /* centers it inside the card */
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -198,6 +198,14 @@ h2 {
 .project-img:hover {
   transform: scale(1.02);
   box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
+
+/* Responsive tweak */
+@media (max-width: 720px) {
+  .project-img {
+    width: 80%;        /* bigger on mobile */
+    max-width: 250px;
+  }
 }
 
 /* Music Section */
