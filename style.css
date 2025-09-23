@@ -242,4 +242,19 @@ footer {
   nav a {
     margin: 8px 6px;
   }
+  .project-img {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+  margin: 15px auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+}
 }
