@@ -238,4 +238,42 @@ footer {
   .project h3, .music h3 {
     font-size: 1.15rem;
   }
+  .about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
 }
+
+.about-img {
+  width: 220px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+@media (max-width: 700px) {
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+  }
+
+  .about-img {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+}
+
+
