@@ -206,7 +206,48 @@ footer {
   font-size: 0.95rem;
 }
 
-/* Responsive */
+/* About Section Image Layout */
+.about-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.about-img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 250px;
+}
+
+/* Skills Section Image Layout */
+.skills-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.skills-img {
+  max-width: 200px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  flex-shrink: 0;
+}
+
+/* Responsive Design */
 @media (max-width: 700px) {
   header {
     flex-direction: column;
@@ -238,79 +279,22 @@ footer {
   .project h3, .music h3 {
     font-size: 1.15rem;
   }
-  .about-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 25px;
-  flex-wrap: wrap;
-}
 
-.about-img {
-  width: 220px;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  flex-shrink: 0;
-}
-
-.about-text {
-  flex: 1;
-  min-width: 250px;
-}
-
-@media (max-width: 700px) {
-  .about-content {
-    flex-direction: column;
-    align-items: center;
-    text-align: left;
-  }
-
-  .about-img {
-    max-width: 200px;
-    width: 100%;
-    height: auto;
-    border-radius: 12px;
-    object-fit: cover;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    flex-shrink: 0;
-  }
-
-
-  .about-text {
-    width: 100%;
-  }
-  .skills-content {
-  display: flex;
-  align-items: flex-start;
-  gap: 25px;
-  flex-wrap: wrap;
-}
-
-.skills-img {
-  max-width: 200px;
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: cover;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  flex-shrink: 0;
-}
-
-@media (max-width: 700px) {
+  .about-content,
   .skills-content {
     flex-direction: column;
     align-items: center;
     text-align: left;
   }
 
+  .about-img,
   .skills-img {
     max-width: 100%;
     width: 100%;
     height: auto;
   }
+
+  .about-text {
+    width: 100%;
+  }
 }
-
-}
-
-
