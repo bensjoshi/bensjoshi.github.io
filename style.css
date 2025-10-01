@@ -319,7 +319,7 @@ footer {
   
   #skills img {
       /* Image is now set to a fixed maximum size (350px) and will be centered with the list */
-      max-width: 350px; 
+      width: 50% ; 
       flex-shrink: 0; 
       margin: auto; 
   }
