@@ -321,7 +321,7 @@ footer {
       /* Image is now set to a fixed maximum size (350px) and will be centered with the list */
       max-width: 350px; 
       flex-shrink: 0; 
-      margin: 0; 
+      margin: auto; 
   }
   
   #skills ul {
