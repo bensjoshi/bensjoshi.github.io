@@ -1,4 +1,6 @@
-/* Reset */
+
+
+/* --- RESET --- */
 * {
   margin: 0;
   padding: 0;
@@ -7,336 +9,321 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-/* --- 1. Global & Variables --- */
-:root {
-  /* Color Palette */
-  --color-primary: #3498DB; /* Bright Blue for links/accents */
-  --color-secondary: #2C3E50; /* Dark Navy for text */
-  --color-background: #ECF0F1; /* Off-White background */
-  --color-card-bg: #FFFFFF; /* White for sections/cards */
-  --color-text-dim: #7F8C8D; /* Dimmed text for secondary info */
-  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05); /* Soft shadow for cards */
-  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
-
-  /* Spacing */
-  --section-spacing: 60px;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
   font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-  background: var(--color-background);
-  color: var(--color-secondary);
-  line-height: 1.7; /* Increased line-height for readability */
-  padding: 24px;
-  max-width: 960px; /* Slightly wider max content width */
+  background: #ECF0F1;
+  color: #2C3E50;
+  line-height: 1.7;
+  padding: 16px;
+  max-width: 960px;
   margin: 0 auto;
 }
 
-/* General Typography */
+/* --- GLOBAL COLORS & VARIABLES --- */
+:root {
+  --color-primary: #3498DB;
+  --color-secondary: #2C3E50;
+  --color-background: #ECF0F1;
+  --color-card-bg: #FFFFFF;
+  --color-text-dim: #7F8C8D;
+  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --section-spacing: 60px;
+}
+
+/* --- TYPOGRAPHY --- */
 h1 {
-  font-size: 2.25rem; /* Larger for impact */
+  font-size: 2rem;
   font-weight: 800;
   margin-bottom: 5px;
 }
 
 h2 {
-  font-size: 1.75rem;
-  margin-bottom: 25px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
   color: var(--color-secondary);
 }
 
 a {
   color: var(--color-primary);
   text-decoration: none;
-  transition: color 0.3s ease; /* Smooth link color change */
+  transition: color 0.3s ease;
+  min-height: 44px;
 }
 
 a:hover, a:focus {
-  color: #2980B9; /* Slightly darker blue on hover/focus */
+  color: #2980B9;
   text-decoration: underline;
-  outline: none; /* Remove default focus outline if using custom styles, but keeping underline for accessibility */
+  outline: none;
 }
 
-/* Add style for emphasized text (e.g., tech stacks in projects) */
 p em {
-    font-style: normal;
-    font-weight: 600;
-    color: var(--color-primary);
-    display: inline-block;
-    margin-right: 5px;
+  font-style: normal;
+  font-weight: 600;
+  color: var(--color-primary);
+  display: inline-block;
+  margin-right: 5px;
 }
 
-/* --- 2. Header & Navigation --- */
+/* --- UNIVERSAL MEDIA RULES --- */
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* =======================================================
+   HEADER
+   ======================================================= */
 .site-header {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  /* Reduced gap for a tighter header */
-  gap: 20px; 
-  padding: 30px 20px;
+  gap: 15px;
+  padding: 20px 10px;
   background-color: var(--color-card-bg);
-  border-radius: 16px; 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08); 
-  flex-wrap: wrap;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
   margin-bottom: var(--section-spacing);
-  /* Centering items, which places the profile photo visually in the middle */
-  justify-content: center; 
+  text-align: center;
 }
 
 .profile-img img {
-  width: 130px;
-  height: 130px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   border: 4px solid var(--color-background);
 }
 
-.intro-text h1 {
-  margin-top: 0;
-  margin-bottom: 5px;
-}
-
-.intro-text p {
-  color: var(--color-text-dim);
-  font-size: 0.95rem;
-  margin-bottom: 0; /* Reduced vertical space */
-}
-
 nav a {
-  display: inline-block;
-  margin-right: 15px;
+  display: block;
+  margin: 8px 0;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 0.95rem;
 }
 
-nav a:last-child {
-  margin-right: 0;
-}
-
-/* --- 3. Main Content & Sections --- */
+/* =======================================================
+   SECTIONS
+   ======================================================= */
 section {
-  padding: 30px 20px; /* NEW: Added internal padding to sections */
+  padding: 20px 15px;
   margin-bottom: var(--section-spacing);
-  background-color: var(--color-card-bg); /* NEW: Give all sections a white background */
-  border-radius: 16px; /* NEW: Give all sections rounded corners */
-  box-shadow: var(--shadow-subtle); /* NEW: Apply consistent shadow */
+  background-color: var(--color-card-bg);
+  border-radius: 16px;
+  box-shadow: var(--shadow-subtle);
 }
 
-/* Hide padding/margin on the last section */
 #contact {
-  padding-bottom: 30px; 
-  margin-bottom: 0; /* Remove bottom margin from last section */
+  margin-bottom: 0;
 }
 
-/* --- 4. About Section --- */
+/* =======================================================
+   ABOUT SECTION
+   ======================================================= */
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+
 .about-img {
-  /* Constrains size on mobile - THIS NOW STYLES PICTURE2.JPG (PORTRAIT) */
-  max-width: 300px; 
-  width: 100%; 
-  height: auto;
+  max-width: 300px;
+  width: 100%;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  margin-bottom: 25px; /* Added spacing for mobile stacking */
 }
 
 .about-text p {
   font-size: 1rem;
 }
 
-/* --- 5. Skills Section --- */
-
-/* Wrapper for Skills content: Stacks items vertically and centers them (default/mobile) */
+/* =======================================================
+   SKILLS SECTION
+   ======================================================= */
 .skills-content-layout {
   display: flex;
-  flex-direction: column; /* Default: Stack vertically on mobile/desktop */
+  flex-direction: column;
   gap: 30px;
-  align-items: center; /* ALIGNMENT FIX: Center the image and the list */
-  
-  /* NEW SUBTLE BACKGROUND STYLES */
-  background-color: #F8F9F9; /* Very light gray/off-white background */
-  padding: 20px; /* Internal padding to keep content off the edges */
-  border-radius: 12px; /* Slight rounding to match card aesthetic */
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05); /* Very subtle inner shadow for depth */
+  align-items: center;
+  background-color: #F8F9F9;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 #skills img {
-  max-width: 400px;
-  width: 100%;
-  height: auto;
-  display: block;
-  /* Adjusted margin for mobile/default view to respect new internal padding */
-  margin: 0 auto 15px auto; 
+  max-width: 250px;
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  flex-shrink: 0;
+  margin-bottom: 20px;
 }
 
-/* Style the list inside the skills section */
 #skills ul {
-    /* Set to standard disc bullets */
-    list-style-type: disc; 
-    padding-left: 20px; 
-    max-width: 600px; /* NEW: Constrain max width for better readability when centered */
+  list-style-type: disc;
+  padding-left: 20px;
+  max-width: 600px;
 }
 
 #skills ul li {
-    background: none; 
-    padding-left: 0; 
-    margin-bottom: 10px;
+  margin-bottom: 10px;
 }
 
-/* --- 6. Projects Section (Container Styles) --- */
-/* Override section padding/bg for project cards */
+/* =======================================================
+   PROJECTS SECTION
+   ======================================================= */
 #projects {
-    padding: 0;
-    background: transparent;
-    box-shadow: none;
-    border-radius: 0;
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+  border-radius: 0;
 }
 
 .project {
   background: var(--color-card-bg);
-  padding: 25px;
+  padding: 20px 15px;
   border-radius: 10px;
-  /* Removed border-left to reduce visual noise, let shadow define it */
-  box-shadow: var(--shadow-subtle); 
-  margin-bottom: 25px; /* Reduced gap between projects */
-  transition: transform 0.3s ease, box-shadow 0.3s ease; 
+  box-shadow: var(--shadow-subtle);
+  margin-bottom: 25px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project:hover {
-  transform: translateY(-5px); /* Lift the card slightly on hover */
-  box-shadow: var(--shadow-hover); /* Darker shadow on hover */
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-hover);
 }
 
 .project h3 {
-  font-size: 1.35rem;
-  color: var(--color-secondary);
+  font-size: 1.3rem;
   margin-bottom: 10px;
 }
 
-/* Removed old p em style, moved to general styles */
-.project p em {
-  display: block;
-  margin-bottom: 12px;
-}
-
 .project-img {
-  display: block;
-  width: 100%; /* Allows image to fill the card width for a cleaner look */
-  max-width: 300px; /* Set a consistent max width */
-  height: auto;
+  width: 100%;
+  max-width: 300px;
   margin: 15px auto;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
-/* --- 7. Music Section --- */
-.music {
-  /* Reverted to standard section styling */
-  border-left: none; /* Remove redundant border-left since all sections have a background/shadow now */
-}
-
+/* =======================================================
+   MUSIC SECTION
+   ======================================================= */
 .music h3 {
   font-size: 1.3rem;
-  color: var(--color-secondary);
   margin-bottom: 12px;
 }
 
 .music p {
   margin-bottom: 12px;
-  font-size: 1rem;
-  color: var(--color-secondary);
 }
 
-/* NEW MUSIC IMAGE STYLE */
 .music-hero-img {
-    display: block;
-    width: 100%;
-    max-height: 250px; /* Limit height of the music image */
-    object-fit: cover;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: var(--shadow-subtle);
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: var(--shadow-subtle);
 }
 
-/* --- 8. Footer --- */
+/* =======================================================
+   FOOTER
+   ======================================================= */
 footer {
   text-align: center;
-  padding: 30px 0 10px 0;
+  padding: 20px 0;
   border-top: 1px solid #BDC3C7;
   color: var(--color-text-dim);
   font-size: 0.85rem;
 }
 
-/* --- 9. Media Queries for Tablet/Desktop (768px and up) */
-@media (min-width: 768px) {
-  
-  /* Header: Keeps content centered and wrapped, avoiding the push-apart look */
-  .site-header {
-    justify-content: center; 
-    padding: 30px 40px;
-  }
-  
-  /* All Sections: Increase side padding for desktop */
-  section {
-      padding: 40px 30px;
+/* =======================================================
+   MOBILE-ONLY IMPROVEMENTS
+   ======================================================= */
+@media (max-width: 480px) {
+  body {
+    padding: 12px;
+    font-size: 0.95rem;
   }
 
-  /* About Section: Switch to side-by-side layout (Flexbox) */
+  section, .project {
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+
+  h1 { font-size: 1.8rem; }
+  h2 { font-size: 1.4rem; }
+}
+
+/* =======================================================
+   TABLET & DESKTOP (unchanged visuals)
+   ======================================================= */
+@media (min-width: 768px) {
+  .site-header {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 30px 40px;
+    text-align: left;
+  }
+
+  .profile-img img {
+    width: 130px;
+    height: 130px;
+  }
+
+  nav a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 1rem;
+  }
+
+  section {
+    padding: 40px 30px;
+  }
+
   .about-content {
-    display: flex;
-    gap: 40px; 
+    flex-direction: row;
     align-items: flex-start;
+    gap: 40px;
   }
 
   .about-img {
-    /* FIX 1: Reduced width for portrait image */
-    max-width: 200px; 
+    max-width: 200px;
     flex-shrink: 0;
   }
 
-  .about-text {
-    flex-grow: 1;
+  .skills-content-layout {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    padding: 30px;
   }
 
-  /* Skills Section: SIDE-BY-SIDE LAYOUT */
-  .skills-content-layout {
-      flex-direction: row; /* Force side-by-side on desktop */
-      /* CHANGE: Use 'center' to center the image and list block within the gray background. */
-      justify-content: center; 
-      align-items: center; 
-      gap: 40px; 
-      
-      /* Reset default margin on desktop */
-      margin: 0; 
-      /* Reduced padding on desktop to look cleaner */
-      padding: 30px; 
-  }
-  
   #skills img {
-      /* Image is now set to a fixed maximum size (350px) and will be centered with the list */
-      width: 50% ; 
-      flex-shrink: 0; 
-      margin: auto; 
+    width: 50%;
+    max-width: 350px;
+    margin: auto;
   }
-  
+
   #skills ul {
-      /* List takes remaining space but won't grow infinitely large since content is centered */
-      flex-grow: 1; 
-      max-width: none; 
+    flex-grow: 1;
+    max-width: none;
   }
-  
-  /* Projects: Simple two-column layout */
+
   .projects {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 30px;
   }
 
-  /* Remove margin-bottom from the project when it's in a grid */
   .project {
     margin-bottom: 0;
   }
