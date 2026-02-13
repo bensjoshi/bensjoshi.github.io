@@ -1,330 +1,174 @@
-
-
-/* --- RESET --- */
+/* ===== RESET ===== */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-  font-size: 16px;
-  -webkit-text-size-adjust: 100%;
-}
-
 body {
-  font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif;
-  background: #ECF0F1;
-  color: #2C3E50;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background: #f8f9fb;
+  color: #111;
   line-height: 1.7;
-  padding: 16px;
-  max-width: 960px;
-  margin: 0 auto;
 }
 
-/* --- GLOBAL COLORS & VARIABLES --- */
-:root {
-  --color-primary: #3498DB;
-  --color-secondary: #2C3E50;
-  --color-background: #ECF0F1;
-  --color-card-bg: #FFFFFF;
-  --color-text-dim: #7F8C8D;
-  --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-hover: 0 8px 20px rgba(0, 0, 0, 0.1);
-  --section-spacing: 60px;
-}
-
-/* --- TYPOGRAPHY --- */
-h1 {
-  font-size: 2rem;
-  font-weight: 800;
-  margin-bottom: 5px;
-}
-
-h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  color: var(--color-secondary);
-}
-
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  min-height: 44px;
-}
-
-a:hover, a:focus {
-  color: #2980B9;
-  text-decoration: underline;
-  outline: none;
-}
-
-p em {
-  font-style: normal;
-  font-weight: 600;
-  color: var(--color-primary);
-  display: inline-block;
-  margin-right: 5px;
-}
-
-/* --- UNIVERSAL MEDIA RULES --- */
-img, video {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* =======================================================
-   HEADER
-   ======================================================= */
+/* ===== HEADER ===== */
 .site-header {
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 15px;
-  padding: 20px 10px;
-  background-color: var(--color-card-bg);
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
-  margin-bottom: var(--section-spacing);
-  text-align: center;
+  gap: 2rem;
+  padding: 2rem 6%;
+  background: white;
+  border-bottom: 1px solid #eee;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .profile-img img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
+  width: 110px;
+  height: 110px;
   object-fit: cover;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border: 4px solid var(--color-background);
+  border-radius: 50%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.intro-text h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.2rem;
+}
+
+.intro-text p {
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 nav a {
+  margin-right: 1.5rem;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+nav a:hover {
+  color: #0077ff;
+}
+
+/* ===== MAIN SECTIONS ===== */
+main {
+  padding: 4rem 6%;
+}
+
+section h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+section h2::after {
+  content: "";
+  width: 50px;
+  height: 3px;
+  background: #0077ff;
   display: block;
-  margin: 8px 0;
-  font-weight: 600;
-  font-size: 0.95rem;
+  margin-top: 10px;
+  border-radius: 3px;
 }
 
-/* =======================================================
-   SECTIONS
-   ======================================================= */
-section {
-  padding: 20px 15px;
-  margin-bottom: var(--section-spacing);
-  background-color: var(--color-card-bg);
-  border-radius: 16px;
-  box-shadow: var(--shadow-subtle);
-}
-
-#contact {
-  margin-bottom: 0;
-}
-
-/* =======================================================
-   ABOUT SECTION
-   ======================================================= */
+/* ===== ABOUT PAGE ===== */
 .about-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 25px;
+  gap: 3rem;
+  align-items: flex-start;
 }
 
 .about-img {
-  max-width: 300px;
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-.about-text p {
-  font-size: 1rem;
-}
-
-/* =======================================================
-   SKILLS SECTION
-   ======================================================= */
-.skills-content-layout {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
-  align-items: center;
-  background-color: #F8F9F9;
-  padding: 20px;
+  width: 320px;
   border-radius: 12px;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease;
 }
 
-#skills img {
-  max-width: 250px;
-  border-radius: 8px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
-  margin-bottom: 20px;
+.about-img:hover {
+  transform: scale(1.02);
 }
 
-#skills ul {
-  list-style-type: disc;
-  padding-left: 20px;
+.about-text {
   max-width: 600px;
 }
 
-#skills ul li {
-  margin-bottom: 10px;
+.about-text p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  color: #444;
 }
 
-/* =======================================================
-   PROJECTS SECTION
-   ======================================================= */
-#projects {
-  padding: 0;
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
+/* ===== MUSIC PAGE ===== */
+#music {
+  max-width: 800px;
 }
 
-.project {
-  background: var(--color-card-bg);
-  padding: 20px 15px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-subtle);
-  margin-bottom: 25px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+#music p {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  color: #444;
 }
 
-.project:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-hover);
-}
-
-.project h3 {
-  font-size: 1.3rem;
-  margin-bottom: 10px;
-}
-
-.project-img {
-  width: 100%;
-  max-width: 300px;
-  margin: 15px auto;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* =======================================================
-   MUSIC SECTION
-   ======================================================= */
-.music h3 {
-  font-size: 1.3rem;
-  margin-bottom: 12px;
-}
-
-.music p {
-  margin-bottom: 12px;
-}
-
-.music-hero-img {
-  width: 100%;
-  max-height: 250px;
-  object-fit: cover;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  box-shadow: var(--shadow-subtle);
-}
-
-/* =======================================================
-   FOOTER
-   ======================================================= */
+/* ===== FOOTER ===== */
 footer {
   text-align: center;
-  padding: 20px 0;
-  border-top: 1px solid #BDC3C7;
-  color: var(--color-text-dim);
-  font-size: 0.85rem;
+  padding: 2rem;
+  margin-top: 4rem;
+  background: white;
+  border-top: 1px solid #eee;
+  font-size: 0.9rem;
+  color: #777;
 }
 
-/* =======================================================
-   MOBILE-ONLY IMPROVEMENTS
-   ======================================================= */
-@media (max-width: 480px) {
-  body {
-    padding: 12px;
-    font-size: 0.95rem;
-  }
-
-  section, .project {
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  }
-
-  h1 { font-size: 1.8rem; }
-  h2 { font-size: 1.4rem; }
-}
-
-/* =======================================================
-   TABLET & DESKTOP (unchanged visuals)
-   ======================================================= */
-@media (min-width: 768px) {
-  .site-header {
-    flex-direction: row;
-    justify-content: center;
-    gap: 20px;
-    padding: 30px 40px;
-    text-align: left;
-  }
-
-  .profile-img img {
-    width: 130px;
-    height: 130px;
-  }
-
-  nav a {
-    display: inline-block;
-    margin-right: 15px;
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 40px 30px;
-  }
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
 
   .about-content {
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 40px;
+    flex-direction: column;
   }
 
   .about-img {
-    max-width: 200px;
-    flex-shrink: 0;
+    width: 100%;
+    max-width: 400px;
   }
 
-  .skills-content-layout {
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 40px;
-    padding: 30px;
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
   }
 
-  #skills img {
-    width: 50%;
-    max-width: 350px;
-    margin: auto;
+  nav {
+    margin-top: 1rem;
   }
 
-  #skills ul {
-    flex-grow: 1;
-    max-width: none;
-  }
+}
+/* ===== MUSIC IMAGE GALLERY ===== */
 
-  .projects {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
-  }
+.music-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
 
-  .project {
-    margin-bottom: 0;
-  }
+.music-gallery img {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.music-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
 }
