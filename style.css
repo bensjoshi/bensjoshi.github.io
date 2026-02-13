@@ -12,6 +12,11 @@ body {
   line-height: 1.7;
 }
 
+/* ===== ACCENT COLOR ===== */
+:root {
+  --accent-color: #0077ff; /* used for headings, links, shadows */
+}
+
 /* ===== HEADER ===== */
 .site-header {
   display: flex;
@@ -55,7 +60,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #0077ff;
+  color: var(--accent-color);
 }
 
 /* ===== MAIN SECTIONS ===== */
@@ -73,7 +78,7 @@ section h2::after {
   content: "";
   width: 50px;
   height: 3px;
-  background: #0077ff;
+  background: var(--accent-color);
   display: block;
   margin-top: 10px;
   border-radius: 3px;
@@ -151,8 +156,28 @@ footer {
   }
 
 }
-/* ===== MUSIC IMAGE GALLERY ===== */
 
+/* ===== PROJECT IMAGES ===== */
+.project-img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 15px 35px rgba(0, 119, 255, 0.08); /* subtle accent */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  display: block;
+  margin-bottom: 1rem;
+  filter: saturate(1.05);
+}
+
+.project-img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 45px rgba(0, 119, 255, 0.15);
+  filter: saturate(1.1);
+}
+
+/* ===== MUSIC GALLERY ===== */
 .music-gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -164,11 +189,13 @@ footer {
   width: 100%;
   border-radius: 12px;
   object-fit: cover;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 15px 35px rgba(0, 119, 255, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  filter: saturate(1.05);
 }
 
 .music-gallery img:hover {
   transform: scale(1.03);
-  box-shadow: 0 20px 45px rgba(0,0,0,0.15);
+  box-shadow: 0 20px 45px rgba(0, 119, 255, 0.15);
+  filter: saturate(1.1);
 }
