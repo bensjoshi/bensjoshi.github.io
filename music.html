@@ -1,59 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ben Joshi | Music</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Ben Joshi — Music</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --ink:#1a1a18;--paper:#f7f5f0;--cream:#ede9e0;
+  --accent:#c45c2a;--accent2:#3a6b8a;--muted:#7a7570;--border:#d4cfc5;
+  --serif:'DM Serif Display',serif;--sans:'DM Sans',sans-serif;--mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth;}
+body{font-family:var(--sans);background:var(--paper);color:var(--ink);font-size:15px;line-height:1.65;min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:var(--paper);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 2rem;height:54px;}
+.nav-logo{font-family:var(--serif);font-size:1.2rem;color:var(--ink);text-decoration:none;}
+.nav-links{display:flex;gap:0.25rem;align-items:center;}
+.nav-links a{font-size:13px;font-weight:500;color:var(--muted);text-decoration:none;padding:5px 12px;border-radius:20px;transition:color 0.15s,background 0.15s;}
+.nav-links a:hover,.nav-links a.active{color:var(--ink);background:var(--cream);}
+.nav-links a.github{color:var(--accent);}
+main{animation:fadeUp 0.35s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:translateY(0);}}
+section{padding:3.5rem 2rem;border-bottom:1px solid var(--border);}
+.section-header{display:flex;align-items:baseline;gap:1rem;margin-bottom:2.5rem;}
+.section-num{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:0.08em;}
+.section-title{font-family:var(--serif);font-size:1.9rem;color:var(--ink);}
+footer{padding:1.5rem 2rem;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-family:var(--mono);border-top:1px solid var(--border);}
+
+/* MUSIC */
+.music-layout{display:flex;flex-direction:column;gap:1.5rem;}
+.music-photos{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;border:1px solid var(--border);border-radius:8px;overflow:hidden;height:260px;}
+.music-photos img{width:100%;height:100%;object-fit:cover;filter:sepia(0.1) contrast(1.05);transition:filter 0.3s;display:block;}
+.music-photos img:hover{filter:none;}
+.music-cards{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;}
+.music-card{background:var(--cream);border-radius:8px;padding:1.5rem;border:1px solid var(--border);}
+.music-card h2{font-family:var(--serif);font-size:1.1rem;margin-bottom:0.6rem;color:var(--ink);}
+.music-card p{font-size:13px;color:var(--muted);line-height:1.65;}
+.tag-row{display:flex;gap:6px;flex-wrap:wrap;margin-top:0.85rem;}
+.genre-tag{font-size:11px;font-family:var(--mono);padding:3px 9px;border-radius:20px;background:var(--paper);border:1px solid var(--border);color:var(--muted);}
+.music-note{font-size:14px;color:var(--muted);font-style:italic;}
+
+@media(max-width:680px){
+  .music-photos{height:180px;}
+  .music-cards{grid-template-columns:1fr;}
+  nav{padding:0 1rem;}
+  section{padding:2.5rem 1.5rem;}
+  footer{flex-direction:column;gap:4px;text-align:center;}
+}
+</style>
 </head>
 <body>
-
-<header class="site-header">
-  <div class="profile-img">
-    <img src="images/profile.jpg" alt="Ben Joshi profile photo" />
+<nav>
+  <a href="index.html" class="nav-logo">Ben Joshi</a>
+  <div class="nav-links">
+    <a href="index.html">About</a>
+    <a href="software.html">Software</a>
+    <a href="music.html" class="active">Music</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://github.com/bensjoshi/My-Projects" target="_blank" class="github">GitHub ↗</a>
   </div>
-  <div class="intro-text">
-    <h1>Ben Joshi</h1>
-    <p>Software Developer | Professional Trombonist</p>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="software.html">Software</a>
-      <a href="music.html">Music</a>
-      <a href="contact.html">Contact</a>
-      <a href="https://github.com/bensjoshi/My-Projects" target="_blank" rel="noopener noreferrer">GitHub</a>
-    </nav>
-  </div>
-</header>
+</nav>
 
 <main>
-<section id="music">
-  <h2>Trombone & Music</h2>
-
-  <div class="music-gallery">
-    <img src="images/music1.jpg" alt="Live performance">
-    <img src="images/music2.jpg" alt="Jazz performance">
-    <img src="images/music3.jpg" alt="Band rehearsal">
-  </div>
-
-  <p>
-    I’m a trombonist with a ABRSM Level 4 Diploma and Grade 8, with experience performing across jazz, big band, ska,
-    and brass ensemble settings.
-  </p>
-
-  <p>
-    I currently perform with <strong>The Hoplites</strong>, a Nottingham-based ska band,
-   playing regular gigs across a wide range of venues. I really enjoy collaborating on any music projects so do not hestitate to get in touch.
-  </p>
-
-
-</section>
-
+  <section>
+    <div class="section-header">
+      <span class="section-num">02 —</span>
+      <h1 class="section-title">Trombone &amp; Music</h1>
+    </div>
+    <div class="music-layout">
+      <div class="music-photos">
+        <img src="images/music1.jpg" alt="Live performance"/>
+        <img src="images/music2.jpg" alt="Jazz performance"/>
+        <img src="images/music3.jpg" alt="Band rehearsal"/>
+      </div>
+      <div class="music-cards">
+        <div class="music-card">
+          <h2>Qualifications</h2>
+          <p>ABRSM Level 4 Diploma and Grade 8 in trombone, with experience performing across a wide range of musical styles and ensembles.</p>
+          <div class="tag-row">
+            <span class="genre-tag">Jazz</span>
+            <span class="genre-tag">Big Band</span>
+            <span class="genre-tag">Ska</span>
+            <span class="genre-tag">Brass Ensemble</span>
+          </div>
+        </div>
+        <div class="music-card">
+          <h2>The Hoplites</h2>
+          <p>Currently performing with The Hoplites, a Nottingham-based ska band playing regular gigs across a wide range of venues.</p>
+          <div class="tag-row">
+            <span class="genre-tag">Nottingham</span>
+            <span class="genre-tag">Ska</span>
+            <span class="genre-tag">Live Gigs</span>
+          </div>
+        </div>
+      </div>
+      <p class="music-note">Open to collaboration on any music projects — don't hesitate to <a href="contact.html" style="color:var(--accent2);">get in touch</a>.</p>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>&copy; 2025 Ben Joshi</p>
+  <span>© 2025 Ben Joshi</span>
+  <span>Software Developer · Professional Trombonist · Nottingham, UK</span>
 </footer>
-
 </body>
 </html>
-
