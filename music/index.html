@@ -2,8 +2,8 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Ben Joshi | Music</title>
 
@@ -17,11 +17,20 @@
 
   <style>
 
+    /* =========================
+       RESET
+    ========================= */
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
+
+
+    /* =========================
+       VARIABLES
+    ========================= */
 
     :root {
       --ink: #F1EEE7;
@@ -39,6 +48,11 @@
       --mono: 'DM Mono', monospace;
     }
 
+
+    /* =========================
+       GENERAL
+    ========================= */
+
     html {
       scroll-behavior: smooth;
     }
@@ -50,6 +64,53 @@
       font-size: 15px;
       line-height: 1.65;
       min-height: 100vh;
+    }
+
+    main {
+      animation: fadeUp 0.35s ease both;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    section {
+      padding: 4.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .section-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-num {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+    }
+
+    .section-title {
+      font-family: var(--serif);
+      font-size: 1.9rem;
+      font-weight: 400;
+      color: var(--ink);
     }
 
 
@@ -109,62 +170,6 @@
 
     .nav-links a.software {
       color: var(--accent2);
-    }
-
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    main {
-      animation: fadeUp 0.35s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      padding: 4.5rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-num {
-      font-family: var(--mono);
-      font-size: 11px;
-
-      color: var(--accent);
-
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-
-      font-weight: 400;
-
-      color: var(--ink);
     }
 
 
@@ -325,12 +330,6 @@
       object-fit: cover;
 
       border-radius: 3px;
-
-
-    }
-
-    .hero-right img:hover {
-      filter: none;
     }
 
     .hero-right-overlay {
@@ -358,7 +357,7 @@
 
 
     /* =========================
-       INTRO
+       ABOUT
     ========================= */
 
     .intro {
@@ -449,7 +448,7 @@
 
 
     /* =========================
-       THE HOPLITES
+       ENSEMBLE
     ========================= */
 
     .ensemble {
@@ -498,205 +497,233 @@
       line-height: 1.75;
     }
 
-/* =========================
-   PHOTOGRAPHY CAROUSEL
-========================= */
 
-.music-carousel {
-  position: relative;
-  width: 100%;
-  background: #0b0b0a;
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  overflow: hidden;
-}
+    /* =========================
+       ON STAGE CAROUSEL
+    ========================= */
 
-.carousel-track {
-  position: relative;
-  width: 100%;
-  min-height: 500px;
+    .music-carousel {
+      position: relative;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      width: 100%;
 
-.carousel-slide {
-  display: none;
-  width: 100%;
-  height: 600px;
+      background: #0b0b0a;
 
-  align-items: center;
-  justify-content: center;
+      border: 1px solid var(--border);
 
-  animation: carouselFade 0.35s ease;
-}
+      border-radius: 8px;
 
-.carousel-slide.active {
-  display: flex;
-}
+      overflow: hidden;
+    }
 
-.carousel-slide img {
-  display: block;
+    .carousel-track {
+      position: relative;
 
-  width: 100%;
-  height: 100%;
+      width: 100%;
 
-  object-fit: contain;
+      display: flex;
+      align-items: center;
+      justify-content: center;
 
-  /* Keeps the entire photograph visible */
-  filter: sepia(0.08) contrast(1.05);
-}
+      background: #0b0b0a;
+    }
 
-@keyframes carouselFade {
-  from {
-    opacity: 0;
-  }
+    .carousel-slide {
+      display: none;
 
-  to {
-    opacity: 1;
-  }
-}
+      width: 100%;
 
+      height: 600px;
 
-/* Arrows */
+      align-items: center;
+      justify-content: center;
+    }
 
-.carousel-button {
-  position: absolute;
+    .carousel-slide.active {
+      display: flex;
 
-  top: 50%;
-  transform: translateY(-50%);
+      animation: carouselFade 0.35s ease;
+    }
 
-  z-index: 5;
+    @keyframes carouselFade {
+      from {
+        opacity: 0;
+      }
 
-  width: 42px;
-  height: 42px;
+      to {
+        opacity: 1;
+      }
+    }
 
-  border: 1px solid var(--border);
-  border-radius: 50%;
+    .carousel-slide img {
+      display: block;
 
-  background: rgba(20, 20, 18, 0.85);
-  color: var(--ink);
+      width: 100%;
+      height: 100%;
 
-  font-family: var(--sans);
-  font-size: 22px;
+      object-fit: contain;
 
-  cursor: pointer;
+      filter: sepia(0.08) contrast(1.05);
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+      transition: filter 0.3s ease;
+    }
 
-  transition:
-    background 0.15s,
-    border-color 0.15s;
-}
-
-.carousel-button:hover {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--paper);
-}
-
-.carousel-prev {
-  left: 1rem;
-}
-
-.carousel-next {
-  right: 1rem;
-}
+    .carousel-slide img:hover {
+      filter: none;
+    }
 
 
-/* Counter */
+    /* =========================
+       CAROUSEL ARROWS
+    ========================= */
 
-.carousel-counter {
-  position: absolute;
+    .carousel-button {
+      position: absolute;
 
-  top: 1rem;
-  right: 1rem;
+      top: 50%;
 
-  z-index: 5;
+      transform: translateY(-50%);
 
-  padding: 5px 9px;
+      z-index: 10;
 
-  background: rgba(20, 20, 18, 0.85);
-  border: 1px solid var(--border);
+      width: 46px;
+      height: 46px;
 
-  font-family: var(--mono);
-  font-size: 10px;
+      border: 1px solid var(--border);
 
-  color: var(--muted);
-}
+      border-radius: 50%;
+
+      background: rgba(20, 20, 18, 0.9);
+
+      color: var(--ink);
+
+      font-family: var(--sans);
+
+      font-size: 28px;
+
+      line-height: 1;
+
+      cursor: pointer;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      transition:
+        background 0.15s,
+        color 0.15s,
+        border-color 0.15s,
+        transform 0.15s;
+    }
+
+    .carousel-button:hover {
+      background: var(--accent);
+
+      border-color: var(--accent);
+
+      color: var(--paper);
+
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .carousel-button:focus-visible {
+      outline: 2px solid var(--accent);
+
+      outline-offset: 3px;
+    }
+
+    .carousel-prev {
+      left: 1rem;
+    }
+
+    .carousel-next {
+      right: 1rem;
+    }
 
 
-/* Dots */
+    /* =========================
+       CAROUSEL COUNTER
+    ========================= */
 
-.carousel-dots {
-  display: flex;
-  justify-content: center;
-  gap: 7px;
+    .carousel-counter {
+      position: absolute;
 
-  padding: 14px;
+      top: 1rem;
 
-  background: var(--paper);
-  border-top: 1px solid var(--border);
-}
+      right: 1rem;
 
-.carousel-dot {
-  width: 6px;
-  height: 6px;
+      z-index: 10;
 
-  padding: 0;
+      padding: 5px 9px;
 
-  border: none;
-  border-radius: 50%;
+      background: rgba(20, 20, 18, 0.9);
 
-  background: var(--border);
+      border: 1px solid var(--border);
 
-  cursor: pointer;
+      font-family: var(--mono);
 
-  transition:
-    background 0.2s,
-    transform 0.2s;
-}
+      font-size: 10px;
 
-.carousel-dot.active {
-  background: var(--accent);
-  transform: scale(1.3);
-}
+      color: var(--muted);
+    }
 
 
-/* Mobile */
+    /* =========================
+       CAROUSEL DOTS
+    ========================= */
 
-@media (max-width: 680px) {
+    .carousel-dots {
+      display: flex;
 
-  .carousel-track {
-    min-height: 300px;
-  }
+      justify-content: center;
 
-  .carousel-slide {
-    height: 320px;
-  }
+      align-items: center;
 
-  .carousel-button {
-    width: 36px;
-    height: 36px;
-    font-size: 18px;
-  }
+      gap: 8px;
 
-  .carousel-prev {
-    left: 0.6rem;
-  }
+      padding: 14px;
 
-  .carousel-next {
-    right: 0.6rem;
-  }
+      background: var(--paper);
 
-  .carousel-counter {
-    top: 0.6rem;
-    right: 0.6rem;
-  }
-}
+      border-top: 1px solid var(--border);
+    }
+
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+
+      padding: 0;
+
+      border: none;
+
+      border-radius: 50%;
+
+      background: var(--border);
+
+      cursor: pointer;
+
+      transition:
+        background 0.2s,
+        transform 0.2s;
+    }
+
+    .carousel-dot:hover {
+      background: var(--muted);
+    }
+
+    .carousel-dot.active {
+      background: var(--accent);
+
+      transform: scale(1.35);
+    }
+
+    .carousel-dot:focus-visible {
+      outline: 2px solid var(--accent);
+
+      outline-offset: 3px;
+    }
 
 
     /* =========================
@@ -833,7 +860,7 @@
 
 
     /* =========================
-       MOBILE
+       TABLET
     ========================= */
 
     @media (max-width: 800px) {
@@ -876,8 +903,16 @@
       .contact-links {
         text-align: left;
       }
+
+      .carousel-slide {
+        height: 500px;
+      }
     }
 
+
+    /* =========================
+       MOBILE
+    ========================= */
 
     @media (max-width: 680px) {
 
@@ -891,6 +926,7 @@
 
       .nav-links a {
         padding: 5px 7px;
+
         font-size: 12px;
       }
 
@@ -915,14 +951,28 @@
         grid-template-columns: 1fr;
       }
 
-      .music-photos {
-        grid-template-columns: 1fr 1fr;
-
-        height: 300px;
+      .carousel-slide {
+        height: 320px;
       }
 
-      .music-photos img:first-child {
-        grid-column: span 2;
+      .carousel-button {
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+      }
+
+      .carousel-prev {
+        left: 0.6rem;
+      }
+
+      .carousel-next {
+        right: 0.6rem;
+      }
+
+      .carousel-counter {
+        top: 0.6rem;
+        right: 0.6rem;
       }
 
       .qualifications {
@@ -931,6 +981,7 @@
 
       .qualification + .qualification {
         border-left: none;
+
         border-top: 1px solid var(--border);
       }
 
@@ -949,272 +1000,527 @@
 
 <body>
 
-
-<!-- =========================
-     NAVIGATION
-========================= -->
-
-<nav>
-
-  <a href="/" class="nav-logo">
-    Ben Joshi
-  </a>
-
-  <div class="nav-links">
-
-    <a href="/software/">
-      Software
-    </a>
-
-    <a href="#about">
-      About
-    </a>
-
-    <a href="#performance">
-      Performance
-    </a>
-
-    <a href="#qualifications">
-      Qualifications
-    </a>
-
-    <a href="#contact">
-      Contact
-    </a>
-
-  </div>
-
-</nav>
-
-
-<main>
-
-
   <!-- =========================
-       HERO
+       NAVIGATION
   ========================= -->
 
-  <section>
+  <nav>
 
-    <div class="hero">
+    <a href="/" class="nav-logo">
+      Ben Joshi
+    </a>
+
+    <div class="nav-links">
+
+      <a href="/software/">
+        Software
+      </a>
+
+      <a href="#about">
+        About
+      </a>
+
+      <a href="#performance">
+        Performance
+      </a>
+
+      <a href="#qualifications">
+        Qualifications
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
+    </div>
+
+  </nav>
 
 
-      <div class="hero-left">
+  <main>
 
-        <p class="hero-eyebrow">
-          Trombone · Performance · Music
-        </p>
+    <!-- =========================
+         HERO
+    ========================= -->
 
+    <section>
 
-        <h1 class="hero-name">
+      <div class="hero">
 
-          I play<br>
-          <em>trombone.</em>
+        <div class="hero-left">
 
-        </h1>
+          <p class="hero-eyebrow">
+            Trombone · Performance · Music
+          </p>
 
+          <h1 class="hero-name">
+            I play<br>
+            <em>trombone.</em>
+          </h1>
 
-        <p class="hero-desc">
+          <p class="hero-desc">
+            Trombonist performing across jazz, ska, big band,
+            and brass ensembles, based in Sheffield, UK.
+          </p>
 
-          Trombonist performing across jazz, ska, big band,
-          and brass ensembles, based in Sheffield, UK.
+          <div class="hero-tags">
 
-        </p>
+            <span class="tag">Trombone</span>
+            <span class="tag">Jazz</span>
+            <span class="tag">Ska</span>
+            <span class="tag">Big Band</span>
+            <span class="tag">Brass</span>
+            <span class="tag">Live Performance</span>
 
+          </div>
 
-        <div class="hero-tags">
+          <div class="hero-ctas">
 
-          <span class="tag">Trombone</span>
-          <span class="tag">Jazz</span>
-          <span class="tag">Ska</span>
-          <span class="tag">Big Band</span>
-          <span class="tag">Brass</span>
-          <span class="tag">Live Performance</span>
+            <a
+              class="btn btn-primary"
+              href="#performance"
+            >
+              Performance
+            </a>
+
+            <a
+              class="btn btn-outline"
+              href="#contact"
+            >
+              Get in touch
+            </a>
+
+          </div>
 
         </div>
 
 
-        <div class="hero-ctas">
+        <div class="hero-right">
 
-          <a
-            class="btn btn-primary"
-            href="#performance"
-          >
+          <img
+            src="/images/profile.jpg"
+            alt="Ben Joshi performing trombone"
+          />
+
+          <div class="hero-right-overlay">
+
+            <p>
+              Trombonist · Live Performance
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================= -->
+
+    <section id="about">
+
+      <div class="section-inner">
+
+        <div class="section-header">
+
+          <span class="section-num">
+            01 —
+          </span>
+
+          <h2 class="section-title">
+            About the Music
+          </h2>
+
+        </div>
+
+
+        <div class="intro">
+
+          <p>
+            I’m a <strong>trombonist</strong> with experience
+            performing across a range of styles and ensembles.
+            My playing spans jazz, ska, big band, and brass,
+            with a particular focus on live performance and
+            working as part of an ensemble.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PERFORMANCE
+    ========================= -->
+
+    <section id="performance">
+
+      <div class="section-inner">
+
+        <div class="section-header">
+
+          <span class="section-num">
+            02 —
+          </span>
+
+          <h2 class="section-title">
             Performance
-          </a>
+          </h2>
 
-          <a
-            class="btn btn-outline"
-            href="#contact"
+        </div>
+
+
+        <div class="music-grid">
+
+          <!-- THE HOPLITES -->
+
+          <div class="music-card">
+
+            <h2>
+              The Hoplites
+            </h2>
+
+            <p>
+              Currently performing with The Hoplites,
+              a Nottingham-based ska band playing regular
+              live gigs across a wide range of venues.
+            </p>
+
+            <div class="tag-row">
+
+              <span class="genre-tag">
+                Ska
+              </span>
+
+              <span class="genre-tag">
+                Nottingham
+              </span>
+
+              <span class="genre-tag">
+                Live Gigs
+              </span>
+
+            </div>
+
+          </div>
+
+
+          <!-- MUSICAL STYLES -->
+
+          <div class="music-card">
+
+            <h2>
+              Musical Styles
+            </h2>
+
+            <p>
+              Experience across jazz, big band, ska,
+              and brass ensemble performance, with
+              experience adapting to different musical
+              settings and group sizes.
+            </p>
+
+            <div class="tag-row">
+
+              <span class="genre-tag">
+                Jazz
+              </span>
+
+              <span class="genre-tag">
+                Big Band
+              </span>
+
+              <span class="genre-tag">
+                Ska
+              </span>
+
+              <span class="genre-tag">
+                Brass Ensemble
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CURRENT ENSEMBLE
+    ========================= -->
+
+    <section>
+
+      <div class="section-inner">
+
+        <div class="section-header">
+
+          <span class="section-num">
+            03 —
+          </span>
+
+          <h2 class="section-title">
+            Current Ensemble
+          </h2>
+
+        </div>
+
+
+        <div class="ensemble">
+
+          <div class="ensemble-meta">
+            Current<br>
+            Performance
+          </div>
+
+          <div>
+
+            <h2 class="ensemble-name">
+              The Hoplites
+            </h2>
+
+            <p class="ensemble-location">
+              Nottingham · Ska
+            </p>
+
+            <p class="ensemble-description">
+              Performing trombone with The Hoplites,
+              a live ska band based in Nottingham.
+              The band performs regularly across
+              different venues and events.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ON STAGE
+    ========================= -->
+
+    <section>
+
+      <div class="section-inner">
+
+        <div class="section-header">
+
+          <span class="section-num">
+            04 —
+          </span>
+
+          <h2 class="section-title">
+            On Stage
+          </h2>
+
+        </div>
+
+
+        <div class="music-carousel">
+
+          <div class="carousel-track">
+
+            <div class="carousel-slide active">
+
+              <img
+                src="/images/music1.jpg"
+                alt="Ben Joshi performing trombone with an ensemble"
+              />
+
+            </div>
+
+
+            <div class="carousel-slide">
+
+              <img
+                src="/images/music2.jpg"
+                alt="Ben Joshi performing trombone on stage"
+              />
+
+            </div>
+
+
+            <div class="carousel-slide">
+
+              <img
+                src="/images/music3.jpg"
+                alt="Trombone section performing on stage"
+              />
+
+            </div>
+
+          </div>
+
+
+          <!-- PREVIOUS -->
+
+          <button
+            type="button"
+            class="carousel-button carousel-prev"
+            aria-label="Previous image"
           >
-            Get in touch
-          </a>
+            &#8249;
+          </button>
+
+
+          <!-- NEXT -->
+
+          <button
+            type="button"
+            class="carousel-button carousel-next"
+            aria-label="Next image"
+          >
+            &#8250;
+          </button>
+
+
+          <!-- COUNTER -->
+
+          <div
+            class="carousel-counter"
+            aria-live="polite"
+          >
+            <span id="carousel-current">1</span> / 3
+          </div>
+
+
+          <!-- DOTS -->
+
+          <div class="carousel-dots">
+
+            <button
+              type="button"
+              class="carousel-dot active"
+              aria-label="Show image 1"
+              aria-current="true"
+            ></button>
+
+            <button
+              type="button"
+              class="carousel-dot"
+              aria-label="Show image 2"
+              aria-current="false"
+            ></button>
+
+            <button
+              type="button"
+              class="carousel-dot"
+              aria-label="Show image 3"
+              aria-current="false"
+            ></button>
+
+          </div>
 
         </div>
 
       </div>
 
-
-      <div class="hero-right">
-
-        <img
-          src="/images/profile.jpg"
-          alt="Ben Joshi performing trombone"
-        />
+    </section>
 
 
-        <div class="hero-right-overlay">
+    <!-- =========================
+         QUALIFICATIONS
+    ========================= -->
 
-          <p>
-            Trombonist · Live Performance
-          </p>
+    <section id="qualifications">
 
-        </div>
+      <div class="section-inner">
 
-      </div>
+        <div class="section-header">
 
-    </div>
+          <span class="section-num">
+            05 —
+          </span>
 
-  </section>
-
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section id="about">
-
-    <div class="section-inner">
-
-
-      <div class="section-header">
-
-        <span class="section-num">
-          01 —
-        </span>
-
-        <h2 class="section-title">
-          About the Music
-        </h2>
-
-      </div>
-
-
-      <div class="intro">
-
-        <p>
-
-          I’m a <strong>trombonist</strong> with experience
-          performing across a range of styles and ensembles.
-          My playing spans jazz, ska, big band, and brass,
-          with a particular focus on live performance and
-          working as part of an ensemble.
-
-        </p>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PERFORMANCE
-  ========================= -->
-
-  <section id="performance">
-
-    <div class="section-inner">
-
-
-      <div class="section-header">
-
-        <span class="section-num">
-          02 —
-        </span>
-
-        <h2 class="section-title">
-          Performance
-        </h2>
-
-      </div>
-
-
-      <div class="music-grid">
-
-
-        <!-- THE HOPLITES -->
-
-        <div class="music-card">
-
-          <h2>
-            The Hoplites
+          <h2 class="section-title">
+            Qualifications
           </h2>
 
-          <p>
-
-            Currently performing with The Hoplites,
-            a Nottingham-based ska band playing regular
-            live gigs across a wide range of venues.
-
-          </p>
+        </div>
 
 
-          <div class="tag-row">
+        <div class="qualifications">
 
-            <span class="genre-tag">
-              Ska
-            </span>
+          <div class="qualification">
 
-            <span class="genre-tag">
-              Nottingham
-            </span>
+            <div class="qualification-label">
+              ABRSM
+            </div>
 
-            <span class="genre-tag">
-              Live Gigs
-            </span>
+            <div class="qualification-title">
+              Level 4 Diploma
+            </div>
+
+            <p class="qualification-description">
+              ABRSM Level 4 Diploma in trombone.
+            </p>
+
+          </div>
+
+
+          <div class="qualification">
+
+            <div class="qualification-label">
+              ABRSM
+            </div>
+
+            <div class="qualification-title">
+              Grade 8 Trombone
+            </div>
+
+            <p class="qualification-description">
+              Grade 8 qualification in trombone,
+              alongside practical performance experience.
+            </p>
 
           </div>
 
         </div>
 
+      </div>
 
-        <!-- MUSICAL STYLES -->
+    </section>
 
-        <div class="music-card">
 
-          <h2>
-            Musical Styles
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section id="contact">
+
+      <div class="section-inner">
+
+        <div class="contact">
+
+          <h2 class="contact-heading">
+            Let's make<br>
+            some <em>music.</em>
           </h2>
 
-          <p>
 
-            Experience across jazz, big band, ska,
-            and brass ensemble performance, with
-            experience adapting to different musical
-            settings and group sizes.
+          <div class="contact-links">
 
-          </p>
+            <a href="mailto:bensjoshi@gmail.com">
+              bensjoshi@gmail.com
+            </a>
 
-
-          <div class="tag-row">
-
-            <span class="genre-tag">
-              Jazz
-            </span>
-
-            <span class="genre-tag">
-              Big Band
-            </span>
-
-            <span class="genre-tag">
-              Ska
-            </span>
-
-            <span class="genre-tag">
-              Brass Ensemble
-            </span>
+            <a href="/">
+              benjoshi.co.uk ↗
+            </a>
 
           </div>
 
@@ -1222,371 +1528,233 @@
 
       </div>
 
-    </div>
+    </section>
 
-  </section>
+  </main>
 
 
   <!-- =========================
-       ENSEMBLE
+       FOOTER
   ========================= -->
 
-  <section>
+  <footer>
 
-    <div class="section-inner">
+    <span>
+      © 2026 Ben Joshi
+    </span>
 
+    <span>
+      Trombonist · Sheffield, UK
+    </span>
 
-      <div class="section-header">
-
-        <span class="section-num">
-          03 —
-        </span>
-
-        <h2 class="section-title">
-          Current Ensemble
-        </h2>
-
-      </div>
-
-
-      <div class="ensemble">
-
-
-        <div class="ensemble-meta">
-          Current<br>
-          Performance
-        </div>
-
-
-        <div>
-
-          <h2 class="ensemble-name">
-            The Hoplites
-          </h2>
-
-          <p class="ensemble-location">
-            Nottingham · Ska
-          </p>
-
-          <p class="ensemble-description">
-
-            Performing trombone with The Hoplites,
-            a live ska band based in Nottingham.
-            The band performs regularly across
-            different venues and events.
-
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
+  </footer>
 
 
   <!-- =========================
-       PHOTOGRAPHY
+       CAROUSEL JAVASCRIPT
   ========================= -->
 
-  <section>
+  <script>
 
-    <div class="section-inner">
+    document.addEventListener("DOMContentLoaded", function () {
 
+      const slides =
+        document.querySelectorAll(".carousel-slide");
 
-      <div class="section-header">
+      const dots =
+        document.querySelectorAll(".carousel-dot");
 
-        <span class="section-num">
-          04 —
-        </span>
+      const prevButton =
+        document.querySelector(".carousel-prev");
 
-        <h2 class="section-title">
-          On Stage
-        </h2>
+      const nextButton =
+        document.querySelector(".carousel-next");
 
-      </div>
+      const counter =
+        document.getElementById("carousel-current");
 
+      let currentSlide = 0;
 
-      <div class="music-carousel">
 
-  <div class="carousel-track">
+      /* =========================
+         SHOW SLIDE
+      ========================= */
 
-    <div class="carousel-slide active">
-      <img
-        src="/images/music1.jpg"
-        alt="Ben Joshi performing trombone with an ensemble"
-      />
-    </div>
+      function showSlide(index) {
 
-    <div class="carousel-slide">
-      <img
-        src="/images/music2.jpg"
-        alt="Ben Joshi performing trombone on stage"
-      />
-    </div>
+        if (index >= slides.length) {
+          index = 0;
+        }
 
-    <div class="carousel-slide">
-      <img
-        src="/images/music3.jpg"
-        alt="Trombone section performing on stage"
-      />
-    </div>
+        if (index < 0) {
+          index = slides.length - 1;
+        }
 
-  </div>
+        currentSlide = index;
 
 
-  <button
-    class="carousel-button carousel-prev"
-    aria-label="Previous image"
-  >
-    ‹
-  </button>
+        /* Hide all slides */
 
-  <button
-    class="carousel-button carousel-next"
-    aria-label="Next image"
-  >
-    ›
-  </button>
+        slides.forEach(function (slide) {
+          slide.classList.remove("active");
+        });
 
 
-  <div class="carousel-counter">
-    <span id="carousel-current">1</span> / 3
-  </div>
+        /* Remove active dots */
 
+        dots.forEach(function (dot) {
+          dot.classList.remove("active");
+          dot.setAttribute("aria-current", "false");
+        });
 
-  <div class="carousel-dots">
 
-    <button
-      class="carousel-dot active"
-      aria-label="Show image 1"
-    ></button>
+        /* Show current slide */
 
-    <button
-      class="carousel-dot"
-      aria-label="Show image 2"
-    ></button>
+        slides[currentSlide].classList.add("active");
 
-    <button
-      class="carousel-dot"
-      aria-label="Show image 3"
-    ></button>
 
-  </div>
+        /* Activate current dot */
 
-</div>
+        if (dots[currentSlide]) {
 
-  <!-- =========================
-       QUALIFICATIONS
-  ========================= -->
+          dots[currentSlide].classList.add("active");
 
-  <section id="qualifications">
+          dots[currentSlide].setAttribute(
+            "aria-current",
+            "true"
+          );
 
-    <div class="section-inner">
+        }
 
 
-      <div class="section-header">
+        /* Update counter */
 
-        <span class="section-num">
-          05 —
-        </span>
+        counter.textContent = currentSlide + 1;
 
-        <h2 class="section-title">
-          Qualifications
-        </h2>
+      }
 
-      </div>
 
+      /* =========================
+         NEXT BUTTON
+      ========================= */
 
-      <div class="qualifications">
+      nextButton.addEventListener("click", function () {
 
+        showSlide(currentSlide + 1);
 
-        <div class="qualification">
+      });
 
-          <div class="qualification-label">
-            ABRSM
-          </div>
 
-          <div class="qualification-title">
-            Level 4 Diploma
-          </div>
+      /* =========================
+         PREVIOUS BUTTON
+      ========================= */
 
-          <p class="qualification-description">
+      prevButton.addEventListener("click", function () {
 
-            ABRSM Level 4 Diploma in trombone.
+        showSlide(currentSlide - 1);
 
-          </p>
+      });
 
-        </div>
 
+      /* =========================
+         DOT NAVIGATION
+      ========================= */
 
-        <div class="qualification">
+      dots.forEach(function (dot, index) {
 
-          <div class="qualification-label">
-            ABRSM
-          </div>
+        dot.addEventListener("click", function () {
 
-          <div class="qualification-title">
-            Grade 8 Trombone
-          </div>
+          showSlide(index);
 
-          <p class="qualification-description">
+        });
 
-            Grade 8 qualification in trombone,
-            alongside practical performance experience.
+      });
 
-          </p>
 
-        </div>
+      /* =========================
+         KEYBOARD NAVIGATION
+      ========================= */
 
+      document.addEventListener("keydown", function (event) {
 
-      </div>
+        if (event.key === "ArrowRight") {
 
-    </div>
+          showSlide(currentSlide + 1);
 
-  </section>
+        }
 
+        if (event.key === "ArrowLeft") {
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
+          showSlide(currentSlide - 1);
 
-  <section id="contact">
+        }
 
-    <div class="section-inner">
+      });
 
 
-      <div class="contact">
+      /* =========================
+         TOUCH / SWIPE
+      ========================= */
 
+      const carousel =
+        document.querySelector(".music-carousel");
 
-        <h2 class="contact-heading">
+      let touchStartX = 0;
 
-          Let's make<br>
-          some <em>music.</em>
 
-        </h2>
+      carousel.addEventListener(
+        "touchstart",
+        function (event) {
 
+          touchStartX =
+            event.touches[0].clientX;
 
-        <div class="contact-links">
+        },
+        { passive: true }
+      );
 
-          <a href="bensjoshi@gmail.com">
-            bensjoshi@gmail.com
-          </a>
 
-          <a href="/">
-            benjoshi.co.uk ↗
-          </a>
+      carousel.addEventListener(
+        "touchend",
+        function (event) {
 
-        </div>
+          const touchEndX =
+            event.changedTouches[0].clientX;
 
+          const distance =
+            touchStartX - touchEndX;
 
-      </div>
 
-    </div>
+          if (Math.abs(distance) < 50) {
+            return;
+          }
 
-  </section>
 
+          if (distance > 0) {
 
-</main>
+            showSlide(currentSlide + 1);
 
+          } else {
 
-<!-- =========================
-     FOOTER
-========================= -->
+            showSlide(currentSlide - 1);
 
-<footer>
+          }
 
-  <span>
-    © 2026 Ben Joshi
-  </span>
+        },
+        { passive: true }
+      );
 
-  <span>
-    Trombonist · Sheffield, UK
-  </span>
 
-</footer>
+      /* =========================
+         INITIALISE
+      ========================= */
 
-<script>
-  const slides = document.querySelectorAll('.carousel-slide');
-  const dots = document.querySelectorAll('.carousel-dot');
-  const prevButton = document.querySelector('.carousel-prev');
-  const nextButton = document.querySelector('.carousel-next');
-  const counter = document.getElementById('carousel-current');
+      showSlide(0);
 
-  let currentSlide = 0;
-
-  function showSlide(index) {
-    if (index < 0) {
-      currentSlide = slides.length - 1;
-    } else if (index >= slides.length) {
-      currentSlide = 0;
-    } else {
-      currentSlide = index;
-    }
-
-    slides.forEach((slide, i) => {
-      slide.classList.toggle('active', i === currentSlide);
     });
 
-    dots.forEach((dot, i) => {
-      dot.classList.toggle('active', i === currentSlide);
-    });
+  </script>
 
-    counter.textContent = currentSlide + 1;
-  }
-
-  prevButton.addEventListener('click', () => {
-    showSlide(currentSlide - 1);
-  });
-
-  nextButton.addEventListener('click', () => {
-    showSlide(currentSlide + 1);
-  });
-
-  dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      showSlide(i);
-    });
-  });
-
-
-  /* Keyboard navigation */
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'ArrowLeft') {
-      showSlide(currentSlide - 1);
-    }
-
-    if (event.key === 'ArrowRight') {
-      showSlide(currentSlide + 1);
-    }
-  });
-
-
-  /* Touch/swipe support */
-
-  let touchStartX = 0;
-
-  const carousel = document.querySelector('.music-carousel');
-
-  carousel.addEventListener('touchstart', (event) => {
-    touchStartX = event.changedTouches[0].screenX;
-  }, { passive: true });
-
-  carousel.addEventListener('touchend', (event) => {
-    const touchEndX = event.changedTouches[0].screenX;
-    const distance = touchEndX - touchStartX;
-
-    if (Math.abs(distance) < 50) return;
-
-    if (distance < 0) {
-      showSlide(currentSlide + 1);
-    } else {
-      showSlide(currentSlide - 1);
-    }
-  }, { passive: true });
-</script>
 </body>
 
 </html>
