@@ -1,39 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Ben Joshi | Software & Data</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-    rel="stylesheet"
-  >
-
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+    :root {
+      --ink: #171717;
+      --paper: #f7f6f2;
+      --muted: #666;
+      --border: #d8d6d0;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: Arial, Helvetica, sans-serif;
     }
 
-    :root {
-      --ink: #F2F0EA;
-      --paper: #111110;
-      --cream: #181817;
-      --accent: #6F8790;
-      --accent2: #B86B4B;
-      --muted: #A5A39D;
-      --border: #34332F;
-
-      --serif: 'DM Serif Display', serif;
-      --sans: 'DM Sans', sans-serif;
-      --mono: 'DM Mono', monospace;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     html {
@@ -41,12 +27,15 @@
     }
 
     body {
-      font-family: var(--sans);
       background: var(--paper);
       color: var(--ink);
-      font-size: 15px;
-      line-height: 1.65;
-      min-height: 100vh;
+      font-family: var(--sans);
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     /* =========================
@@ -54,108 +43,41 @@
     ========================= */
 
     nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      background: var(--paper);
+      height: 54px;
       border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      max-width: 1200px;
+      height: 100%;
+      margin: 0 auto;
+      padding: 0 2rem;
 
       display: flex;
       align-items: center;
       justify-content: space-between;
-
-      padding: 0 2rem;
-      height: 54px;
     }
 
-    .nav-logo {
+    .nav-name {
       font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--ink);
-      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: 700;
     }
 
     .nav-links {
       display: flex;
-      gap: 0.25rem;
       align-items: center;
+      gap: 1.75rem;
+      font-size: 14px;
     }
 
     .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-
-      padding: 5px 12px;
-      border-radius: 20px;
-
-      transition: color 0.15s, background 0.15s;
+      transition: opacity 0.2s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--ink);
-      background: var(--cream);
+    .nav-links a:hover {
+      opacity: 0.55;
     }
-
-    .nav-links a.github {
-      color: var(--accent);
-    }
-
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    main {
-      animation: fadeUp 0.35s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      padding: 4.5rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-num {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      color: var(--ink);
-      font-weight: 400;
-    }
-
 
     /* =========================
        HERO
@@ -163,26 +85,30 @@
 
     .hero {
       min-height: calc(100vh - 54px);
-
       max-width: 1200px;
       margin: 0 auto;
-
       padding: 5rem 2rem;
 
       display: grid;
       grid-template-columns: 1.15fr 0.85fr;
       gap: 5rem;
-
       align-items: center;
     }
 
+    .hero-left {
+      min-width: 0;
+    }
+
     .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 11px;
+      margin-bottom: 1rem;
+
+      font-family: var(--sans);
+      font-size: 13px;
+      font-weight: 600;
       letter-spacing: 0.12em;
-      color: var(--accent);
       text-transform: uppercase;
-      margin-bottom: 1.5rem;
+
+      color: #777;
     }
 
     .hero-name {
@@ -194,17 +120,11 @@
       margin-bottom: 2rem;
     }
 
-    .hero-name em {
-      color: var(--accent);
-      font-style: italic;
-    }
-
     .hero-desc {
       max-width: 540px;
 
       font-size: 16px;
       line-height: 1.75;
-
       color: var(--muted);
 
       margin-bottom: 1.75rem;
@@ -218,60 +138,58 @@
     }
 
     .tag {
-      font-family: var(--mono);
-      font-size: 10px;
+      padding: 5px 10px;
 
-      padding: 4px 9px;
-
-      color: var(--muted);
-      background: var(--cream);
       border: 1px solid var(--border);
-
       border-radius: 3px;
+
+      font-size: 12px;
+      color: #555;
     }
 
-    .hero-ctas {
+    .hero-actions {
       display: flex;
       gap: 10px;
-      flex-wrap: wrap;
+      align-items: center;
     }
 
-    .btn {
-      display: inline-block;
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
 
-      padding: 9px 16px;
+      min-height: 46px;
+      padding: 0 20px;
 
-      font-size: 13px;
-      text-decoration: none;
+      border: 1px solid var(--ink);
+      border-radius: 3px;
 
-      border-radius: 4px;
+      font-size: 14px;
+      font-weight: 600;
 
       transition:
-        background 0.15s,
-        color 0.15s,
-        border-color 0.15s;
+        background 0.2s ease,
+        color 0.2s ease;
     }
 
-    .btn-primary {
+    .button-primary {
       background: var(--ink);
       color: var(--paper);
     }
 
-    .btn-primary:hover {
-      background: var(--accent);
-      color: var(--paper);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
+    .button-primary:hover {
+      background: transparent;
       color: var(--ink);
     }
 
+    .button-secondary {
+      background: transparent;
+    }
+
+    .button-secondary:hover {
+      background: var(--ink);
+      color: var(--paper);
+    }
 
     /* =========================
        HERO IMAGE
@@ -279,6 +197,8 @@
 
     .hero-right {
       position: relative;
+      display: flex;
+      justify-content: flex-end;
     }
 
     .hero-right img {
@@ -286,17 +206,18 @@
 
       width: 100%;
       max-width: 390px;
+      aspect-ratio: 4 / 5;
+
+      object-fit: cover;
+      object-position: center 35%;
 
       margin-left: auto;
-
-      filter: grayscale(100%);
 
       border-radius: 3px;
     }
 
     .hero-right-overlay {
       position: absolute;
-
       left: 0;
       bottom: 1.5rem;
 
@@ -304,331 +225,47 @@
 
       background: var(--paper);
       border: 1px solid var(--border);
-    }
 
-    .hero-right-overlay p {
-      font-family: var(--mono);
-      font-size: 10px;
-      color: var(--muted);
-      letter-spacing: 0.03em;
+      font-family: monospace;
+      font-size: 11px;
+      color: #555;
     }
-
 
     /* =========================
-       INTRO
+       SECTIONS
     ========================= */
 
-    .intro {
+    .section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+
+      border-top: 1px solid var(--border);
+    }
+
+    .section-label {
+      display: block;
+      margin-bottom: 1.5rem;
+
+      font-family: monospace;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .section-heading {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 400;
+      line-height: 1.05;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-intro {
       max-width: 700px;
-    }
-
-    .intro p {
-      font-size: 17px;
-      line-height: 1.8;
       color: var(--muted);
-    }
-
-    .intro strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-
-      border: 1px solid var(--border);
-      border-radius: 8px;
-
-      overflow: hidden;
-    }
-
-    /* Each project is a <details> element so the case-study write-up
-       can expand in place without any JS. */
-    .project-item {
-      background: var(--paper);
-    }
-
-    .project-item + .project-item {
-      border-top: 1px solid var(--border);
-    }
-
-    .project-item summary {
-      list-style: none;
-      cursor: pointer;
-    }
-
-    .project-item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .project-row {
-      display: grid;
-
-      grid-template-columns: 2fr 3fr 1fr auto;
-
-      padding: 1.35rem 1.5rem;
-
-      transition: background 0.15s;
-
-      gap: 1.25rem;
-      align-items: start;
-    }
-
-    .project-item summary:hover .project-row,
-    .project-item[open] .project-row {
-      background: var(--cream);
-    }
-
-    .proj-name {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-
-      color: var(--ink);
-
-      line-height: 1.3;
-
-      padding-top: 2px;
-    }
-
-    .proj-desc {
-      font-size: 13px;
-
-      color: var(--muted);
-
-      line-height: 1.55;
-    }
-
-    .proj-stack {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 4px;
-
-      justify-content: flex-end;
-    }
-
-    .proj-stack span {
-      font-size: 10px;
-
-      font-family: var(--mono);
-
-      padding: 2px 7px;
-
-      border-radius: 3px;
-
-      background: var(--cream);
-
-      color: var(--muted);
-
-      border: 1px solid var(--border);
-
-      white-space: nowrap;
-    }
-
-    .proj-toggle {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-
-      padding-top: 3px;
-      text-align: right;
-
-      white-space: nowrap;
-    }
-
-    .proj-toggle::before {
-      content: "View Project Details +";
-    }
-
-    .project-item[open] .proj-toggle::before {
-      content: "Close −";
-    }
-
-    /* Expanded case-study body */
-    .case-study {
-      padding: 0 1.5rem 2rem 1.5rem;
-      border-top: 1px solid var(--border);
-      background: var(--cream);
-    }
-
-    .case-study-inner {
-      max-width: 760px;
-      padding-top: 1.5rem;
-    }
-
-    .case-study h4 {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-top: 1.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .case-study h4:first-child {
-      margin-top: 0;
-    }
-
-    .case-study p {
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .case-study ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .case-study li {
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-study li strong,
-    .case-study p strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .github-link {
-      margin-top: 1.5rem;
-
-      font-size: 13px;
-
-      color: var(--muted);
-    }
-
-    .github-link a {
-      color: var(--accent2);
-      text-decoration: none;
-    }
-
-    .github-link a:hover {
-      text-decoration: underline;
-    }
-
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .experience {
-      display: grid;
-
-      grid-template-columns: 1fr 2fr;
-
-      gap: 4rem;
-
-      max-width: 900px;
-    }
-
-    .experience-meta {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .experience-role {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .experience-company {
-      color: var(--accent);
-      font-size: 13px;
-      margin-bottom: 1rem;
-    }
-
-    .experience-description {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-
-    /* =========================
-       SKILLS
-    ========================= */
-
-    .skills-grid {
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-
-    .skill-group {
-      padding: 1.5rem;
-
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-group h3 {
-      font-family: var(--mono);
-      font-size: 11px;
-
-      color: var(--accent);
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.08em;
-
-      margin-bottom: 0.75rem;
-    }
-
-    .skill-group p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 2fr;
-
-      gap: 4rem;
-
-      max-width: 900px;
-    }
-
-    .about-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .about-text {
-      font-size: 15px;
-      color: var(--muted);
+      font-size: 16px;
       line-height: 1.8;
     }
-
-    .about-text p + p {
-      margin-top: 1rem;
-    }
-
 
     /* =========================
        CONTACT
@@ -636,13 +273,9 @@
 
     .contact {
       display: flex;
-
       justify-content: space-between;
-      align-items: flex-end;
-
-      gap: 2rem;
+      gap: 3rem;
     }
-
 
     .contact-heading {
       font-family: var(--serif);
@@ -653,60 +286,56 @@
     }
 
     .contact-note {
-      margin: 0;
+      max-width: 500px;
       color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-      max-width: 420px;
+      font-size: 15px;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
-      gap: 6px;
-      text-align: right;
-    }
+      align-items: flex-end;
+      gap: 8px;
 
-    .contact-links a {
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 12px;
-      text-decoration: none;
+      font-size: 14px;
     }
 
     .contact-links a:hover {
-      color: var(--ink);
+      text-decoration: underline;
     }
-    
-
 
     /* =========================
        FOOTER
     ========================= */
 
     footer {
-      padding: 1.5rem 2rem;
-
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-
-      font-size: 12px;
-
-      color: var(--muted);
-
-      font-family: var(--mono);
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
 
       border-top: 1px solid var(--border);
-    }
 
+      color: #888;
+      font-size: 12px;
+    }
 
     /* =========================
        MOBILE
     ========================= */
 
     @media (max-width: 800px) {
+
+      .nav-inner {
+        padding: 0 1.5rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+      .nav-links a:nth-child(n+4) {
+        display: none;
+      }
 
       .hero {
         grid-template-columns: 1fr;
@@ -720,60 +349,37 @@
 
       .hero-right {
         order: -1;
+        justify-content: flex-start;
       }
 
       .hero-right img {
-        max-width: 280px;
+        width: 100%;
+        max-width: 300px;
         margin: 0;
+
+        aspect-ratio: 4 / 5;
+        object-position: center 35%;
       }
 
       .hero-right-overlay {
         left: 1rem;
       }
 
-      .experience,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
+      .section {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
       }
 
       .contact {
         flex-direction: column;
-        align-items: flex-start;
       }
 
       .contact-links {
-        text-align: left;
+        align-items: flex-start;
       }
     }
 
-
     @media (max-width: 680px) {
-
-      nav {
-        padding: 0 1rem;
-      }
-
-      .nav-links {
-        gap: 0;
-      }
-
-      .nav-links a {
-        padding: 5px 7px;
-        font-size: 12px;
-      }
-
-      .nav-links a.github {
-        display: none;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
 
       .hero {
         padding-left: 1.5rem;
@@ -784,84 +390,65 @@
         font-size: clamp(3.2rem, 15vw, 5rem);
       }
 
-      .project-row {
-        grid-template-columns: 1fr;
-        gap: 0.65rem;
+      .hero-desc {
+        font-size: 15px;
       }
 
-      .proj-stack {
-        justify-content: flex-start;
+      .hero-actions {
+        flex-wrap: wrap;
       }
 
-      .proj-toggle {
-        text-align: left;
-      }
-
-      .case-study {
-        padding: 0 1.25rem 1.75rem 1.25rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
+      .section {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
 
       footer {
-        flex-direction: column;
-        gap: 4px;
-        text-align: center;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
       }
     }
   </style>
 </head>
 
-
 <body>
 
-<!-- =========================
-     NAV
-========================= -->
+  <!-- =========================
+       NAVIGATION
+  ========================= -->
 
-<nav>
+  <nav>
+    <div class="nav-inner">
 
-  <a href="/" class="nav-logo">Ben Joshi</a>
+      <a href="/" class="nav-name">
+        Ben Joshi
+      </a>
 
-  <div class="nav-links">
+      <div class="nav-links">
+        <a href="/software" aria-current="page">Software</a>
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a href="https://github.com/bensjoshi/My-Projects"
+           target="_blank"
+           rel="noopener noreferrer">
+          GitHub ↗
+        </a>
+      </div>
 
-    <a href="/" class="active">Software</a>
-
-    <a href="#work">Projects</a>
-
-    <a href="#experience">Experience</a>
-
-    <a href="#skills">Skills</a>
-
-    <a href="#about">About</a>
-
-    <a href="#contact">Contact</a>
-
-    <a
-      href="https://github.com/bensjoshi/My-Projects"
-      target="_blank"
-      class="github"
-    >
-      GitHub ↗
-    </a>
-
-  </div>
-
-</nav>
-
-
-<main>
+    </div>
+  </nav>
 
 
   <!-- =========================
        HERO
   ========================= -->
 
-  <section>
+  <main>
 
-    <div class="hero">
+    <section class="hero">
 
       <div class="hero-left">
 
@@ -870,36 +457,33 @@
         </p>
 
         <h1 class="hero-name">
-        Software, Data,<br>
-        and Engineering
+          Software Engineering<br>
+          &amp; Data
         </h1>
 
         <p class="hero-desc">
-        Data professional and Computer Science graduate with hands-on experience in data cleansing, pipeline development, dashboard engineering, 
-        and software development. Currently working as an Assistant Data Manager.
+          Computer Science graduate and Assistant Data Manager with experience
+          building software, working with data, and developing practical
+          systems using Python, Java, and SQL.
         </p>
 
         <div class="hero-tags">
-
-          <span class="tag">Software</span>
-          <span class="tag">Data</span>
           <span class="tag">Python</span>
           <span class="tag">Java</span>
           <span class="tag">SQL</span>
-          <span class="tag">Firebase</span>
-
+          <span class="tag">REST APIs</span>
+          <span class="tag">Databases</span>
+          <span class="tag">Data</span>
         </div>
 
-        <div class="hero-ctas">
-
-          <a class="btn btn-primary" href="#work">
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">
             View Projects
           </a>
 
-          <a class="btn btn-outline" href="#contact">
+          <a href="#contact" class="button button-secondary">
             Get in touch
           </a>
-
         </div>
 
       </div>
@@ -910,851 +494,155 @@
         <img
           src="/images/picture1.jpg"
           alt="Ben Joshi"
-        />
+        >
 
         <div class="hero-right-overlay">
-
-          <p>
-            Computer Science · Software · Data
-          </p>
-
+          Computer Science · Software · Data
         </div>
 
       </div>
 
-    </div>
-
-  </section>
+    </section>
 
 
-  <!-- =========================
-       INTRO
-  ========================= -->
+    <!-- =========================
+         INTRO
+    ========================= -->
 
-  <section>
+    <section class="section" id="about">
 
-    <div class="section-inner">
+      <span class="section-label">
+        01 —
+      </span>
 
-      <div class="section-header">
+      <h2 class="section-heading">
+        Software &amp; Data Engineering
+      </h2>
 
-        <span class="section-num">
-          01 —
-        </span>
-
-        <h2 class="section-title">
-          Software &amp; Data Engineering
-        </h2>
-
-      </div>
-
-
-      <div class="intro">
-
-        <p>
-            I’m a Computer Science graduate from Nottingham Trent University, where I achieved a 2:1 BSc Computer Science in 2025. 
-            My experience spans data management, cleansing and modelling, dashboard development, software engineering, and cloud-connected applications.
-        </p> 
-
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       PROJECTS
-  ========================= -->
-
-  <section id="work">
-
-    <div class="section-inner">
-
-      <div class="section-header">
-
-        <span class="section-num">
-          02 —
-        </span>
-
-        <h2 class="section-title">
-          Selected Work
-        </h2>
-
-      </div>
-
-
-      <p style="
-        font-size:14px;
-        color:var(--muted);
-        margin-bottom:2rem;
-        max-width:560px;
-        line-height:1.7;
-      ">
-        A selection of software and data projects developed through
-        university, personal work, and practical experience. Click a
-        project to read the full technical write-up.
+      <p class="section-intro">
+        I’m a Computer Science graduate from Nottingham Trent University,
+        where I achieved a 2:1 BSc Computer Science in 2025. My experience
+        spans data management, cleansing and modelling, dashboard
+        development, software engineering, and cloud-connected applications.
       </p>
 
+    </section>
 
-      <div class="projects-grid">
 
+    <!-- =========================
+         PROJECTS
+    ========================= -->
 
-        <!-- BOOKING -->
+    <section class="section" id="projects">
 
-        <details class="project-item">
+      <span class="section-label">
+        02 —
+      </span>
 
-          <summary>
-            <div class="project-row">
+      <h2 class="section-heading">
+        Projects
+      </h2>
 
-              <div class="proj-name">
-                RoomSync - Dorm Room Booking System
-              </div>
+      <!-- Keep your existing project cards/content here -->
 
-              <div class="proj-desc">
-              A distributed booking system for student accommodation with a RESTful Java backend
-               and a separate console client, integrating third-party routing and weather APIs.
-              </div>
+    </section>
 
-              <div class="proj-stack">
-                <span>Java</span>
-                <span>REST APIs</span>
-                <span>Tomcat</span>
-              </div>
 
-              <div class="proj-toggle"></div>
+    <!-- =========================
+         EXPERIENCE
+    ========================= -->
 
-            </div>
-          </summary>
+    <section class="section" id="experience">
 
-          <div class="case-study">
-            <div class="case-study-inner">
+      <span class="section-label">
+        03 —
+      </span>
 
-              <h4>Overview</h4>
-              <p>
-                A two-tier system for browsing and applying for student
-                accommodation, built to practice proper client-server
-                separation rather than a single monolithic app. The
-                backend is a Java EE RESTful web service; the client is
-                an entirely separate Java console application that only
-                ever talks to the backend over HTTP.
-              </p>
+      <h2 class="section-heading">
+        Experience
+      </h2>
 
-              <h4>Architecture &amp; Tech Stack</h4>
-              <p>
-                Java EE / JAX-RS (Jersey) backend deployed as a servlet-
-                container web app, consumed by a standalone Java console
-                client over <code>HttpURLConnection</code>, with Gson for
-                serialization on both sides. Integrates two third-party
-                public APIs: OSRM for driving-distance calculation and
-                7Timer! for weather forecasts.
-              </p>
+      <!-- Keep your existing experience content here -->
 
-              <h4>Key Technical Highlights</h4>
-              <ul>
-                <li>
-                  Designed a REST API with resources for rooms,
-                  applications, distance, and weather — each a separate
-                  JAX-RS <code>@Path</code> class registered through a
-                  central <code>ApplicationConfig</code>.
-                </li>
-                <li>
-                  Integrated two third-party public APIs server-side:
-                  parsing OSRM's GeoJSON route response to extract
-                  distance, and deserializing 7Timer's nested weather
-                  payload into typed Java objects.
-                </li>
-                <li>
-                  Implemented server-side availability logic using
-                  <code>java.time.LocalDate</code> comparisons rather
-                  than trusting client-supplied flags.
-                </li>
-                <li>
-                  Built the client as a fully independent consumer of the
-                  API — its own DTOs, its own HTTP handling — to practice
-                  designing a backend for consumers you don't control.
-                </li>
-              </ul>
+    </section>
 
-              <h4>What I'd Improve</h4>
-              <p>
-                The file-backed JSON persistence works but isn't
-                concurrency-safe, the application writes use manual string
-                manipulation to keep a JSON array valid across appends.
-                A real database (even SQLite) would remove that fragility
-                entirely. I'd also extract the hardcoded file paths into
-                configuration and share DTOs between client and server
-                via a common module instead of duplicating them.
-              </p>
 
-            </div>
-          </div>
+    <!-- =========================
+         SKILLS
+    ========================= -->
 
-        </details>
+    <section class="section" id="skills">
 
-
-        <!-- SOUNDWAVE -->
-
-        <details class="project-item">
-
-          <summary>
-            <div class="project-row">
-
-              <div class="proj-name">
-                SoundWave
-              </div>
-
-              <div class="proj-desc">
-              A social platform for musicians with a Firestore-backed follow/unfollow graph using atomic transactions 
-              to keep bidirectional relationships and counts consistent.
-              </div>
-
-              <div class="proj-stack">
-                <span>Android</span>
-                <span>Java</span>
-                <span>Firebase</span>
-                <span>Figma</span>
-              </div>
-
-              <div class="proj-toggle"></div>
-
-            </div>
-          </summary>
-
-          <div class="case-study">
-            <div class="case-study-inner">
-
-              <h4>Overview</h4>
-              <p>
-                My final year university project — a social media app
-                connecting musicians through shared instruments, genres,
-                and interests, with a content feed, profile discovery,
-                and a full follow/unfollow social graph.Designed and built end-to-end with the UI prototyped in Figma.
-              </p>
-
-              <h4>Architecture &amp; Tech Stack</h4>
-              <p>
-                Android (Java) with a Firebase/Firestore backend. The
-                standout piece is a bidirectional follow relationship
-                with denormalized counters, kept consistent via
-                Firestore transactions.
-              </p>
-
-              <h4>Key Technical Highlights</h4>
-              <ul>
-                <li>
-                  Implemented follow/unfollow using a <strong>Firestore
-                  transaction</strong> that reads both users' documents,
-                  then atomically updates <code>following</code>/<code>followers</code>
-                  arrays (via <code>arrayUnion</code>/<code>arrayRemove</code>)
-                  and denormalized <code>followingCount</code>/<code>followersCount</code>
-                  fields (via <code>increment</code>) on both sides in a
-                  single atomic operation — the correct pattern for
-                  keeping a bidirectional relationship and its counters
-                  consistent under concurrent writes.
-                </li>
-                <li>
-                  Built a content feed, profile discovery, search, and
-                  full profile editing (instruments, genres, bio,
-                  location) on a shared Firestore schema.
-                </li>
-                <li>
-                  Designed the user profile schema with tagged fields
-                  (instruments and genres as list types) specifically to
-                  support future similarity-based matching.
-                </li>
-              </ul>
-
-              <h4>What I'd Improve</h4>
-              <p>
-                Discovery currently selects a musician at random from the
-                full user base (with simple repeat-avoidance) rather than
-                ranking by shared interests — a natural next step given
-                the schema already captures instruments and genres. I'd
-                also replace the full-collection fetch on each discovery
-                request with paginated queries as the user base grows.
-              </p>
-
-            </div>
-          </div>
-
-        </details>
-
-
-        <!-- AI -->
-
-        <details class="project-item">
-
-          <summary>
-            <div class="project-row">
-
-              <div class="proj-name">
-                InstrumentIQ - AI Music Chatbot
-              </div>
-
-              <div class="proj-desc">
-                A multi-modal assistant for brass instrument questions, 
-                combining a tuned CNN image classifier, 
-                symbolic knowledge-base reasoning, and voice interaction.
-              </div>
-
-              <div class="proj-stack">
-                <span>Python</span>
-                <span>NLP</span>
-                <span>AI</span>
-              </div>
-
-              <div class="proj-toggle"></div>
-
-            </div>
-          </summary>
-
-          <div class="case-study">
-            <div class="case-study-inner">
-
-              <h4>Overview</h4>
-              <p>
-                A conversational assistant for brass/woodwind instrument
-                questions that routes between five distinct AI techniques
-                depending on the type of input it receives - image,
-                greeting, factual assertion, factual query, or open
-                question, rather than relying on a single model.
-              </p>
-
-              <h4>Architecture &amp; Tech Stack</h4>
-              <p>
-                A CNN (Keras/TensorFlow) for image classification, with
-                its architecture selected via automated hyperparameter
-                search (Keras Tuner's Hyperband algorithm); an AIML
-                pattern-matching kernel for conversational small talk;
-                TF-IDF with cosine similarity for retrieval-based Q&amp;A;
-                a symbolic subject-predicate-object knowledge base with
-                fuzzy-matched contradiction checking; and speech-to-text /
-                text-to-speech for voice interaction.
-              </p>
-
-              <h4>Key Technical Highlights</h4>
-              <ul>
-                <li>
-                  Trained a CNN for binary brass-vs-woodwind image
-                  classification, with the network architecture found
-                  through Hyperband search rather than manually tuned.
-                </li>
-                <li>
-                  Built a symbolic knowledge base that persists new facts
-                  back to disk across sessions, with contradiction
-                  detection using fuzzy string matching so near-equivalent
-                  phrasings are still recognized correctly.
-                </li>
-                <li>
-                  Designed a rule-based orchestration layer that inspects
-                  each user input and routes it to the appropriate
-                  subsystem — image classifier, AIML kernel, KB writer, KB
-                  checker, or TF-IDF retrieval — making the system's
-                  reasoning explainable rather than a black box.
-                </li>
-                <li>
-                  Integrated five materially different AI/NLP techniques
-                  into one coherent interaction loop, including optional
-                  voice input/output.
-                </li>
-              </ul>
-
-              <h4>What I'd Improve</h4>
-              <p>
-                The knowledge base and Q&amp;A datasets are intentionally
-                small, built to demonstrate each technique working
-                correctly rather than to scale to a production knowledge
-                base. I'd also look at replacing the manual keyword-based
-                input router with a lightweight intent classifier, so
-                routing decisions are learned rather than hardcoded.
-              </p>
-
-            </div>
-          </div>
-
-        </details>
-
-
-        <!-- PROPERTY -->
-
-        <details class="project-item">
-
-          <summary>
-            <div class="project-row">
-
-              <div class="proj-name">
-                TenantTrack - Property Management App
-              </div>
-
-              <div class="proj-desc">
-                A property management app for landlords with Firebase Auth 
-                (including Google Sign-In) and per-user data isolation.
-              </div>
-
-              <div class="proj-stack">
-                <span>Android</span>
-                <span>Java</span>
-                <span>Firebase</span>
-              </div>
-
-              <div class="proj-toggle"></div>
-
-            </div>
-          </summary>
-
-          <div class="case-study">
-            <div class="case-study-inner">
-
-              <h4>Overview</h4>
-              <p>
-                An Android app for landlords to list, update, and track
-                rental properties — tenant details, rent and deposit
-                amounts, tenancy dates, and property photos — scoped
-                per-user so each landlord only sees their own portfolio.
-              </p>
-
-              <h4>Architecture &amp; Tech Stack</h4>
-              <p>
-                Android (Java) with Firebase Authentication (email/password
-                plus Google Sign-In federation via OAuth token exchange)
-                and Firestore for property records.
-              </p>
-
-              <h4>Key Technical Highlights</h4>
-              <ul>
-                <li>
-                  Implemented proper federated authentication: Google
-                  Sign-In returns an ID token, exchanged for a Firebase
-                  credential via <code>GoogleAuthProvider</code>, giving
-                  users a one-tap login alongside standard email/password.
-                </li>
-                <li>
-                  Every property record is written with the owner's
-                  Firebase UID attached, enabling per-user data isolation
-                  enforceable through Firestore security rules.
-                </li>
-                <li>
-                  Built image capture and local persistence: photos are
-                  picked from the device gallery, decoded, compressed,
-                  and written to app-internal storage, with only the file
-                  reference persisted to Firestore.
-                </li>
-              </ul>
-
-              <h4>What I'd Improve</h4>
-              <p>
-                Property photos are currently stored on-device rather
-                than in Firebase Storage, so they don't sync across
-                devices or survive a reinstall — migrating to Storage
-                with a persisted download URL would fix that properly.
-                Numeric fields like rent and deposit are also stored as
-                strings; moving them to proper numeric types would allow
-                server-side filtering and sorting.
-              </p>
-
-            </div>
-          </div>
-
-        </details>
-
-
-        <!-- SMART FRIDGE -->
-
-        <details class="project-item">
-
-          <summary>
-            <div class="project-row">
-
-              <div class="proj-name">
-                FutureFridges
-              </div>
-
-              <div class="proj-desc">
-                A role-based kitchen inventory app for commercial food service, 
-                with automated expiry and low-stock alerting across four staff roles.
-              </div>
-
-              <div class="proj-stack">
-                <span>Android</span>
-                <span>Java</span>
-                <span>Agile</span>
-                <span>GitHub</span>
-              </div>
-
-              <div class="proj-toggle"></div>
-
-            </div>
-          </summary>
-
-          <div class="case-study">
-            <div class="case-study-inner">
-
-              <h4>Overview</h4>
-              <p>
-                An Android app supporting four distinct staff roles —
-                Head Chef, Regular Chef, Delivery Person, and Manager —
-                each with their own login flow and dashboard, built
-                around a shared Firestore backend. Handles inventory
-                tracking, expiry/low-stock alerting, order fulfillment,
-                delivery history, and health &amp; safety reporting.
-              </p>
-
-              <h4>Architecture &amp; Tech Stack</h4>
-              <p>
-                Android (Java) with a Firebase/Firestore backend — a
-                single app with four role-specific Activity/Fragment
-                flows branching from a shared entry point, built
-                collaboratively in an Agile team using GitHub for
-                version control and task tracking.
-              </p>
-
-              <h4>Key Technical Highlights</h4>
-              <ul>
-                <li>
-                  Built a role-based access structure across four
-                  distinct user types sharing one data backend, each
-                  with scoped views and permissions.
-                </li>
-                <li>
-                  Implemented expiry-window and low-stock detection
-                  logic: inventory items are checked against a rolling
-                  time window and quantity threshold on each fetch,
-                  automatically generating notification records when
-                  thresholds are crossed.
-                </li>
-                <li>
-                  Designed a decoupled alerting pattern — detection logic
-                  and notification delivery are separate concerns, with
-                  alerts persisted as their own Firestore collection
-                  rather than being ephemeral UI state.
-                </li>
-                <li>
-                  Delivered a genuinely full CRUD feature set — inventory,
-                  ordering, delivery history, compliance reporting, and
-                  manager-side user administration — across 30+ source
-                  files as part of a coordinated team sprint cycle.
-                </li>
-              </ul>
-
-              <h4>What I'd Improve</h4>
-              <p>
-                Authentication is currently custom-built against a
-                Firestore <code>employees</code> collection rather than
-                using Firebase Authentication, and credentials aren't
-                hashed — the clear next step for production would be
-                migrating to Firebase Auth with custom claims for roles
-                and proper credential hashing. I'd also move
-                expiry-checking server-side via a scheduled Cloud
-                Function so alerts fire in real time rather than only
-                when a user opens the inventory screen.
-              </p>
-
-            </div>
-          </div>
-
-        </details>
-
-
-      </div>
-
-
-      <p class="github-link">
-
-        See all projects on
-
-        <a
-          href="https://github.com/bensjoshi/My-Projects"
-          target="_blank"
-        >
-          GitHub ↗
-        </a>
-
-      </p>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       EXPERIENCE
-  ========================= -->
-
-  <section id="experience">
-
-    <div class="section-inner">
-
-      <div class="section-header">
-
-        <span class="section-num">
-          03 —
-        </span>
-
-        <h2 class="section-title">
-          Experience
-        </h2>
-
-      </div>
-
-
-      <div class="experience">
-
-        <div class="experience-meta">
-          CURRENT
-        </div>
-
-        <div>
-
-          <div class="experience-role">
-            Assistant Data and Insights Manager
-          </div>
-
-          <div class="experience-company">
-            Sheffield, UK
-          </div>
-
-          <p class="experience-description">
-              Supporting a construction consultancy’s data operations across Sheffield and London offices, 
-              streamlining and automating reporting processes and building data tools for project and estate management.
-          </p>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-  <!-- =========================
-       SKILLS
-  ========================= -->
-<section id="skills">
-
-  <div class="section-inner">
-
-    <div class="section-header">
-
-      <span class="section-num">
+      <span class="section-label">
         04 —
       </span>
 
-      <h2 class="section-title">
-        Technical Skills
+      <h2 class="section-heading">
+        Skills
       </h2>
 
-    </div>
+      <!-- Keep your existing skills content here -->
+
+    </section>
 
 
-    <div class="skills-grid">
+    <!-- =========================
+         CONTACT
+    ========================= -->
 
+    <section class="section" id="contact">
 
-      <div class="skill-group">
-
-        <h3>
-          Languages
-        </h3>
-
-        <p>
-          Python<br>
-          SQL<br>
-          Java<br>
-          C++<br>
-          HTML / CSS<br>
-          JavaScript<br>
-          Visual Basic
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Data &amp; Analytics
-        </h3>
-
-        <p>
-          Data Cleansing<br>
-          Data Modelling<br>
-          Advanced Excel<br>
-          Power Query<br>
-          ETL Principles
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Databases &amp; Cloud
-        </h3>
-
-        <p>
-          SQL Databases<br>
-          Firebase / NoSQL<br>
-          Database Integration<br>
-          RESTful APIs<br>
-          Cloud Computing
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Development
-        </h3>
-
-        <p>
-          GitHub<br>
-          Android Studio<br>
-          Visual Studio<br>
-          NetBeans<br>
-          Spyder<br>
-          Eclipse
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Architecture
-        </h3>
-
-        <p>
-          RESTful APIs<br>
-          Service-Oriented Architecture<br>
-          Cloud-Integrated Systems<br>
-          Database Integration
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Methodologies
-        </h3>
-
-        <p>
-          Agile / Scrum<br>
-          Waterfall<br>
-          UX Wireframing
-        </p>
-
-      </div>
-
-
-    </div>
-
-  </div>
-
-</section>
-
-  <!-- =========================
-       ABOUT
-  ========================= -->
-
-  <section id="about">
-
-    <div class="section-inner">
-
-      <div class="section-header">
-
-        <span class="section-num">
-          05 —
-        </span>
-
-        <h2 class="section-title">
-          About
-        </h2>
-
-      </div>
-
-
-      <div class="about-grid">
+      <div class="contact">
 
         <div>
+          <h2 class="contact-heading">
+            Contact
+          </h2>
 
-          <span class="about-label">
-            Background
-          </span>
+          <p class="contact-note">
+            Interested in software engineering and data engineering
+            opportunities.
+          </p>
+        </div>
+
+        <div class="contact-links">
+
+          <a href="mailto:bensjoshi@gmail.com">
+            bensjoshi@gmail.com
+          </a>
+
+          <a
+            href="https://github.com/bensjoshi/My-Projects"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/ben-joshi/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
 
         </div>
 
-
-        <div class="about-text">
-
-          <p>
-            I studied Computer Science and have developed software
-            across mobile applications, distributed systems,
-            AI projects, and collaborative development environments.
-          </p>
-
-          <p>
-            Alongside software development, my current work in data
-            management has given me a practical perspective on how
-            systems, processes, and information work together.
-          </p>
-
-        </div>
-
       </div>
 
-    </div>
+    </section>
 
-  </section>
-
-
-
-<section id="contact">
-  <div class="section-inner">
-    <div class="contact">
-      <div>
-        <h2 class="contact-heading">Contact</h2>
-        <p class="contact-note">
-          Interested in software engineering and data engineering opportunities.
-        </p>
-      </div>
-
-      <div class="contact-links">
-        <a href="mailto:bensjoshi@gmail.com">bensjoshi@gmail.com</a>
-        <a href="https://github.com/bensjoshi/My-Projects" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/ben-joshi/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      </div>
-    </div>
-  </div>
-</section>
+  </main>
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
-</main>
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <span>
-    © 2026 Ben Joshi
-  </span>
-
-  <span>
-    Software &amp; Data · Sheffield, UK
-  </span>
-
-</footer>
-
+  <footer>
+    © 2026 Ben Joshi / Software &amp; Data · Sheffield, UK
+  </footer>
 
 </body>
 </html>
