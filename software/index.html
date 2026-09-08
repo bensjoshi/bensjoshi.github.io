@@ -643,42 +643,41 @@
       gap: 2rem;
     }
 
+
     .contact-heading {
       font-family: var(--serif);
-
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-
+      font-size: 1.9rem;
       font-weight: 400;
-
       line-height: 1;
+      margin-bottom: 10px;
     }
 
-    .contact-heading em {
-      color: var(--accent);
+    .contact-note {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+      max-width: 420px;
     }
 
     .contact-links {
       display: flex;
       flex-direction: column;
-
       gap: 6px;
-
       text-align: right;
     }
 
     .contact-links a {
       color: var(--muted);
-
       font-family: var(--mono);
-
       font-size: 12px;
-
       text-decoration: none;
     }
 
     .contact-links a:hover {
       color: var(--ink);
     }
+    
 
 
     /* =========================
@@ -1107,7 +1106,7 @@
 
               <div class="proj-desc">
               A social platform for musicians with a Firestore-backed follow/unfollow graph using atomic transactions 
-              to keep bidirectional relationships and counts consistent. Designed and built end-to-end with the UI prototyped in Figma.
+              to keep bidirectional relationships and counts consistent.
               </div>
 
               <div class="proj-stack">
@@ -1130,7 +1129,7 @@
                 My final year university project — a social media app
                 connecting musicians through shared instruments, genres,
                 and interests, with a content feed, profile discovery,
-                and a full follow/unfollow social graph.
+                and a full follow/unfollow social graph.Designed and built end-to-end with the UI prototyped in Figma.
               </p>
 
               <h4>Architecture &amp; Tech Stack</h4>
@@ -1715,46 +1714,26 @@
   </section>
 
 
-  <!-- =========================
-       CONTACT
-  ========================= -->
 
-  <section id="contact">
-
-    <div class="section-inner">
-
-      <div class="contact">
-
-        <h2 class="contact-heading">
-          Solving problems with<br>
-         software <em>and data.</em>
-        </h2>
-
-
-        <div class="contact-links">
-
-          <a href="bensjoshi@gmail.com">
-            bensjoshi@gmail.com
-          </a>
-
-          <a
-            href="https://github.com/bensjoshi/My-Projects"
-            target="_blank"
-          >
-            GitHub ↗
-          </a>
-
-          <a href="/">
-            benjoshi.co.uk ↗
-          </a>
-
-        </div>
-
+<section id="contact">
+  <div class="section-inner">
+    <div class="contact">
+      <div>
+        <h2 class="contact-heading">Contact</h2>
+        <p class="contact-note">
+          Interested in software engineering and data engineering opportunities.
+        </p>
       </div>
 
+      <div class="contact-links">
+        <a href="mailto:bensjoshi@gmail.com">bensjoshi@gmail.com</a>
+        <a href="https://github.com/bensjoshi/My-Projects" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/benjoshi/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+      </div>
     </div>
+  </div>
+</section>
 
-  </section>
 
 
 </main>
