@@ -483,6 +483,25 @@
       font-weight: 500;
     }
 
+    .case-study figure {
+      margin: 0 0 1.5rem 0;
+    }
+
+    .case-study figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+
+    .case-study figcaption {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--muted);
+      margin-top: 0.5rem;
+    }
+
     .github-link {
       margin-top: 1.5rem;
 
@@ -974,6 +993,112 @@
 
 
       <div class="projects-grid">
+
+
+        <!-- TROMBELLO -->
+
+        <details class="project-item">
+
+          <summary>
+            <div class="project-row">
+
+              <div class="proj-name">
+                Trombello - Trombone Transcription
+              </div>
+
+              <div class="proj-desc">
+              A web app that turns a trombone recording into editable sheet music, with
+              per-note intonation feedback and MusicXML/PDF export. Currently in development.
+              </div>
+
+              <div class="proj-stack">
+                <span>Python</span>
+                <span>FastAPI</span>
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>music21</span>
+              </div>
+
+              <div class="proj-toggle"></div>
+
+            </div>
+          </summary>
+
+          <div class="case-study">
+            <div class="case-study-inner">
+
+              <figure>
+                <img
+                  src="../images/trombello.jpg"
+                  alt="Trombello interface showing a transcribed trombone excerpt as sheet music, with out-of-tune notes circled and a piano-roll timeline below"
+                  loading="lazy"
+                >
+                <figcaption>A transcribed excerpt: notes 25¢ or more out of tune are circled, with a pitch timeline below.</figcaption>
+              </figure>
+
+              <h4>Overview</h4>
+              <p>
+                A transcription tool built for one instrument. Upload a
+                recording (often made on a phone) and Trombello returns
+                notes, rhythm, key and notation, shown as a score in the
+                browser alongside a piano roll. Every note carries its
+                tuning in cents, so students, players and teachers can see
+                exactly where intonation drifted, then export to
+                MuseScore or Sibelius via MusicXML, or print as PDF.
+              </p>
+
+              <h4>Architecture &amp; Tech Stack</h4>
+              <p>
+                A FastAPI backend runs the transcription pipeline as
+                background jobs with progress reporting; a React +
+                TypeScript (Vite) frontend renders the score with
+                OpenSheetMusicDisplay. Scores are built with music21 and
+                engraved to PDF with Verovio. Optional Demucs source
+                separation isolates the trombone from a backing track.
+              </p>
+
+              <h4>Key Technical Highlights</h4>
+              <ul>
+                <li>
+                  Implemented pitch detection with the <strong>YIN
+                  algorithm</strong> in pure NumPy, then grouped the
+                  frame-by-frame pitch track into discrete notes while
+                  handling trombone-specific behaviour: slide movement,
+                  glissandi, tongued attacks, vibrato and pedal tones.
+                </li>
+                <li>
+                  Built tempo estimation and rhythm quantisation that
+                  snaps notes onto a musical grid (including triplets) and
+                  inserts rests, producing a real, readable score rather
+                  than a raw note list.
+                </li>
+                <li>
+                  Created a <strong>golden dataset</strong> of real
+                  trombone recordings paired with ground-truth scores and
+                  an evaluation harness that scores the exact pipeline the
+                  app runs, so every change is measured, not guessed.
+                </li>
+                <li>
+                  Designed an in-browser review flow: uncertain or
+                  out-of-tune notes are circled, and users can step
+                  through, correct and re-engrave notes with undo/redo.
+                </li>
+              </ul>
+
+              <h4>What's Next</h4>
+              <p>
+                Accuracy is strongest on exercises and weaker on fast
+                slurred passages in real pieces, which the dataset makes
+                easy to track. Next on the roadmap: synced playback in
+                the note editor, better handling of backing tracks, and a
+                public beta with accounts and deployment. The source isn't
+                on GitHub yet while it's in active development.
+              </p>
+
+            </div>
+          </div>
+
+        </details>
 
 
         <!-- BOOKING -->
