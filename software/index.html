@@ -7,6 +7,21 @@
 
   <title>Ben Joshi | Software & Data</title>
 
+  <meta name="description" content="Software and data projects by Ben Joshi, a Computer Science graduate and Assistant Data Manager working with Python, Java and SQL.">
+  <link rel="canonical" href="https://benjoshi.co.uk/software/">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Ben Joshi">
+  <meta property="og:title" content="Ben Joshi | Software &amp; Data">
+  <meta property="og:description" content="Software and data projects by Ben Joshi, a Computer Science graduate and Assistant Data Manager working with Python, Java and SQL.">
+  <meta property="og:url" content="https://benjoshi.co.uk/software/">
+  <meta property="og:image" content="https://benjoshi.co.uk/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Ben Joshi">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -771,6 +786,30 @@
 
       .nav-links a.github {
         display: none;
+      }
+
+      /* Keep the menu on one line: the name stays whole and the
+         links scroll sideways instead of pushing the page wider. */
+      .nav-logo {
+        white-space: nowrap;
+        flex-shrink: 0;
+        margin-right: 0.75rem;
+      }
+
+      .nav-links {
+        min-width: 0;
+        overflow-x: auto;
+        scrollbar-width: none;
+        -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
+        mask-image: linear-gradient(to right, #000 85%, transparent);
+      }
+
+      .nav-links::-webkit-scrollbar {
+        display: none;
+      }
+
+      .nav-links a {
+        white-space: nowrap;
       }
 
       section {
