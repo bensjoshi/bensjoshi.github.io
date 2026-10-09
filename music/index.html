@@ -25,1025 +25,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-
-    /* =========================
-       RESET
-    ========================= */
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-
-    /* =========================
-       VARIABLES
-    ========================= */
-
-    :root {
-      --ink: #F1EEE7;
-      --paper: #141412;
-      --cream: #1D1C19;
-
-      --accent: #B86B4B;
-      --accent2: #7F9694;
-
-      --muted: #A6A29A;
-      --border: #393631;
-
-      --serif: 'DM Serif Display', serif;
-      --sans: 'DM Sans', sans-serif;
-      --mono: 'DM Mono', monospace;
-    }
-
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans);
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.65;
-      min-height: 100vh;
-    }
-
-    main {
-      animation: fadeUp 0.35s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      padding: 4.5rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-num {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      font-weight: 400;
-      color: var(--ink);
-    }
-
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      background: var(--paper);
-      border-bottom: 1px solid var(--border);
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 2rem;
-      height: 54px;
-    }
-
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.25rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-
-      color: var(--muted);
-      text-decoration: none;
-
-      padding: 5px 12px;
-      border-radius: 20px;
-
-      transition:
-        color 0.15s,
-        background 0.15s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--ink);
-      background: var(--cream);
-    }
-
-    .nav-links a.software {
-      color: var(--accent2);
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: calc(100vh - 54px);
-
-      max-width: 1200px;
-      margin: 0 auto;
-
-      padding: 5rem 2rem;
-
-      display: grid;
-      grid-template-columns: 0.9fr 1.1fr;
-
-      gap: 5rem;
-
-      align-items: center;
-    }
-
-    .hero-left {
-      max-width: 600px;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 11px;
-
-      letter-spacing: 0.12em;
-
-      color: var(--accent);
-
-      text-transform: uppercase;
-
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-name {
-      font-family: var(--serif);
-
-      font-size: clamp(4rem, 8vw, 7rem);
-
-      font-weight: 400;
-
-      line-height: 0.95;
-
-      letter-spacing: -0.025em;
-
-      margin-bottom: 2rem;
-    }
-
-    .hero-name em {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .hero-desc {
-      max-width: 500px;
-
-      font-size: 16px;
-
-      line-height: 1.75;
-
-      color: var(--muted);
-
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 6px;
-
-      margin-bottom: 2rem;
-    }
-
-    .tag {
-      font-family: var(--mono);
-
-      font-size: 10px;
-
-      padding: 4px 9px;
-
-      color: var(--muted);
-
-      background: var(--cream);
-
-      border: 1px solid var(--border);
-
-      border-radius: 3px;
-    }
-
-    .hero-ctas {
-      display: flex;
-
-      gap: 10px;
-
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-
-      padding: 9px 16px;
-
-      font-size: 13px;
-
-      text-decoration: none;
-
-      border-radius: 4px;
-
-      transition:
-        background 0.15s,
-        color 0.15s,
-        border-color 0.15s;
-    }
-
-    .btn-primary {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent);
-      color: var(--paper);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--ink);
-    }
-
-
-    /* =========================
-       HERO IMAGE
-    ========================= */
-
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-right img {
-      display: block;
-
-      width: 100%;
-
-      max-height: 650px;
-
-      object-fit: cover;
-
-      border-radius: 3px;
-    }
-
-    .hero-right-overlay {
-      position: absolute;
-
-      left: -1rem;
-      bottom: 1.5rem;
-
-      padding: 8px 12px;
-
-      background: var(--paper);
-
-      border: 1px solid var(--border);
-    }
-
-    .hero-right-overlay p {
-      font-family: var(--mono);
-
-      font-size: 10px;
-
-      color: var(--muted);
-
-      letter-spacing: 0.03em;
-    }
-
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .intro {
-      max-width: 720px;
-    }
-
-    .intro p {
-      font-size: 17px;
-
-      line-height: 1.8;
-
-      color: var(--muted);
-    }
-
-    .intro strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-
-    /* =========================
-       MUSIC CONTENT
-    ========================= */
-
-    .music-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      gap: 1.5rem;
-    }
-
-    .music-card {
-      background: var(--cream);
-
-      border: 1px solid var(--border);
-
-      border-radius: 8px;
-
-      padding: 1.75rem;
-    }
-
-    .music-card h2 {
-      font-family: var(--serif);
-
-      font-size: 1.35rem;
-
-      font-weight: 400;
-
-      margin-bottom: 0.7rem;
-
-      color: var(--ink);
-    }
-
-    .music-card p {
-      font-size: 13px;
-
-      color: var(--muted);
-
-      line-height: 1.7;
-    }
-
-    .tag-row {
-      display: flex;
-
-      gap: 6px;
-
-      flex-wrap: wrap;
-
-      margin-top: 1rem;
-    }
-
-    .genre-tag {
-      font-size: 10px;
-
-      font-family: var(--mono);
-
-      padding: 3px 9px;
-
-      border-radius: 20px;
-
-      background: var(--paper);
-
-      border: 1px solid var(--border);
-
-      color: var(--muted);
-    }
-
-
-    /* =========================
-       ENSEMBLE
-    ========================= */
-
-    .ensemble {
-      display: grid;
-
-      grid-template-columns: 1fr 2fr;
-
-      gap: 4rem;
-
-      max-width: 900px;
-    }
-
-    .ensemble-meta {
-      font-family: var(--mono);
-
-      font-size: 11px;
-
-      color: var(--muted);
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.06em;
-    }
-
-    .ensemble-name {
-      font-family: var(--serif);
-
-      font-size: 1.6rem;
-
-      margin-bottom: 0.25rem;
-    }
-
-    .ensemble-location {
-      font-size: 13px;
-
-      color: var(--accent);
-
-      margin-bottom: 1rem;
-    }
-
-    .ensemble-description {
-      font-size: 14px;
-
-      color: var(--muted);
-
-      line-height: 1.75;
-    }
-
-
-    /* =========================
-       ON STAGE CAROUSEL
-    ========================= */
-
-    .music-carousel {
-      position: relative;
-
-      width: 100%;
-
-      background: #0b0b0a;
-
-      border: 1px solid var(--border);
-
-      border-radius: 8px;
-
-      overflow: hidden;
-    }
-
-    .carousel-track {
-      position: relative;
-
-      width: 100%;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background: #0b0b0a;
-    }
-
-    .carousel-slide {
-      display: none;
-
-      width: 100%;
-
-      height: 600px;
-
-      align-items: center;
-      justify-content: center;
-    }
-
-    .carousel-slide.active {
-      display: flex;
-
-      animation: carouselFade 0.35s ease;
-    }
-
-    @keyframes carouselFade {
-      from {
-        opacity: 0;
-      }
-
-      to {
-        opacity: 1;
-      }
-    }
-
-    .carousel-slide img {
-      display: block;
-
-      width: 100%;
-      height: 100%;
-
-      object-fit: contain;
-
-      filter: sepia(0.08) contrast(1.05);
-
-      transition: filter 0.3s ease;
-    }
-
-    .carousel-slide img:hover {
-      filter: none;
-    }
-
-
-    /* =========================
-       CAROUSEL ARROWS
-    ========================= */
-
-    .carousel-button {
-      position: absolute;
-
-      top: 50%;
-
-      transform: translateY(-50%);
-
-      z-index: 10;
-
-      width: 46px;
-      height: 46px;
-
-      border: 1px solid var(--border);
-
-      border-radius: 50%;
-
-      background: rgba(20, 20, 18, 0.9);
-
-      color: var(--ink);
-
-      font-family: var(--sans);
-
-      font-size: 28px;
-
-      line-height: 1;
-
-      cursor: pointer;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      transition:
-        background 0.15s,
-        color 0.15s,
-        border-color 0.15s,
-        transform 0.15s;
-    }
-
-    .carousel-button:hover {
-      background: var(--accent);
-
-      border-color: var(--accent);
-
-      color: var(--paper);
-
-      transform: translateY(-50%) scale(1.05);
-    }
-
-    .carousel-button:focus-visible {
-      outline: 2px solid var(--accent);
-
-      outline-offset: 3px;
-    }
-
-    .carousel-prev {
-      left: 1rem;
-    }
-
-    .carousel-next {
-      right: 1rem;
-    }
-
-
-    /* =========================
-       CAROUSEL COUNTER
-    ========================= */
-
-    .carousel-counter {
-      position: absolute;
-
-      top: 1rem;
-
-      right: 1rem;
-
-      z-index: 10;
-
-      padding: 5px 9px;
-
-      background: rgba(20, 20, 18, 0.9);
-
-      border: 1px solid var(--border);
-
-      font-family: var(--mono);
-
-      font-size: 10px;
-
-      color: var(--muted);
-    }
-
-
-    /* =========================
-       CAROUSEL DOTS
-    ========================= */
-
-    .carousel-dots {
-      display: flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      gap: 8px;
-
-      padding: 14px;
-
-      background: var(--paper);
-
-      border-top: 1px solid var(--border);
-    }
-
-    .carousel-dot {
-      width: 7px;
-      height: 7px;
-
-      padding: 0;
-
-      border: none;
-
-      border-radius: 50%;
-
-      background: var(--border);
-
-      cursor: pointer;
-
-      transition:
-        background 0.2s,
-        transform 0.2s;
-    }
-
-    .carousel-dot:hover {
-      background: var(--muted);
-    }
-
-    .carousel-dot.active {
-      background: var(--accent);
-
-      transform: scale(1.35);
-    }
-
-    .carousel-dot:focus-visible {
-      outline: 2px solid var(--accent);
-
-      outline-offset: 3px;
-    }
-
-
-    /* =========================
-       QUALIFICATIONS
-    ========================= */
-
-    .qualifications {
-      display: grid;
-
-      grid-template-columns: 1fr 1fr;
-
-      border: 1px solid var(--border);
-
-      border-radius: 8px;
-
-      overflow: hidden;
-    }
-
-    .qualification {
-      padding: 1.5rem;
-
-      background: var(--paper);
-    }
-
-    .qualification + .qualification {
-      border-left: 1px solid var(--border);
-    }
-
-    .qualification-label {
-      font-family: var(--mono);
-
-      font-size: 10px;
-
-      color: var(--accent);
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.08em;
-
-      margin-bottom: 0.75rem;
-    }
-
-    .qualification-title {
-      font-family: var(--serif);
-
-      font-size: 1.2rem;
-
-      margin-bottom: 0.35rem;
-    }
-
-    .qualification-description {
-      font-size: 13px;
-
-      color: var(--muted);
-
-      line-height: 1.6;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: flex-end;
-
-      gap: 2rem;
-    }
-
-    .contact-heading {
-      font-family: var(--serif);
-
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-
-      font-weight: 400;
-
-      line-height: 1;
-    }
-
-    .contact-heading em {
-      color: var(--accent);
-    }
-
-    .contact-links {
-      display: flex;
-
-      flex-direction: column;
-
-      gap: 6px;
-
-      text-align: right;
-    }
-
-    .contact-links a {
-      color: var(--muted);
-
-      font-family: var(--mono);
-
-      font-size: 12px;
-
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      color: var(--ink);
-    }
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 1.5rem 2rem;
-
-      display: flex;
-
-      justify-content: space-between;
-
-      align-items: center;
-
-      font-size: 12px;
-
-      color: var(--muted);
-
-      font-family: var(--mono);
-
-      border-top: 1px solid var(--border);
-    }
-
-
-    /* =========================
-       TABLET
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .hero {
-        grid-template-columns: 1fr;
-
-        gap: 3rem;
-
-        min-height: auto;
-
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      .hero-right {
-        order: -1;
-      }
-
-      .hero-right img {
-        max-height: 500px;
-      }
-
-      .hero-right-overlay {
-        left: 1rem;
-      }
-
-      .ensemble {
-        grid-template-columns: 1fr;
-
-        gap: 1.5rem;
-      }
-
-      .contact {
-        flex-direction: column;
-
-        align-items: flex-start;
-      }
-
-      .contact-links {
-        text-align: left;
-      }
-
-      .carousel-slide {
-        height: 500px;
-      }
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 680px) {
-
-      nav {
-        padding: 0 1rem;
-      }
-
-      .nav-links {
-        gap: 0;
-      }
-
-      .nav-links a {
-        padding: 5px 7px;
-
-        font-size: 12px;
-      }
-
-      .nav-links a.github {
-        display: none;
-      }
-
-      /* Keep the menu on one line: the name stays whole and the
-         links scroll sideways instead of pushing the page wider. */
-      .nav-logo {
-        white-space: nowrap;
-        flex-shrink: 0;
-        margin-right: 0.75rem;
-      }
-
-      .nav-links {
-        min-width: 0;
-        overflow-x: auto;
-        scrollbar-width: none;
-        -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
-        mask-image: linear-gradient(to right, #000 85%, transparent);
-      }
-
-      .nav-links::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav-links a {
-        white-space: nowrap;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
-
-      .hero {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-
-      .hero-name {
-        font-size: clamp(3.5rem, 16vw, 5.5rem);
-      }
-
-      .music-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .carousel-slide {
-        height: 320px;
-      }
-
-      .carousel-button {
-        width: 38px;
-        height: 38px;
-
-        font-size: 22px;
-      }
-
-      .carousel-prev {
-        left: 0.6rem;
-      }
-
-      .carousel-next {
-        right: 0.6rem;
-      }
-
-      .carousel-counter {
-        top: 0.6rem;
-        right: 0.6rem;
-      }
-
-      .qualifications {
-        grid-template-columns: 1fr;
-      }
-
-      .qualification + .qualification {
-        border-left: none;
-
-        border-top: 1px solid var(--border);
-      }
-
-      footer {
-        flex-direction: column;
-
-        gap: 4px;
-
-        text-align: center;
-      }
-    }
-
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 
-<body>
+<body data-room="music">
+
+  <a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="duotone" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.067 0.91 0.961"/>
+        <feFuncG type="table" tableValues="0.067 0.251 0.961"/>
+        <feFuncB type="table" tableValues="0.067 0.122 0.953"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
 
   <!-- =========================
        NAVIGATION
   ========================= -->
 
-  <nav>
+  <nav class="site-nav" aria-label="Site">
 
     <a href="/" class="nav-logo">
       Ben Joshi
@@ -1076,21 +83,17 @@
   </nav>
 
 
-  <main>
+  <main id="main">
 
     <!-- =========================
          HERO
     ========================= -->
 
-    <section>
+    <section class="hero">
 
-      <div class="hero">
+      <div class="hero-left">
 
-        <div class="hero-left">
-
-          <p class="hero-eyebrow">
-            Trombone · Performance · Music
-          </p>
+        <div>
 
           <h1 class="hero-name">
             I play<br>
@@ -1120,6 +123,7 @@
               href="#performance"
             >
               Performance
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v13M3 9l5 5 5-5"/></svg>
             </a>
 
             <a
@@ -1133,23 +137,40 @@
 
         </div>
 
+      <p class="poster-info">
+          <span>Trombone · Performance · Music</span>
+        </p>
 
-        <div class="hero-right">
+      </div>
 
-          <img
-            src="/images/profile.jpg"
-            alt="Ben Joshi performing trombone"
-          />
 
-          <div class="hero-right-overlay">
+      <div class="field">
 
-            <p>
-              Trombonist · Live Performance
-            </p>
-
+        <figure>
+          <div class="duo">
+            <img
+              src="/images/profile.jpg"
+              alt="Ben Joshi performing trombone"
+              width="1200"
+              height="1600"
+            />
           </div>
+          <figcaption class="field-caption">
+            Trombonist · Live Performance
+          </figcaption>
+        </figure>
 
-        </div>
+        <svg class="motif trombone" viewBox="-62 0 532 162" aria-hidden="true" focusable="false">
+          <path class="horn" d="M150 2Q186 30 250 30M150 62Q186 34 250 34M150 2V62M250 32H452V84H250M462 112H250M462 104V120"/>
+          <path class="slide-outer" d="M440 84H150V112H440"/>
+          <path class="tick" d="M150 132V142"/><text x="150" y="160" text-anchor="middle">1</text>
+          <path class="tick" d="M121 132V142"/><text x="121" y="160" text-anchor="middle">2</text>
+          <path class="tick" d="M91 132V142"/><text x="91" y="160" text-anchor="middle">3</text>
+          <path class="tick" d="M59 132V142"/><text x="59" y="160" text-anchor="middle">4</text>
+          <path class="tick" d="M26 132V142"/><text x="26" y="160" text-anchor="middle">5</text>
+          <path class="tick" d="M-11 132V142"/><text x="-11" y="160" text-anchor="middle">6</text>
+          <path class="tick" d="M-50 132V142"/><text x="-50" y="160" text-anchor="middle">7</text>
+        </svg>
 
       </div>
 
@@ -1160,15 +181,11 @@
          ABOUT
     ========================= -->
 
-    <section id="about">
+    <section class="block" id="about">
 
       <div class="section-inner">
 
         <div class="section-header">
-
-          <span class="section-num">
-            01 —
-          </span>
 
           <h2 class="section-title">
             About the Music
@@ -1198,15 +215,11 @@
          PERFORMANCE
     ========================= -->
 
-    <section id="performance">
+    <section class="block" id="performance">
 
       <div class="section-inner">
 
         <div class="section-header">
-
-          <span class="section-num">
-            02 —
-          </span>
 
           <h2 class="section-title">
             Performance
@@ -1221,9 +234,9 @@
 
           <div class="music-card">
 
-            <h2>
+            <h3>
               The Hoplites
-            </h2>
+            </h3>
 
             <p>
               Currently performing with The Hoplites,
@@ -1254,9 +267,9 @@
 
           <div class="music-card">
 
-            <h2>
+            <h3>
               Musical Styles
-            </h2>
+            </h3>
 
             <p>
               Experience across jazz, big band, ska,
@@ -1298,15 +311,11 @@
          CURRENT ENSEMBLE
     ========================= -->
 
-    <section>
+    <section class="block">
 
       <div class="section-inner">
 
         <div class="section-header">
-
-          <span class="section-num">
-            03 —
-          </span>
 
           <h2 class="section-title">
             Current Ensemble
@@ -1352,15 +361,11 @@
          ON STAGE
     ========================= -->
 
-    <section>
+    <section class="block">
 
-      <div class="section-inner">
+      <div class="section-inner wide">
 
         <div class="section-header">
-
-          <span class="section-num">
-            04 —
-          </span>
 
           <h2 class="section-title">
             On Stage
@@ -1405,62 +410,55 @@
           </div>
 
 
-          <!-- PREVIOUS -->
+          <div class="carousel-bar">
 
-          <button
-            type="button"
-            class="carousel-button carousel-prev"
-            aria-label="Previous image"
-          >
-            &#8249;
-          </button>
+            <div
+              class="carousel-counter"
+              aria-live="polite"
+            >
+              <span id="carousel-current">1</span> / 3
+            </div>
 
+            <div class="carousel-dots">
 
-          <!-- NEXT -->
+              <button
+                type="button"
+                class="carousel-dot active"
+                aria-label="Show image 1"
+                aria-current="true"
+              ></button>
 
-          <button
-            type="button"
-            class="carousel-button carousel-next"
-            aria-label="Next image"
-          >
-            &#8250;
-          </button>
+              <button
+                type="button"
+                class="carousel-dot"
+                aria-label="Show image 2"
+                aria-current="false"
+              ></button>
 
+              <button
+                type="button"
+                class="carousel-dot"
+                aria-label="Show image 3"
+                aria-current="false"
+              ></button>
 
-          <!-- COUNTER -->
-
-          <div
-            class="carousel-counter"
-            aria-live="polite"
-          >
-            <span id="carousel-current">1</span> / 3
-          </div>
-
-
-          <!-- DOTS -->
-
-          <div class="carousel-dots">
+            </div>
 
             <button
               type="button"
-              class="carousel-dot active"
-              aria-label="Show image 1"
-              aria-current="true"
-            ></button>
+              class="carousel-button carousel-prev"
+              aria-label="Previous image"
+            >
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M15 8H2M7 3L2 8l5 5"/></svg>
+            </button>
 
             <button
               type="button"
-              class="carousel-dot"
-              aria-label="Show image 2"
-              aria-current="false"
-            ></button>
-
-            <button
-              type="button"
-              class="carousel-dot"
-              aria-label="Show image 3"
-              aria-current="false"
-            ></button>
+              class="carousel-button carousel-next"
+              aria-label="Next image"
+            >
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
+            </button>
 
           </div>
 
@@ -1475,15 +473,11 @@
          QUALIFICATIONS
     ========================= -->
 
-    <section id="qualifications">
+    <section class="block" id="qualifications">
 
       <div class="section-inner">
 
         <div class="section-header">
-
-          <span class="section-num">
-            05 —
-          </span>
 
           <h2 class="section-title">
             Qualifications
@@ -1496,12 +490,12 @@
 
           <div class="qualification">
 
-            <div class="qualification-label">
-              ABRSM
-            </div>
-
             <div class="qualification-title">
               Level 4 Diploma
+            </div>
+
+            <div class="qualification-label">
+              ABRSM
             </div>
 
             <p class="qualification-description">
@@ -1513,12 +507,12 @@
 
           <div class="qualification">
 
-            <div class="qualification-label">
-              ABRSM
-            </div>
-
             <div class="qualification-title">
               Grade 8 Trombone
+            </div>
+
+            <div class="qualification-label">
+              ABRSM
             </div>
 
             <p class="qualification-description">
@@ -1539,7 +533,7 @@
          CONTACT
     ========================= -->
 
-    <section id="contact">
+    <section class="close" id="contact">
 
       <div class="section-inner">
 
@@ -1553,12 +547,14 @@
 
           <div class="contact-links">
 
-            <a href="mailto:bensjoshi@gmail.com">
+            <a class="mail" href="mailto:bensjoshi@gmail.com">
               bensjoshi@gmail.com
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
             </a>
 
             <a href="/">
-              benjoshi.co.uk ↗
+              benjoshi.co.uk
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
             </a>
 
           </div>
@@ -1576,7 +572,7 @@
        FOOTER
   ========================= -->
 
-  <footer>
+  <footer class="site-footer">
 
     <span>
       © 2026 Ben Joshi
