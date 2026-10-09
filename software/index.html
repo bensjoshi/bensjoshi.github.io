@@ -25,844 +25,32 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
-    rel="stylesheet"
-  >
-
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    :root {
-      --ink: #F2F0EA;
-      --paper: #111110;
-      --cream: #181817;
-      --accent: #6F8790;
-      --accent2: #B86B4B;
-      --muted: #A5A39D;
-      --border: #34332F;
-
-      --serif: 'DM Serif Display', serif;
-      --sans: 'DM Sans', sans-serif;
-      --mono: 'DM Mono', monospace;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: var(--sans);
-      background: var(--paper);
-      color: var(--ink);
-      font-size: 15px;
-      line-height: 1.65;
-      min-height: 100vh;
-    }
-
-    /* =========================
-       NAVIGATION
-    ========================= */
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-
-      background: var(--paper);
-      border-bottom: 1px solid var(--border);
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      padding: 0 2rem;
-      height: 54px;
-    }
-
-    .nav-logo {
-      font-family: var(--serif);
-      font-size: 1.2rem;
-      color: var(--ink);
-      text-decoration: none;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 0.25rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--muted);
-      text-decoration: none;
-
-      padding: 5px 12px;
-      border-radius: 20px;
-
-      transition: color 0.15s, background 0.15s;
-    }
-
-    .nav-links a:hover,
-    .nav-links a.active {
-      color: var(--ink);
-      background: var(--cream);
-    }
-
-    .nav-links a.github {
-      color: var(--accent);
-    }
-
-
-    /* =========================
-       GENERAL
-    ========================= */
-
-    main {
-      animation: fadeUp 0.35s ease both;
-    }
-
-    @keyframes fadeUp {
-      from {
-        opacity: 0;
-        transform: translateY(14px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    section {
-      padding: 4.5rem 2rem;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .section-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header {
-      display: flex;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-num {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      letter-spacing: 0.08em;
-    }
-
-    .section-title {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      color: var(--ink);
-      font-weight: 400;
-    }
-
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: calc(100vh - 54px);
-
-      max-width: 1200px;
-      margin: 0 auto;
-
-      padding: 5rem 2rem;
-
-      display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 5rem;
-
-      align-items: center;
-    }
-
-    .hero-eyebrow {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.12em;
-      color: var(--accent);
-      text-transform: uppercase;
-      margin-bottom: 1.5rem;
-    }
-
-    .hero-name {
-      font-family: var(--serif);
-      font-size: clamp(3.8rem, 7vw, 6.5rem);
-      font-weight: 400;
-      line-height: 0.98;
-      letter-spacing: -0.025em;
-      margin-bottom: 2rem;
-    }
-
-    .hero-name em {
-      color: var(--accent);
-      font-style: italic;
-    }
-
-    .hero-desc {
-      max-width: 540px;
-
-      font-size: 16px;
-      line-height: 1.75;
-
-      color: var(--muted);
-
-      margin-bottom: 1.75rem;
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 2rem;
-    }
-
-    .tag {
-      font-family: var(--mono);
-      font-size: 10px;
-
-      padding: 4px 9px;
-
-      color: var(--muted);
-      background: var(--cream);
-      border: 1px solid var(--border);
-
-      border-radius: 3px;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    .btn {
-      display: inline-block;
-
-      padding: 9px 16px;
-
-      font-size: 13px;
-      text-decoration: none;
-
-      border-radius: 4px;
-
-      transition:
-        background 0.15s,
-        color 0.15s,
-        border-color 0.15s;
-    }
-
-    .btn-primary {
-      background: var(--ink);
-      color: var(--paper);
-    }
-
-    .btn-primary:hover {
-      background: var(--accent);
-      color: var(--paper);
-    }
-
-    .btn-outline {
-      border: 1px solid var(--border);
-      color: var(--muted);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--ink);
-    }
-
-
-    /* =========================
-       HERO IMAGE
-    ========================= */
-
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-right img {
-      display: block;
-
-      width: 100%;
-      max-width: 390px;
-
-      margin-left: auto;
-
-  
-
-      border-radius: 3px;
-    }
-
-
-
-
-    /* =========================
-       INTRO
-    ========================= */
-
-    .intro {
-      max-width: 700px;
-    }
-
-    .intro p {
-      font-size: 17px;
-      line-height: 1.8;
-      color: var(--muted);
-    }
-
-    .intro strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-
-    /* =========================
-       PROJECTS
-    ========================= */
-
-    .projects-grid {
-      display: flex;
-      flex-direction: column;
-
-      border: 1px solid var(--border);
-      border-radius: 8px;
-
-      overflow: hidden;
-    }
-
-    /* Each project is a <details> element so the case-study write-up
-       can expand in place without any JS. */
-    .project-item {
-      background: var(--paper);
-    }
-
-    .project-item + .project-item {
-      border-top: 1px solid var(--border);
-    }
-
-    .project-item summary {
-      list-style: none;
-      cursor: pointer;
-    }
-
-    .project-item summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .project-row {
-      display: grid;
-
-      grid-template-columns: 2fr 3fr 1fr auto;
-
-      padding: 1.35rem 1.5rem;
-
-      transition: background 0.15s;
-
-      gap: 1.25rem;
-      align-items: start;
-    }
-
-    .project-item summary:hover .project-row,
-    .project-item[open] .project-row {
-      background: var(--cream);
-    }
-
-    .proj-name {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-
-      color: var(--ink);
-
-      line-height: 1.3;
-
-      padding-top: 2px;
-    }
-
-    .proj-desc {
-      font-size: 13px;
-
-      color: var(--muted);
-
-      line-height: 1.55;
-    }
-
-    .proj-stack {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 4px;
-
-      justify-content: flex-end;
-    }
-
-    .proj-stack span {
-      font-size: 10px;
-
-      font-family: var(--mono);
-
-      padding: 2px 7px;
-
-      border-radius: 3px;
-
-      background: var(--cream);
-
-      color: var(--muted);
-
-      border: 1px solid var(--border);
-
-      white-space: nowrap;
-    }
-
-    .proj-toggle {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-
-      padding-top: 3px;
-      text-align: right;
-
-      white-space: nowrap;
-    }
-
-    .proj-toggle::before {
-      content: "View +";
-    }
-
-    .project-item[open] .proj-toggle::before {
-      content: "Close −";
-    }
-
-    /* Expanded case-study body */
-    .case-study {
-      padding: 0 1.5rem 2rem 1.5rem;
-      border-top: 1px solid var(--border);
-      background: var(--cream);
-    }
-
-    .case-study-inner {
-      max-width: 760px;
-      padding-top: 1.5rem;
-    }
-
-    .case-study h4 {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-top: 1.5rem;
-      margin-bottom: 0.6rem;
-    }
-
-    .case-study h4:first-child {
-      margin-top: 0;
-    }
-
-    .case-study p {
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--muted);
-    }
-
-    .case-study ul {
-      margin: 0;
-      padding-left: 1.1rem;
-    }
-
-    .case-study li {
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--muted);
-      margin-bottom: 0.5rem;
-    }
-
-    .case-study li strong,
-    .case-study p strong {
-      color: var(--ink);
-      font-weight: 500;
-    }
-
-    .case-study figure {
-      margin: 0 0 1.5rem 0;
-    }
-
-    .case-study figure img {
-      display: block;
-      width: 100%;
-      height: auto;
-      border: 1px solid var(--border);
-      border-radius: 6px;
-    }
-
-    .case-study figcaption {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 0.5rem;
-    }
-
-    .github-link {
-      margin-top: 1.5rem;
-
-      font-size: 13px;
-
-      color: var(--muted);
-    }
-
-    .github-link a {
-      color: var(--accent2);
-      text-decoration: none;
-    }
-
-    .github-link a:hover {
-      text-decoration: underline;
-    }
-
-
-    /* =========================
-       EXPERIENCE
-    ========================= */
-
-    .experience {
-      display: grid;
-
-      grid-template-columns: 1fr 2fr;
-
-      gap: 4rem;
-
-      max-width: 900px;
-    }
-
-    .experience-meta {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--muted);
-    }
-
-    .experience-role {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      margin-bottom: 0.25rem;
-    }
-
-    .experience-company {
-      color: var(--accent);
-      font-size: 13px;
-      margin-bottom: 1rem;
-    }
-
-    .experience-description {
-      color: var(--muted);
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-
-    /* =========================
-       SKILLS
-    ========================= */
-
-    .skills-grid {
-      display: grid;
-
-      grid-template-columns: repeat(4, 1fr);
-
-      border-top: 1px solid var(--border);
-      border-left: 1px solid var(--border);
-    }
-
-    .skill-group {
-      padding: 1.5rem;
-
-      border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .skill-group h3 {
-      font-family: var(--mono);
-      font-size: 11px;
-
-      color: var(--accent);
-
-      text-transform: uppercase;
-
-      letter-spacing: 0.08em;
-
-      margin-bottom: 0.75rem;
-    }
-
-    .skill-group p {
-      font-size: 13px;
-      color: var(--muted);
-      line-height: 1.7;
-    }
-
-
-    /* =========================
-       ABOUT
-    ========================= */
-
-    .about-grid {
-      display: grid;
-
-      grid-template-columns: 1fr 2fr;
-
-      gap: 4rem;
-
-      max-width: 900px;
-    }
-
-    .about-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-    }
-
-    .about-text {
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .about-text p + p {
-      margin-top: 1rem;
-    }
-
-
-    /* =========================
-       CONTACT
-    ========================= */
-
-    .contact {
-      display: flex;
-
-      justify-content: space-between;
-      align-items: flex-end;
-
-      gap: 2rem;
-    }
-
-
-    .contact-heading {
-      font-family: var(--serif);
-      font-size: 1.9rem;
-      font-weight: 400;
-      line-height: 1;
-      margin-bottom: 10px;
-    }
-
-    .contact-note {
-      margin: 0;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-      max-width: 420px;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
-      text-align: right;
-    }
-
-    .contact-links a {
-      color: var(--muted);
-      font-family: var(--mono);
-      font-size: 12px;
-      text-decoration: none;
-    }
-
-    .contact-links a:hover {
-      color: var(--ink);
-    }
-    
-
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-      padding: 1.5rem 2rem;
-
-      display: flex;
-
-      justify-content: space-between;
-      align-items: center;
-
-      font-size: 12px;
-
-      color: var(--muted);
-
-      font-family: var(--mono);
-
-      border-top: 1px solid var(--border);
-    }
-
-
-    /* =========================
-       MOBILE
-    ========================= */
-
-    @media (max-width: 800px) {
-
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 3rem;
-
-        min-height: auto;
-
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-      }
-
-      .hero-right {
-        order: -1;
-      }
-
-      .hero-right img {
-        max-width: 280px;
-        margin: 0;
-      }
-
-      .hero-right-overlay {
-        left: 1rem;
-      }
-
-      .experience,
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 1.5rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .contact {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .contact-links {
-        text-align: left;
-      }
-    }
-
-
-    @media (max-width: 680px) {
-
-      nav {
-        padding: 0 1rem;
-      }
-
-      .nav-links {
-        gap: 0;
-      }
-
-      .nav-links a {
-        padding: 5px 7px;
-        font-size: 12px;
-      }
-
-      .nav-links a.github {
-        display: none;
-      }
-
-      /* Keep the menu on one line: the name stays whole and the
-         links scroll sideways instead of pushing the page wider. */
-      .nav-logo {
-        white-space: nowrap;
-        flex-shrink: 0;
-        margin-right: 0.75rem;
-      }
-
-      .nav-links {
-        min-width: 0;
-        overflow-x: auto;
-        scrollbar-width: none;
-        -webkit-mask-image: linear-gradient(to right, #000 85%, transparent);
-        mask-image: linear-gradient(to right, #000 85%, transparent);
-      }
-
-      .nav-links::-webkit-scrollbar {
-        display: none;
-      }
-
-      .nav-links a {
-        white-space: nowrap;
-      }
-
-      section {
-        padding: 3rem 1.5rem;
-      }
-
-      .hero {
-        padding-left: 1.5rem;
-        padding-right: 1.5rem;
-      }
-
-      .hero-name {
-        font-size: clamp(3.2rem, 15vw, 5rem);
-      }
-
-      .project-row {
-        grid-template-columns: 1fr;
-        gap: 0.65rem;
-      }
-
-      .proj-stack {
-        justify-content: flex-start;
-      }
-
-      .proj-toggle {
-        text-align: left;
-      }
-
-      .case-study {
-        padding: 0 1.25rem 1.75rem 1.25rem;
-      }
-
-      .skills-grid {
-        grid-template-columns: 1fr;
-      }
-
-      footer {
-        flex-direction: column;
-        gap: 4px;
-        text-align: center;
-      }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
 </head>
 
 
-<body>
+<body data-room="software">
+
+<a class="skip" href="#main">Skip to content</a>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+    <filter id="duotone" color-interpolation-filters="sRGB">
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncR type="table" tableValues="0.075 0.118 0.55 0.961"/>
+        <feFuncG type="table" tableValues="0.105 0.22 0.58 0.961"/>
+        <feFuncB type="table" tableValues="0.33 0.831 0.89 0.953"/>
+      </feComponentTransfer>
+    </filter>
+  </svg>
+
 
 <!-- =========================
      NAV
 ========================= -->
 
-<nav>
+<nav class="site-nav" aria-label="Site">
 
   <a href="/" class="nav-logo">Ben Joshi</a>
 
@@ -883,9 +71,10 @@
     <a
       href="https://github.com/bensjoshi/My-Projects"
       target="_blank"
-      class="github"
+      rel="noopener noreferrer"
+      class="ext"
     >
-      GitHub ↗
+      GitHub <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
     </a>
 
   </div>
@@ -893,22 +82,18 @@
 </nav>
 
 
-<main>
+<main id="main">
 
 
   <!-- =========================
        HERO
   ========================= -->
 
-  <section>
+  <section class="hero">
 
-    <div class="hero">
+    <div class="hero-left">
 
-      <div class="hero-left">
-
-        <p class="hero-eyebrow">
-          Software &amp; Data
-        </p>
+      <div>
 
         <h1 class="hero-name">
           Software Engineering<br>
@@ -934,6 +119,7 @@
 
           <a class="btn btn-primary" href="#work">
             View Projects
+            <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v13M3 9l5 5 5-5"/></svg>
           </a>
 
           <a class="btn btn-outline" href="#contact">
@@ -944,17 +130,27 @@
 
       </div>
 
+    <p class="poster-info">
+          <span>Software &amp; Data</span>
+        </p>
 
-      <div class="hero-right">
+      </div>
 
+
+    <div class="field">
+
+      <div class="duo">
         <img
           src="/images/software.jpg"
           alt="Ben Joshi"
+          width="1280"
+          height="1600"
         />
-
-
-
       </div>
+
+      <svg class="motif" viewBox="0 0 480 120" aria-hidden="true" focusable="false">
+        <path class="wave" pathLength="1" d="M-120 105H-60V15H0V105H60V15H120V105H180V15H240V105H300V15H360V105H420V15H480V105H540V15H600"/>
+      </svg>
 
     </div>
 
@@ -965,15 +161,11 @@
        INTRO
   ========================= -->
 
-  <section>
+  <section class="block">
 
     <div class="section-inner">
 
       <div class="section-header">
-
-        <span class="section-num">
-          01 —
-        </span>
 
         <h2 class="section-title">
           Software &amp; Data Engineering
@@ -1001,15 +193,11 @@
        PROJECTS
   ========================= -->
 
-  <section id="work">
+  <section class="block" id="work">
 
-    <div class="section-inner">
+    <div class="section-inner wide">
 
       <div class="section-header">
-
-        <span class="section-num">
-          02 —
-        </span>
 
         <h2 class="section-title">
           Selected Work
@@ -1018,13 +206,7 @@
       </div>
 
 
-      <p style="
-        font-size:14px;
-        color:var(--muted);
-        margin-bottom:2rem;
-        max-width:560px;
-        line-height:1.7;
-      ">
+      <p class="section-lead">
         A selection of software and data projects developed through
         university, personal work, and practical experience. Click a
         project to read the full technical write-up.
@@ -1075,7 +257,7 @@
                 <figcaption>A transcribed excerpt: notes 25¢ or more out of tune are circled, with a pitch timeline below.</figcaption>
               </figure>
 
-              <h4>Overview</h4>
+              <h3>Overview</h3>
               <p>
                 A transcription tool built for one instrument. Upload a
                 recording (often made on a phone) and Trombello returns
@@ -1086,7 +268,7 @@
                 MuseScore or Sibelius via MusicXML, or print as PDF.
               </p>
 
-              <h4>Architecture &amp; Tech Stack</h4>
+              <h3>Architecture &amp; Tech Stack</h3>
               <p>
                 A FastAPI backend runs the transcription pipeline as
                 background jobs with progress reporting; a React +
@@ -1096,7 +278,7 @@
                 separation isolates the trombone from a backing track.
               </p>
 
-              <h4>Key Technical Highlights</h4>
+              <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Implemented pitch detection with the <strong>YIN
@@ -1124,7 +306,7 @@
                 </li>
               </ul>
 
-              <h4>What's Next</h4>
+              <h3>What's Next</h3>
               <p>
                 Accuracy is strongest on exercises and weaker on fast
                 slurred passages in real pieces, which the dataset makes
@@ -1170,7 +352,7 @@
           <div class="case-study">
             <div class="case-study-inner">
 
-              <h4>Overview</h4>
+              <h3>Overview</h3>
               <p>
                 A two-tier system for browsing and applying for student
                 accommodation, built to practice proper client-server
@@ -1180,7 +362,7 @@
                 ever talks to the backend over HTTP.
               </p>
 
-              <h4>Architecture &amp; Tech Stack</h4>
+              <h3>Architecture &amp; Tech Stack</h3>
               <p>
                 Java EE / JAX-RS (Jersey) backend deployed as a servlet-
                 container web app, consumed by a standalone Java console
@@ -1190,7 +372,7 @@
                 7Timer! for weather forecasts.
               </p>
 
-              <h4>Key Technical Highlights</h4>
+              <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Designed a REST API with resources for rooms,
@@ -1216,7 +398,7 @@
                 </li>
               </ul>
 
-              <h4>What I'd Improve</h4>
+              <h3>What I'd Improve</h3>
               <p>
                 The file-backed JSON persistence works but isn't
                 concurrency-safe, the application writes use manual string
@@ -1264,7 +446,7 @@
           <div class="case-study">
             <div class="case-study-inner">
 
-              <h4>Overview</h4>
+              <h3>Overview</h3>
               <p>
                 My final year university project — a social media app
                 connecting musicians through shared instruments, genres,
@@ -1272,7 +454,7 @@
                 and a full follow/unfollow social graph.Designed and built end-to-end with the UI prototyped in Figma.
               </p>
 
-              <h4>Architecture &amp; Tech Stack</h4>
+              <h3>Architecture &amp; Tech Stack</h3>
               <p>
                 Android (Java) with a Firebase/Firestore backend. The
                 standout piece is a bidirectional follow relationship
@@ -1280,7 +462,7 @@
                 Firestore transactions.
               </p>
 
-              <h4>Key Technical Highlights</h4>
+              <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Implemented follow/unfollow using a <strong>Firestore
@@ -1305,7 +487,7 @@
                 </li>
               </ul>
 
-              <h4>What I'd Improve</h4>
+              <h3>What I'd Improve</h3>
               <p>
                 Discovery currently selects a musician at random from the
                 full user base (with simple repeat-avoidance) rather than
@@ -1352,7 +534,7 @@
           <div class="case-study">
             <div class="case-study-inner">
 
-              <h4>Overview</h4>
+              <h3>Overview</h3>
               <p>
                 A conversational assistant for brass/woodwind instrument
                 questions that routes between five distinct AI techniques
@@ -1361,7 +543,7 @@
                 question, rather than relying on a single model.
               </p>
 
-              <h4>Architecture &amp; Tech Stack</h4>
+              <h3>Architecture &amp; Tech Stack</h3>
               <p>
                 A CNN (Keras/TensorFlow) for image classification, with
                 its architecture selected via automated hyperparameter
@@ -1373,7 +555,7 @@
                 text-to-speech for voice interaction.
               </p>
 
-              <h4>Key Technical Highlights</h4>
+              <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Trained a CNN for binary brass-vs-woodwind image
@@ -1400,7 +582,7 @@
                 </li>
               </ul>
 
-              <h4>What I'd Improve</h4>
+              <h3>What I'd Improve</h3>
               <p>
                 The knowledge base and Q&amp;A datasets are intentionally
                 small, built to demonstrate each technique working
@@ -1446,7 +628,7 @@
           <div class="case-study">
             <div class="case-study-inner">
 
-              <h4>Overview</h4>
+              <h3>Overview</h3>
               <p>
                 An Android app for landlords to list, update, and track
                 rental properties — tenant details, rent and deposit
@@ -1454,14 +636,14 @@
                 per-user so each landlord only sees their own portfolio.
               </p>
 
-              <h4>Architecture &amp; Tech Stack</h4>
+              <h3>Architecture &amp; Tech Stack</h3>
               <p>
                 Android (Java) with Firebase Authentication (email/password
                 plus Google Sign-In federation via OAuth token exchange)
                 and Firestore for property records.
               </p>
 
-              <h4>Key Technical Highlights</h4>
+              <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Implemented proper federated authentication: Google
@@ -1482,7 +664,7 @@
                 </li>
               </ul>
 
-              <h4>What I'd Improve</h4>
+              <h3>What I'd Improve</h3>
               <p>
                 Property photos are currently stored on-device rather
                 than in Firebase Storage, so they don't sync across
@@ -1530,7 +712,7 @@
           <div class="case-study">
             <div class="case-study-inner">
 
-              <h4>Overview</h4>
+              <h3>Overview</h3>
               <p>
                 An Android app supporting four distinct staff roles —
                 Head Chef, Regular Chef, Delivery Person, and Manager —
@@ -1540,7 +722,7 @@
                 delivery history, and health &amp; safety reporting.
               </p>
 
-              <h4>Architecture &amp; Tech Stack</h4>
+              <h3>Architecture &amp; Tech Stack</h3>
               <p>
                 Android (Java) with a Firebase/Firestore backend — a
                 single app with four role-specific Activity/Fragment
@@ -1549,7 +731,7 @@
                 version control and task tracking.
               </p>
 
-              <h4>Key Technical Highlights</h4>
+              <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Built a role-based access structure across four
@@ -1577,7 +759,7 @@
                 </li>
               </ul>
 
-              <h4>What I'd Improve</h4>
+              <h3>What I'd Improve</h3>
               <p>
                 Authentication is currently custom-built against a
                 Firestore <code>employees</code> collection rather than
@@ -1606,8 +788,9 @@
         <a
           href="https://github.com/bensjoshi/My-Projects"
           target="_blank"
+          rel="noopener noreferrer"
         >
-          GitHub ↗
+          GitHub <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
         </a>
 
       </p>
@@ -1621,15 +804,11 @@
        EXPERIENCE
   ========================= -->
 
-  <section id="experience">
+  <section class="block" id="experience">
 
     <div class="section-inner">
 
       <div class="section-header">
-
-        <span class="section-num">
-          03 —
-        </span>
 
         <h2 class="section-title">
           Experience
@@ -1641,7 +820,7 @@
       <div class="experience">
 
         <div class="experience-meta">
-          CURRENT
+          Current
         </div>
 
         <div>
@@ -1671,15 +850,11 @@
   <!-- =========================
        SKILLS
   ========================= -->
-<section id="skills">
+<section class="block" id="skills">
 
   <div class="section-inner">
 
     <div class="section-header">
-
-      <span class="section-num">
-        04 —
-      </span>
 
       <h2 class="section-title">
         Technical Skills
@@ -1803,15 +978,11 @@
        ABOUT
   ========================= -->
 
-  <section id="about">
+  <section class="block" id="about">
 
     <div class="section-inner">
 
       <div class="section-header">
-
-        <span class="section-num">
-          05 —
-        </span>
 
         <h2 class="section-title">
           About
@@ -1855,7 +1026,7 @@
 
 
 
-<section id="contact">
+<section class="close" id="contact">
   <div class="section-inner">
     <div class="contact">
       <div>
@@ -1866,9 +1037,9 @@
       </div>
 
       <div class="contact-links">
-        <a href="mailto:bensjoshi@gmail.com">bensjoshi@gmail.com</a>
-        <a href="https://github.com/bensjoshi/My-Projects" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
-        <a href="https://www.linkedin.com/in/ben-joshi/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+        <a class="mail" href="mailto:bensjoshi@gmail.com">bensjoshi@gmail.com <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg></a>
+        <a href="https://github.com/bensjoshi/My-Projects" target="_blank" rel="noopener noreferrer">GitHub <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg></a>
+        <a href="https://www.linkedin.com/in/ben-joshi/" target="_blank" rel="noopener noreferrer">LinkedIn <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg></a>
       </div>
     </div>
   </div>
@@ -1883,7 +1054,7 @@
      FOOTER
 ========================= -->
 
-<footer>
+<footer class="site-footer">
 
   <span>
     © 2026 Ben Joshi
