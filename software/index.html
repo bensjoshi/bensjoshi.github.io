@@ -229,12 +229,14 @@
 
               <div class="proj-desc">
               A web app that turns a trombone recording into editable sheet music, with
-              per-note intonation feedback and MusicXML/PDF export. Currently in development.
+              per-note tuning, slide positions and practice tools, and MusicXML/PDF export.
+              Currently in development.
               </div>
 
               <div class="proj-stack">
                 <span>Python</span>
                 <span>FastAPI</span>
+                <span>NumPy</span>
                 <span>React</span>
                 <span>TypeScript</span>
                 <span>music21</span>
@@ -251,21 +253,25 @@
               <figure>
                 <img
                   src="../images/trombello.jpg"
-                  alt="Trombello interface showing a transcribed trombone excerpt as sheet music, with out-of-tune notes circled and a piano-roll timeline below"
+                  alt="Trombello's practice view: a transcribed Guilmant excerpt in bass clef with slide positions above the notes and out-of-tune notes circled, and a side panel showing the selected A3 as 45 cents sharp in 2nd position"
                   loading="lazy"
                 >
-                <figcaption>A transcribed excerpt: notes 25¢ or more out of tune are circled, with a pitch timeline below.</figcaption>
+                <figcaption>The practice view: slide positions over the score, notes 25¢ or more out circled, and the selected note's tuning and position alongside.</figcaption>
               </figure>
 
               <h3>Overview</h3>
               <p>
-                A transcription tool built for one instrument. Upload a
-                recording (often made on a phone) and Trombello returns
-                notes, rhythm, key and notation, shown as a score in the
-                browser alongside a piano roll. Every note carries its
-                tuning in cents, so students, players and teachers can see
-                exactly where intonation drifted, then export to
-                MuseScore or Sibelius via MusicXML, or print as PDF.
+                A transcription tool built for one instrument. Upload or
+                record a take in the browser (a phone voice memo works) and
+                Trombello writes it out: notes, rhythm, key and tempo, as a
+                score you can play back, correct and export to MuseScore or
+                Sibelius via MusicXML, or print as PDF. Each take has two
+                views. <strong>Part</strong> is the clean written part to
+                check and export. <strong>Practice</strong> shows how it was
+                actually played: every note's tuning in cents, the likeliest
+                slide position and partial, tuning summarised by position
+                ("B3 in 4th, 3 times: +21¢ on average") and how it drifted
+                from the start of the take to the end.
               </p>
 
               <h3>Architecture &amp; Tech Stack</h3>
@@ -274,46 +280,68 @@
                 background jobs with progress reporting; a React +
                 TypeScript (Vite) frontend renders the score with
                 OpenSheetMusicDisplay. Scores are built with music21 and
-                engraved to PDF with Verovio. Optional Demucs source
-                separation isolates the trombone from a backing track.
+                engraved to PDF with Verovio. The server, command line and
+                evaluation scorer all call the same pipeline module, so the
+                accuracy figures measure exactly what the app does. Optional
+                Demucs source separation takes the trombone out of a
+                backing track.
               </p>
 
               <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
                   Implemented pitch detection with the <strong>YIN
-                  algorithm</strong> in pure NumPy, then grouped the
-                  frame-by-frame pitch track into discrete notes while
-                  handling trombone-specific behaviour: slide movement,
-                  glissandi, tongued attacks, vibrato and pedal tones.
+                  algorithm</strong> in NumPy, then wrote rules for what the
+                  slide and breath leave behind: glissandi, passing tones
+                  caught mid-slide, octave ghosts, soft re-tongues and
+                  breaths that would otherwise be written as low notes.
                 </li>
                 <li>
-                  Built tempo estimation and rhythm quantisation that
-                  snaps notes onto a musical grid (including triplets) and
-                  inserts rests, producing a real, readable score rather
-                  than a raw note list.
+                  Trained a small <strong>onset model</strong> in pure NumPy
+                  on synthetic trombone phrases plus takes from a recording
+                  kit I wrote (twelve studies aimed at the engine's weak
+                  spots). It only ships when it beats the rule-based engine
+                  on the test set, and it mainly helps fast passages.
                 </li>
                 <li>
-                  Created a <strong>golden dataset</strong> of real
-                  trombone recordings paired with ground-truth scores and
-                  an evaluation harness that scores the exact pipeline the
-                  app runs, so every change is measured, not guessed.
+                  Built beat tracking (dynamic programming, after Ellis 2007)
+                  that follows a player's changing tempo, and rhythm
+                  quantisation onto a 16th-note grid with triplets and nine
+                  time signatures, producing a readable score rather than a
+                  raw note list.
                 </li>
                 <li>
-                  Designed an in-browser review flow: uncertain or
-                  out-of-tune notes are circled, and users can step
-                  through, correct and re-engrave notes with undo/redo.
+                  Added slide-position inference for tenor trombone, with or
+                  without an F attachment, choosing alternates for the
+                  phrase (less slide travel in fast runs, the trigger in
+                  place of 6th and 7th) and telling the player which way to
+                  move the slide when a note is out.
+                </li>
+                <li>
+                  Created a <strong>golden dataset</strong> of 24 real
+                  recordings with ground-truth scores. CI runs the unit
+                  tests and the full dataset on every push and fails the
+                  build if accuracy drops. Today it gets 80% of notes and
+                  86% of note lengths right; exercises are near 100%.
+                </li>
+                <li>
+                  Designed practice tools around the score: slow playback
+                  down to 50% with pitch kept, looping a passage of bars a
+                  step faster each time, and a keyboard-driven note editor
+                  with undo/redo.
                 </li>
               </ul>
 
               <h3>What's Next</h3>
               <p>
-                Accuracy is strongest on exercises and weaker on fast
-                slurred passages in real pieces, which the dataset makes
-                easy to track. Next on the roadmap: synced playback in
-                the note editor, better handling of backing tracks, and a
-                public beta with accounts and deployment. The source isn't
-                on GitHub yet while it's in active development.
+                The misses are mostly in fast slurred passages and
+                triplet-heavy writing in real pieces, which the dataset
+                makes easy to track. The prototype stages are done; next is
+                validating it with players (interviews, a landing page and a
+                hand-corrected concierge beta), then a paid beta, then tools
+                for teachers and wider low brass. The source isn't on
+                GitHub yet while it's in
+                active development.
               </p>
 
             </div>
