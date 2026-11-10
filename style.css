@@ -760,6 +760,22 @@ code {
   color: var(--ink-2);
 }
 
+.experience-highlights {
+  max-width: 36em;
+  margin: 20px 0 0;
+  padding-left: 1.1em;
+  color: var(--ink-2);
+}
+
+.experience-highlights li + li {
+  margin-top: 10px;
+}
+
+.experience-highlights strong {
+  color: var(--ink);
+  font-weight: 650;
+}
+
 /* =========================
    SKILLS
    ========================= */
