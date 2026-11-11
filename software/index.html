@@ -5,16 +5,16 @@
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-  <title>Ben Joshi | Software & Data</title>
+  <title>Ben Joshi | Software & AI Engineering</title>
 
-  <meta name="description" content="Software and data projects by Ben Joshi, a Computer Science graduate and Assistant Data Manager working with Python, Java and SQL.">
+  <meta name="description" content="Software and AI engineering projects by Ben Joshi: LLM workflows, machine learning and full-stack apps in Python, TypeScript and SQL.">
   <link rel="canonical" href="https://benjoshi.co.uk/software/">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Ben Joshi">
-  <meta property="og:title" content="Ben Joshi | Software &amp; Data">
-  <meta property="og:description" content="Software and data projects by Ben Joshi, a Computer Science graduate and Assistant Data Manager working with Python, Java and SQL.">
+  <meta property="og:title" content="Ben Joshi | Software &amp; AI Engineering">
+  <meta property="og:description" content="Software and AI engineering projects by Ben Joshi: LLM workflows, machine learning and full-stack apps in Python, TypeScript and SQL.">
   <meta property="og:url" content="https://benjoshi.co.uk/software/">
   <meta property="og:image" content="https://benjoshi.co.uk/images/og-image.jpg">
   <meta property="og:image:width" content="1200">
@@ -96,23 +96,23 @@
       <div>
 
         <h1 class="hero-name">
-          Software Engineering<br>
-          &amp; Data
+          Software &amp; AI<br>
+          Engineering
         </h1>
 
         <p class="hero-desc">
-        Computer Science graduate and Assistant Data Manager with experience
-        building software, working with data, and developing practical systems
-        using Python, Java, and SQL.
+        Software engineer building AI and data systems in Python and TypeScript,
+        from LLM workflows in everyday use at work to a full-stack audio ML app
+        of my own.
         </p>
 
         <div class="hero-tags">
           <span class="tag">Python</span>
-          <span class="tag">Java</span>
+          <span class="tag">TypeScript / React</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">LLMs &amp; MCP</span>
+          <span class="tag">Machine Learning</span>
           <span class="tag">SQL</span>
-          <span class="tag">REST APIs</span>
-          <span class="tag">Databases</span>
-          <span class="tag">Data</span>
         </div>
 
         <div class="hero-ctas">
@@ -131,7 +131,7 @@
       </div>
 
     <p class="poster-info">
-          <span>Software &amp; Data</span>
+          <span>Software &amp; AI</span>
         </p>
 
       </div>
@@ -168,7 +168,7 @@
       <div class="section-header">
 
         <h2 class="section-title">
-          Software &amp; Data Engineering
+          Software, AI &amp; Data
         </h2>
 
       </div>
@@ -177,8 +177,9 @@
       <div class="intro">
 
         <p>
-            I’m a Computer Science graduate from Nottingham Trent University, where I achieved a 2:1 BSc Computer Science in 2025. 
-            My experience spans data management, cleansing and modelling, dashboard development, software engineering, and cloud-connected applications.
+            I’m a Computer Science graduate (BSc, 2:1, Nottingham Trent University, 2025) who builds software end to end:
+            LLM workflows with MCP, machine learning and signal processing, full-stack web apps deployed with Docker,
+            and cloud-connected mobile apps. In my day job I also clean, model and automate the data a business runs on.
         </p> 
 
 
@@ -228,9 +229,9 @@
               </div>
 
               <div class="proj-desc">
-              A web app that turns a trombone recording into editable sheet music, with
+              A live web app that turns a trombone recording into editable sheet music, with
               per-note tuning, slide positions and practice tools, and MusicXML/PDF export.
-              Currently in development.
+              Accuracy is checked against a golden dataset in CI on every push.
               </div>
 
               <div class="proj-stack">
@@ -239,7 +240,7 @@
                 <span>NumPy</span>
                 <span>React</span>
                 <span>TypeScript</span>
-                <span>music21</span>
+                <span>Docker</span>
               </div>
 
               <div class="proj-toggle"></div>
@@ -252,12 +253,18 @@
 
               <figure>
                 <img
-                  src="../images/trombello.jpg"
+                  src="/images/trombello.jpg"
                   alt="Trombello's practice view: a transcribed Guilmant excerpt in bass clef with slide positions above the notes and out-of-tune notes circled, and a side panel showing the selected A3 as 45 cents sharp in 2nd position"
                   loading="lazy"
                 >
                 <figcaption>The practice view: slide positions over the score, notes 25¢ or more out circled, and the selected note's tuning and position alongside.</figcaption>
               </figure>
+
+              <p class="project-links">
+                <a href="https://trombello.onrender.com/" target="_blank" rel="noopener noreferrer">
+                  Try Trombello live <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
+                </a>
+              </p>
 
               <h3>Overview</h3>
               <p>
@@ -280,7 +287,8 @@
                 background jobs with progress reporting; a React +
                 TypeScript (Vite) frontend renders the score with
                 OpenSheetMusicDisplay. Scores are built with music21 and
-                engraved to PDF with Verovio. The server, command line and
+                engraved to PDF with Verovio, and the app is deployed as a
+                Docker container. The server, command line and
                 evaluation scorer all call the same pipeline module, so the
                 accuracy figures measure exactly what the app does. Optional
                 Demucs source separation takes the trombone out of a
@@ -334,195 +342,10 @@
 
               <h3>What's Next</h3>
               <p>
-                The misses are mostly in fast slurred passages and
-                triplet-heavy writing in real pieces, which the dataset
-                makes easy to track. The prototype stages are done; next is
-                validating it with players (interviews, a landing page and a
-                hand-corrected concierge beta), then a paid beta, then tools
-                for teachers and wider low brass. The source isn't on
-                GitHub yet while it's in
-                active development.
-              </p>
-
-            </div>
-          </div>
-
-        </details>
-
-
-        <!-- BOOKING -->
-
-        <details class="project-item">
-
-          <summary>
-            <div class="project-row">
-
-              <div class="proj-name">
-                RoomSync - Dorm Room Booking System
-              </div>
-
-              <div class="proj-desc">
-              A distributed booking system for student accommodation with a RESTful Java backend
-               and a separate console client, integrating third-party routing and weather APIs.
-              </div>
-
-              <div class="proj-stack">
-                <span>Java</span>
-                <span>REST APIs</span>
-                <span>Tomcat</span>
-              </div>
-
-              <div class="proj-toggle"></div>
-
-            </div>
-          </summary>
-
-          <div class="case-study">
-            <div class="case-study-inner">
-
-              <h3>Overview</h3>
-              <p>
-                A two-tier system for browsing and applying for student
-                accommodation, built to practice proper client-server
-                separation rather than a single monolithic app. The
-                backend is a Java EE RESTful web service; the client is
-                an entirely separate Java console application that only
-                ever talks to the backend over HTTP.
-              </p>
-
-              <h3>Architecture &amp; Tech Stack</h3>
-              <p>
-                Java EE / JAX-RS (Jersey) backend deployed as a servlet-
-                container web app, consumed by a standalone Java console
-                client over <code>HttpURLConnection</code>, with Gson for
-                serialization on both sides. Integrates two third-party
-                public APIs: OSRM for driving-distance calculation and
-                7Timer! for weather forecasts.
-              </p>
-
-              <h3>Key Technical Highlights</h3>
-              <ul>
-                <li>
-                  Designed a REST API with resources for rooms,
-                  applications, distance, and weather — each a separate
-                  JAX-RS <code>@Path</code> class registered through a
-                  central <code>ApplicationConfig</code>.
-                </li>
-                <li>
-                  Integrated two third-party public APIs server-side:
-                  parsing OSRM's GeoJSON route response to extract
-                  distance, and deserializing 7Timer's nested weather
-                  payload into typed Java objects.
-                </li>
-                <li>
-                  Implemented server-side availability logic using
-                  <code>java.time.LocalDate</code> comparisons rather
-                  than trusting client-supplied flags.
-                </li>
-                <li>
-                  Built the client as a fully independent consumer of the
-                  API — its own DTOs, its own HTTP handling — to practice
-                  designing a backend for consumers you don't control.
-                </li>
-              </ul>
-
-              <h3>What I'd Improve</h3>
-              <p>
-                The file-backed JSON persistence works but isn't
-                concurrency-safe, the application writes use manual string
-                manipulation to keep a JSON array valid across appends.
-                A real database (even SQLite) would remove that fragility
-                entirely. I'd also extract the hardcoded file paths into
-                configuration and share DTOs between client and server
-                via a common module instead of duplicating them.
-              </p>
-
-            </div>
-          </div>
-
-        </details>
-
-
-        <!-- SOUNDWAVE -->
-
-        <details class="project-item">
-
-          <summary>
-            <div class="project-row">
-
-              <div class="proj-name">
-                SoundWave
-              </div>
-
-              <div class="proj-desc">
-              A social platform for musicians with a Firestore-backed follow/unfollow graph using atomic transactions 
-              to keep bidirectional relationships and counts consistent.
-              </div>
-
-              <div class="proj-stack">
-                <span>Android</span>
-                <span>Java</span>
-                <span>Firebase</span>
-                <span>Figma</span>
-              </div>
-
-              <div class="proj-toggle"></div>
-
-            </div>
-          </summary>
-
-          <div class="case-study">
-            <div class="case-study-inner">
-
-              <h3>Overview</h3>
-              <p>
-                My final year university project — a social media app
-                connecting musicians through shared instruments, genres,
-                and interests, with a content feed, profile discovery,
-                and a full follow/unfollow social graph.Designed and built end-to-end with the UI prototyped in Figma.
-              </p>
-
-              <h3>Architecture &amp; Tech Stack</h3>
-              <p>
-                Android (Java) with a Firebase/Firestore backend. The
-                standout piece is a bidirectional follow relationship
-                with denormalized counters, kept consistent via
-                Firestore transactions.
-              </p>
-
-              <h3>Key Technical Highlights</h3>
-              <ul>
-                <li>
-                  Implemented follow/unfollow using a <strong>Firestore
-                  transaction</strong> that reads both users' documents,
-                  then atomically updates <code>following</code>/<code>followers</code>
-                  arrays (via <code>arrayUnion</code>/<code>arrayRemove</code>)
-                  and denormalized <code>followingCount</code>/<code>followersCount</code>
-                  fields (via <code>increment</code>) on both sides in a
-                  single atomic operation — the correct pattern for
-                  keeping a bidirectional relationship and its counters
-                  consistent under concurrent writes.
-                </li>
-                <li>
-                  Built a content feed, profile discovery, search, and
-                  full profile editing (instruments, genres, bio,
-                  location) on a shared Firestore schema.
-                </li>
-                <li>
-                  Designed the user profile schema with tagged fields
-                  (instruments and genres as list types) specifically to
-                  support future similarity-based matching.
-                </li>
-              </ul>
-
-              <h3>What I'd Improve</h3>
-              <p>
-                Discovery currently selects a musician at random from the
-                full user base (with simple repeat-avoidance) rather than
-                ranking by shared interests — a natural next step given
-                the schema already captures instruments and genres. I'd
-                also replace the full-collection fetch on each discovery
-                request with paginated queries as the user base grows.
+                The remaining misses are mostly in fast slurred passages and
+                triplet-heavy writing in real pieces. The golden dataset
+                makes them easy to measure, so each fix is checked against
+                the full set before it ships.
               </p>
 
             </div>
@@ -626,7 +449,7 @@
         </details>
 
 
-        <!-- PROPERTY -->
+        <!-- BOOKING -->
 
         <details class="project-item">
 
@@ -634,18 +457,18 @@
             <div class="project-row">
 
               <div class="proj-name">
-                TenantTrack - Property Management App
+                RoomSync - Dorm Room Booking System
               </div>
 
               <div class="proj-desc">
-                A property management app for landlords with Firebase Auth 
-                (including Google Sign-In) and per-user data isolation.
+              A distributed booking system for student accommodation with a RESTful Java backend
+               and a separate console client, integrating third-party routing and weather APIs.
               </div>
 
               <div class="proj-stack">
-                <span>Android</span>
                 <span>Java</span>
-                <span>Firebase</span>
+                <span>REST APIs</span>
+                <span>Tomcat</span>
               </div>
 
               <div class="proj-toggle"></div>
@@ -658,49 +481,58 @@
 
               <h3>Overview</h3>
               <p>
-                An Android app for landlords to list, update, and track
-                rental properties — tenant details, rent and deposit
-                amounts, tenancy dates, and property photos — scoped
-                per-user so each landlord only sees their own portfolio.
+                A two-tier system for browsing and applying for student
+                accommodation, built to practice proper client-server
+                separation rather than a single monolithic app. The
+                backend is a Java EE RESTful web service; the client is
+                an entirely separate Java console application that only
+                ever talks to the backend over HTTP.
               </p>
 
               <h3>Architecture &amp; Tech Stack</h3>
               <p>
-                Android (Java) with Firebase Authentication (email/password
-                plus Google Sign-In federation via OAuth token exchange)
-                and Firestore for property records.
+                Java EE / JAX-RS (Jersey) backend deployed as a servlet-
+                container web app, consumed by a standalone Java console
+                client over <code>HttpURLConnection</code>, with Gson for
+                serialization on both sides. Integrates two third-party
+                public APIs: OSRM for driving-distance calculation and
+                7Timer! for weather forecasts.
               </p>
 
               <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
-                  Implemented proper federated authentication: Google
-                  Sign-In returns an ID token, exchanged for a Firebase
-                  credential via <code>GoogleAuthProvider</code>, giving
-                  users a one-tap login alongside standard email/password.
+                  Designed a REST API with resources for rooms,
+                  applications, distance, and weather — each a separate
+                  JAX-RS <code>@Path</code> class registered through a
+                  central <code>ApplicationConfig</code>.
                 </li>
                 <li>
-                  Every property record is written with the owner's
-                  Firebase UID attached, enabling per-user data isolation
-                  enforceable through Firestore security rules.
+                  Integrated two third-party public APIs server-side:
+                  parsing OSRM's GeoJSON route response to extract
+                  distance, and deserializing 7Timer's nested weather
+                  payload into typed Java objects.
                 </li>
                 <li>
-                  Built image capture and local persistence: photos are
-                  picked from the device gallery, decoded, compressed,
-                  and written to app-internal storage, with only the file
-                  reference persisted to Firestore.
+                  Implemented server-side availability logic using
+                  <code>java.time.LocalDate</code> comparisons rather
+                  than trusting client-supplied flags.
+                </li>
+                <li>
+                  Built the client as a fully independent consumer of the
+                  API — its own DTOs, its own HTTP handling — to practice
+                  designing a backend for consumers you don't control.
                 </li>
               </ul>
 
               <h3>What I'd Improve</h3>
               <p>
-                Property photos are currently stored on-device rather
-                than in Firebase Storage, so they don't sync across
-                devices or survive a reinstall — migrating to Storage
-                with a persisted download URL would fix that properly.
-                Numeric fields like rent and deposit are also stored as
-                strings; moving them to proper numeric types would allow
-                server-side filtering and sorting.
+                The file-backed JSON persistence works but isn't concurrency-safe: the application writes use manual string
+                manipulation to keep a JSON array valid across appends.
+                A real database (even SQLite) would remove that fragility
+                entirely. I'd also extract the hardcoded file paths into
+                configuration and share DTOs between client and server
+                via a common module instead of duplicating them.
               </p>
 
             </div>
@@ -709,7 +541,7 @@
         </details>
 
 
-        <!-- SMART FRIDGE -->
+        <!-- SOUNDWAVE -->
 
         <details class="project-item">
 
@@ -717,19 +549,19 @@
             <div class="project-row">
 
               <div class="proj-name">
-                FutureFridges
+                SoundWave
               </div>
 
               <div class="proj-desc">
-                A role-based kitchen inventory app for commercial food service, 
-                with automated expiry and low-stock alerting across four staff roles.
+              A social platform for musicians with a Firestore-backed follow/unfollow graph using atomic transactions 
+              to keep bidirectional relationships and counts consistent.
               </div>
 
               <div class="proj-stack">
                 <span>Android</span>
                 <span>Java</span>
-                <span>Agile</span>
-                <span>GitHub</span>
+                <span>Firebase</span>
+                <span>Figma</span>
               </div>
 
               <div class="proj-toggle"></div>
@@ -742,62 +574,53 @@
 
               <h3>Overview</h3>
               <p>
-                An Android app supporting four distinct staff roles —
-                Head Chef, Regular Chef, Delivery Person, and Manager —
-                each with their own login flow and dashboard, built
-                around a shared Firestore backend. Handles inventory
-                tracking, expiry/low-stock alerting, order fulfillment,
-                delivery history, and health &amp; safety reporting.
+                My final year university project — a social media app
+                connecting musicians through shared instruments, genres,
+                and interests, with a content feed, profile discovery,
+                and a full follow/unfollow social graph. Designed and built end-to-end with the UI prototyped in Figma.
               </p>
 
               <h3>Architecture &amp; Tech Stack</h3>
               <p>
-                Android (Java) with a Firebase/Firestore backend — a
-                single app with four role-specific Activity/Fragment
-                flows branching from a shared entry point, built
-                collaboratively in an Agile team using GitHub for
-                version control and task tracking.
+                Android (Java) with a Firebase/Firestore backend. The
+                standout piece is a bidirectional follow relationship
+                with denormalized counters, kept consistent via
+                Firestore transactions.
               </p>
 
               <h3>Key Technical Highlights</h3>
               <ul>
                 <li>
-                  Built a role-based access structure across four
-                  distinct user types sharing one data backend, each
-                  with scoped views and permissions.
+                  Implemented follow/unfollow using a <strong>Firestore
+                  transaction</strong> that reads both users' documents,
+                  then atomically updates <code>following</code>/<code>followers</code>
+                  arrays (via <code>arrayUnion</code>/<code>arrayRemove</code>)
+                  and denormalized <code>followingCount</code>/<code>followersCount</code>
+                  fields (via <code>increment</code>) on both sides in a
+                  single atomic operation — the correct pattern for
+                  keeping a bidirectional relationship and its counters
+                  consistent under concurrent writes.
                 </li>
                 <li>
-                  Implemented expiry-window and low-stock detection
-                  logic: inventory items are checked against a rolling
-                  time window and quantity threshold on each fetch,
-                  automatically generating notification records when
-                  thresholds are crossed.
+                  Built a content feed, profile discovery, search, and
+                  full profile editing (instruments, genres, bio,
+                  location) on a shared Firestore schema.
                 </li>
                 <li>
-                  Designed a decoupled alerting pattern — detection logic
-                  and notification delivery are separate concerns, with
-                  alerts persisted as their own Firestore collection
-                  rather than being ephemeral UI state.
-                </li>
-                <li>
-                  Delivered a genuinely full CRUD feature set — inventory,
-                  ordering, delivery history, compliance reporting, and
-                  manager-side user administration — across 30+ source
-                  files as part of a coordinated team sprint cycle.
+                  Designed the user profile schema with tagged fields
+                  (instruments and genres as list types) specifically to
+                  support future similarity-based matching.
                 </li>
               </ul>
 
               <h3>What I'd Improve</h3>
               <p>
-                Authentication is currently custom-built against a
-                Firestore <code>employees</code> collection rather than
-                using Firebase Authentication, and credentials aren't
-                hashed — the clear next step for production would be
-                migrating to Firebase Auth with custom claims for roles
-                and proper credential hashing. I'd also move
-                expiry-checking server-side via a scheduled Cloud
-                Function so alerts fire in real time rather than only
-                when a user opens the inventory screen.
+                Discovery currently selects a musician at random from the
+                full user base (with simple repeat-avoidance) rather than
+                ranking by shared interests — a natural next step given
+                the schema already captures instruments and genres. I'd
+                also replace the full-collection fetch on each discovery
+                request with paginated queries as the user base grows.
               </p>
 
             </div>
@@ -848,7 +671,7 @@
       <div class="experience">
 
         <div class="experience-meta">
-          Current
+          Nov 2025 – Present
         </div>
 
         <div>
@@ -858,20 +681,22 @@
           </div>
 
           <div class="experience-company">
-            Sheffield &amp; London, UK
+            MAC Construction Consultants · Sheffield &amp; London, UK
           </div>
 
           <p class="experience-description">
-              Part of a newly established two-person data team at a construction consultancy, building reporting
+              Part of a newly established two-person data team at a construction company, building reporting
               standards, dashboards and automated workflows from the ground up.
           </p>
 
           <ul class="experience-highlights">
             <li>
-              <strong>AI workflow automation:</strong> built a Claude-based workflow with MCP (Model Context Protocol)
-              integrations that generates supporting documentation and analyses incoming documents. I took it from
-              first prototype to a tool in everyday use across the business, cutting work that took weeks by hand
-              to a fraction of the time.
+              <strong>LLM workflow engineering:</strong> designed and built a Claude-based workflow with MCP (Model
+              Context Protocol) integrations that analyses incoming documents and drafts supporting documentation for a recurring,
+              document-heavy process. I took it from first prototype to a tool in everyday use across the business:
+              sections that took an estimated 1–2 days each now take about 3 hours including checking, saving an
+              estimated 750+ hours across 130+ submissions.
+
             </li>
             <li>
               <strong>Client reporting:</strong> designed and automated monthly and multi-site reporting dashboards
@@ -886,6 +711,31 @@
               Automate → SharePoint pipeline, and built a VBA tool that generates contract documents from project inputs.
             </li>
           </ul>
+
+        </div>
+
+      </div>
+
+
+      <div class="experience">
+
+        <div class="experience-meta">
+          2023 – 2024
+        </div>
+
+        <div>
+
+          <div class="experience-role">
+            Digital Forensics Placement
+          </div>
+
+          <div class="experience-company">
+            Industrial placement · Nottingham, UK
+          </div>
+
+          <p class="experience-description">
+              Placement year in digital forensics during my degree.
+          </p>
 
         </div>
 
@@ -914,7 +764,6 @@
 
     <div class="skills-grid">
 
-
       <div class="skill-group">
 
         <h3>
@@ -923,12 +772,12 @@
 
         <p>
           Python<br>
+          TypeScript / JavaScript<br>
           SQL<br>
           Java<br>
           C++<br>
           HTML / CSS<br>
-          JavaScript<br>
-          Visual Basic
+          VBA
         </p>
 
       </div>
@@ -945,7 +794,7 @@
           Model Context Protocol (MCP)<br>
           Prompt &amp; Context Engineering<br>
           LLM Workflow Design<br>
-          Retrieval &amp; Knowledge Bases
+          Retrieval (RAG) &amp; Knowledge Bases
         </p>
 
       </div>
@@ -958,10 +807,10 @@
         </h3>
 
         <p>
-          PyTorch<br>
-          TensorFlow / Keras<br>
-          scikit-learn<br>
           NumPy &amp; pandas<br>
+          TensorFlow / Keras<br>
+          PyTorch<br>
+          scikit-learn<br>
           CNNs &amp; Hyperparameter Tuning<br>
           NLP (NLTK, TF-IDF)
         </p>
@@ -989,14 +838,31 @@
       <div class="skill-group">
 
         <h3>
-          Data &amp; Analytics
+          Backend &amp; Frontend
         </h3>
 
         <p>
-          Data Cleansing<br>
-          Data Modelling<br>
+          FastAPI<br>
+          React<br>
+          REST APIs (JAX-RS)<br>
+          Firebase / Firestore<br>
+          Android
+        </p>
+
+      </div>
+
+
+      <div class="skill-group">
+
+        <h3>
+          Data
+        </h3>
+
+        <p>
+          SQL Databases<br>
+          Data Cleansing &amp; Modelling<br>
+          Power Query &amp; Power Automate<br>
           Advanced Excel<br>
-          Power Query<br>
           ETL Principles
         </p>
 
@@ -1006,64 +872,15 @@
       <div class="skill-group">
 
         <h3>
-          Databases &amp; Cloud
+          Tools &amp; Delivery
         </h3>
 
         <p>
-          SQL Databases<br>
-          Firebase / NoSQL<br>
-          Database Integration<br>
-          RESTful APIs<br>
-          Cloud Computing
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Development
-        </h3>
-
-        <p>
-          GitHub<br>
-          Android Studio<br>
-          Visual Studio<br>
-          NetBeans<br>
-          Spyder<br>
-          Eclipse
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Architecture
-        </h3>
-
-        <p>
-          RESTful APIs<br>
-          Service-Oriented Architecture<br>
-          Cloud-Integrated Systems<br>
-          Database Integration
-        </p>
-
-      </div>
-
-
-      <div class="skill-group">
-
-        <h3>
-          Methodologies
-        </h3>
-
-        <p>
-          Agile / Scrum<br>
-          Waterfall<br>
-          UX Wireframing
+          Git &amp; GitHub<br>
+          GitHub Actions (CI)<br>
+          Docker<br>
+          Linux Command Line<br>
+          Agile / Scrum
         </p>
 
       </div>
@@ -1106,15 +923,16 @@
         <div class="about-text">
 
           <p>
-            I studied Computer Science and have developed software
-            across mobile applications, distributed systems,
-            AI projects, and collaborative development environments.
+            The work I enjoy most is turning a messy, real-world problem
+            into a tool people actually use. At work that means sitting
+            with directors and project teams, finding where the hours go,
+            and building AI and data tools that take that work off them.
           </p>
 
           <p>
-            Alongside software development, my current work in data
-            management has given me a practical perspective on how
-            systems, processes, and information work together.
+            Outside work I play trombone (Grade 8), which is where
+            Trombello and InstrumentIQ came from: I build the tools I
+            want as a player, then measure whether they really work.
           </p>
 
         </div>
@@ -1160,7 +978,7 @@
   </span>
 
   <span>
-    Software &amp; Data · Sheffield, UK
+    Software &amp; AI · Sheffield, UK
   </span>
 
 </footer>
