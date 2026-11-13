@@ -350,11 +350,11 @@ body[data-room="music"] .site-footer {
 }
 
 .g-portrait {
-  object-position: 50% 32%;
+  object-position: 50% 24%;
 }
 
 .g-bigband {
-  object-position: 65% 30%;
+  object-position: 65% 8%;
 }
 
 /* Watch: YouTube tiles that load the player only when played */
