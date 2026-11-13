@@ -258,11 +258,6 @@ body:not([data-room]) :focus-visible,
   text-wrap: balance;
 }
 
-.hero-name em {
-  font-style: normal;
-  color: var(--room);
-}
-
 .hero-desc {
   max-width: 34em;
   font-size: var(--t-lead);
@@ -908,6 +903,21 @@ code {
   color: var(--ink-2);
 }
 
+.ensemble-past-label {
+  margin: 64px 0 14px;
+  font-size: var(--t-small);
+  font-weight: 700;
+  color: var(--room-text);
+}
+
+.music-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.music-grid-3 .music-card h3 {
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+}
+
 /* Carousel */
 
 .music-carousel {
@@ -1085,11 +1095,6 @@ code {
   font-stretch: 112%;
   line-height: 0.9;
   letter-spacing: -0.045em;
-}
-
-.contact-heading em {
-  font-style: normal;
-  color: var(--paper);
 }
 
 .contact-note {
@@ -1461,8 +1466,13 @@ code {
   }
 
   .music-grid,
+  .music-grid-3,
   .qualifications {
     grid-template-columns: 1fr;
+  }
+
+  .ensemble-past-label {
+    margin-top: 40px;
   }
 
   /* Landing */
