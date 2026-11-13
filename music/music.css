@@ -367,6 +367,10 @@ body[data-room="music"] .site-footer {
   margin-bottom: 0;
 }
 
+.g-break {
+  display: none;
+}
+
 .g-row figcaption {
   position: absolute;
   right: 0;
@@ -637,15 +641,22 @@ body[data-room="music"] .site-footer {
     grid-template-columns: 1fr;
   }
 
-  /* Narrow screens: the lead pair stays a pair; later rows stack */
+  /* Narrow screens: the lead pair stays a pair, the live pair stacks,
+     and the row of four splits into two pairs */
   .g-pair,
-  .g-trio {
+  .g-four {
     flex-wrap: wrap;
   }
 
-  .g-pair figure,
-  .g-trio figure:first-child {
+  .g-pair figure {
     flex-basis: 100%;
+  }
+
+  .g-four .g-break {
+    display: block;
+    flex-basis: 100%;
+    height: 0;
+    margin-top: -10px; /* cancel the extra row gap the break adds */
   }
 }
 
