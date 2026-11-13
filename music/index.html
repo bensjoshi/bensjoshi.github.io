@@ -49,6 +49,7 @@
       <a href="/software/" class="ext">Software</a>
       <a href="#about">About</a>
       <a href="#bands">Bands</a>
+      <a href="#watch">Watch</a>
       <a href="#photos">Photos</a>
       <a href="#book">Book me</a>
     </div>
@@ -186,6 +187,67 @@
 
 
     <!-- =========================
+         WATCH
+    ========================= -->
+
+    <section class="m-sec m-sec-wide" id="watch">
+
+      <h2>Watch</h2>
+
+      <div class="watch">
+
+        <div class="watch-top">
+          <figure class="yt-tile yt-main">
+            <a class="yt" href="https://www.youtube.com/watch?v=eBR-XLxedTc" data-yt="eBR-XLxedTc" data-title="Redemption (live)">
+              <img src="/images/video/redemption-live.jpg" alt="" width="1280" height="720" loading="lazy">
+              <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg></span>
+              <span class="visually-hidden">Play Redemption (live)</span>
+            </a>
+            <figcaption><b>Redemption (live)</b> The Hoplites</figcaption>
+          </figure>
+          <figure class="yt-tile yt-short">
+            <a class="yt" href="https://www.youtube.com/watch?v=xZOolAdlszA" data-yt="xZOolAdlszA" data-title="Rock City, behind the scenes">
+              <img src="/images/video/rock-city-bts.jpg" alt="" width="540" height="960" loading="lazy">
+              <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg></span>
+              <span class="visually-hidden">Play Rock City, behind the scenes</span>
+            </a>
+            <figcaption><b>Rock City, behind the scenes</b> The Hoplites · Jan 2025</figcaption>
+          </figure>
+          <figure class="yt-tile yt-short">
+            <a class="yt" href="https://www.youtube.com/watch?v=6ypNVtEBlQg" data-yt="6ypNVtEBlQg" data-title="Things Had to Change (acoustic)">
+              <img src="/images/video/things-had-to-change-acoustic.jpg" alt="" width="540" height="960" loading="lazy">
+              <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg></span>
+              <span class="visually-hidden">Play Things Had to Change (acoustic)</span>
+            </a>
+            <figcaption><b>Things Had to Change (acoustic)</b> The Hoplites</figcaption>
+          </figure>
+        </div>
+
+        <div class="watch-pair">
+          <figure class="yt-tile yt-live">
+            <a class="yt" href="https://www.youtube.com/watch?v=u4DWqXcXq1o" data-yt="u4DWqXcXq1o" data-title="Live at Lichfield Fuse Festival 2025">
+              <img src="/images/video/fuse-festival-2025.jpg" alt="" width="960" height="540" loading="lazy">
+              <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg></span>
+              <span class="visually-hidden">Play Live at Lichfield Fuse Festival 2025</span>
+            </a>
+            <figcaption><b>Live at Lichfield Fuse Festival 2025</b> The Hoplites · filmed by Liam Carnell</figcaption>
+          </figure>
+          <figure class="yt-tile yt-live">
+            <a class="yt" href="https://www.youtube.com/watch?v=Jsnuhsh2o9k" data-yt="Jsnuhsh2o9k" data-title="NTU Big Band ft. Dave O’Higgins">
+              <img src="/images/video/ntu-big-band.jpg" alt="" width="640" height="360" loading="lazy">
+              <span class="yt-play" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M5 3l8 5-8 5z"/></svg></span>
+              <span class="visually-hidden">Play NTU Big Band ft. Dave O’Higgins</span>
+            </a>
+            <figcaption><b>NTU Big Band ft. Dave O’Higgins</b> NTU Music</figcaption>
+          </figure>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
          PHOTOS
     ========================= -->
 
@@ -288,6 +350,24 @@
 
 
   <script>
+    // Video tiles: show a thumbnail, load the YouTube player only on click.
+    // Without JavaScript (or if a video is removed) the tile is a plain YouTube link.
+    document.querySelectorAll(".yt").forEach(function (link) {
+      link.addEventListener("click", function (event) {
+        event.preventDefault();
+        var frame = document.createElement("iframe");
+        frame.src = "https://www.youtube-nocookie.com/embed/" + link.dataset.yt +
+          "?autoplay=1&playsinline=1&rel=0";
+        frame.title = link.dataset.title;
+        frame.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        frame.allowFullscreen = true;
+        frame.referrerPolicy = "strict-origin-when-cross-origin";
+        frame.className = "yt-frame";
+        link.replaceWith(frame);
+        frame.focus();
+      });
+    });
+
     // Turn each booking form into a pre-filled email.
     document.querySelectorAll(".book-form").forEach(function (form) {
       form.addEventListener("submit", function (event) {
