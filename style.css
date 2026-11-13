@@ -903,6 +903,30 @@ code {
   color: var(--ink-2);
 }
 
+.ensemble-description + .ensemble-description {
+  margin-top: 12px;
+}
+
+.ensemble-description em {
+  font-style: italic;
+}
+
+.ensemble-links {
+  display: flex;
+  gap: 24px;
+  margin-top: 18px;
+  font-size: var(--t-small);
+  font-weight: 700;
+}
+
+.ensemble-links a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--room);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+
 .ensemble-past-label {
   margin: 64px 0 14px;
   font-size: var(--t-small);
