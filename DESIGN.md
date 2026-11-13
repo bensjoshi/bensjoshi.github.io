@@ -173,7 +173,8 @@ A printed two-ink palette: one neutral paper, one black with a softer grey for s
 
 A 12-column grid (`repeat(12, minmax(0, 1fr))`) with fluid outer margin (`margin` token) and gutter (`gap` token). Settings are flush-left, ragged-right.
 
-- **Hero / landing split:** content in columns 1–7, room colour field or headshot in columns 8–12 at full viewport height minus the nav (100svh on the landing). The landing's two doors sit at the foot of the left block as full-width colour bands.
+- **Hero split:** content in columns 1–7, room colour field in columns 8–12 at full viewport height minus the nav.
+- **Landing:** a 100svh poster in three bands: the domain strip on top, then the name (columns 1–8, bottom-aligned) beside the uncropped 3:4 backstage portrait in black and white (`images/landing-portrait.jpg`, up to 460px tall, right-aligned, same baseline); it shows both rooms in one picture and stays in black ink so the doors keep the only colour, then the two doors side by side as equal colour panels across the full width. The doors lead; the portrait supports. On phones it stacks name, a small portrait, then the doors.
 - **Sections:** heading in columns 1–4, content in 5–12. Wide sections put the heading in 1–5, a lead in 7–12, and the body full width below. Vertical padding is the `section-y` clamp.
 - **Tracklist:** a fixed four-column row (name 3.2fr, description 5fr, stack 2.6fr, 44px toggle). Expanded case studies reuse the same columns, with subheads in column 1 and prose in 2–3.
 - **Close:** heading and note in columns 1–7, contact links stacked in 8–12, bottom-aligned.
@@ -206,7 +207,7 @@ Every edge is square (0px radius) by default and by declaration. Form comes from
 - Mobile (≤860px): static, logo above a wrapping row of links.
 
 ### Doors (landing signature)
-Full-width colour bands, one per room: label (650, clamp(1.6rem, 2.6vw, 2.5rem)) with arrow on the left, the room's motif on the right (max 96px tall). They wipe in from the left on load (Music 120ms behind). Hover advances the motif and nudges the arrow. Focus is a 3px inset outline in the band's text colour.
+Two equal colour panels side by side across the full width (stacked on phones), one per room: label (650, clamp(1.6rem, 2.6vw, 2.5rem)) with arrow at the top, the room's motif at the foot (max 340px wide, 96px tall). They wipe in from the left on load (Music 120ms behind). Hover advances the motif and nudges the arrow. Focus is a 3px inset outline in the band's text colour.
 
 ### Colour Field (subpage signature)
 The right five hero columns filled with the room ink. Holds a photo printed as a true two-colour duotone by an inline SVG gradient-map filter (`filter: url(#duotone)`: desaturate, then map shadows to `--ink`, midtones to the room ink and highlights to `--paper`; each page defines `#duotone` with its own room ink), an optional 1.2rem caption, and the room motif drawn below in `--on-room`. It wipes in from the right on load.
@@ -243,7 +244,7 @@ A full-bleed room-ink section with a 3px ink top rule, expanded display heading,
 
 **Composition.**
 - **Hero (split):** text block left (name, "Trombonist based in Sheffield.", then the styles line in signal text), with the booking form pinned to its foot; the solo stage photo fills the right 1.15fr at full colour, no duotone, cropped from the right so the slide and bell stay in frame. Below 1100px the hero stacks with the photo first.
-- **Sections:** title left (1fr), content right (2fr), separated by 1px stage-line rules. Order: About, Bands (The Hoplites featured, previous bands in a three-up row), Watch, On stage (one large photo spanning two rows beside two smaller ones, all full colour), Qualifications, then the close.
+- **Sections:** title left (1fr), content right (2fr), separated by 1px stage-line rules. Order: About, Bands (The Hoplites featured, previous bands in a three-up row), Watch, On stage (a collage: one interlocking block of eight photos on a 4-column grid with 8px gutters and no captions; the Carousel pair leads across the top, the festival stage and Steve Fisher's horns form the middle band, and rehearsal and big band shots close it; each tile is cropped to its cell with the crop aimed at faces; the photographer credit sits in a corner when known; on phones it re-packs into two columns), Qualifications, then the close.
 - **Close:** a full-bleed signal-red section with "Need a trombonist?", the email link and a second booking form.
 
 **Watch.** YouTube videos as click-to-play tiles: a local thumbnail (`images/video/`) with a square signal-red play button in the bottom-left corner, swapped for a `youtube-nocookie.com` player only when clicked; without script each tile is a plain YouTube link. Top row: the main 16:9 live video beside two 9:16 Shorts at the same height; second row: two 16:9 live videos. Captions name the video, the band and, for fan uploads, who filmed it. Official singles and lyric videos stay off the page.

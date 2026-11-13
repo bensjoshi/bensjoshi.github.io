@@ -330,31 +330,61 @@ body[data-room="music"] .site-footer {
   grid-template-columns: 1fr;
 }
 
-.gallery {
+/* Collage: one interlocking block of photos, no group labels.
+   Each tile is cropped to its cell, with the crop aimed at the faces. */
+.collage {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  grid-template-rows: repeat(2, clamp(200px, 22vw, 320px));
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, clamp(150px, 18.5vw, 260px)) clamp(180px, 23vw, 320px) repeat(2, clamp(150px, 18.5vw, 260px));
+  grid-template-areas:
+    "car   car   car   shirt"
+    "car   car   car   shirt"
+    "fest  fest  steve steve"
+    "rs    bb    bb    rh"
+    "rs    bell  bell  rh";
+  gap: 8px;
 }
 
-.gallery img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.collage figure {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
   background: var(--stage-2);
 }
 
-.g-main {
-  grid-row: span 2;
-  object-position: 60% center;
+.collage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.g-portrait {
-  object-position: 50% 32%;
-}
+.c-car   { grid-area: car; }
+.c-shirt { grid-area: shirt; }
+.c-fest  { grid-area: fest; }
+.c-steve { grid-area: steve; }
+.c-rs    { grid-area: rs; }
+.c-bb    { grid-area: bb; }
+.c-bell  { grid-area: bell; }
+.c-rh    { grid-area: rh; }
 
-.g-bigband {
-  object-position: 65% 30%;
+.c-car img   { object-position: center 45%; }
+.c-shirt img { object-position: 55% 30%; }
+.c-fest img  { object-position: center 70%; }
+.c-steve img { object-position: center 45%; }
+.c-rs img    { object-position: 45% 25%; }
+.c-bb img    { object-position: center 30%; }
+.c-bell img  { object-position: center 45%; }
+.c-rh img    { object-position: 78% 35%; }
+
+.collage figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px 9px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--light);
+  background: var(--stage);
 }
 
 /* Watch: YouTube tiles that load the player only when played */
@@ -616,14 +646,24 @@ body[data-room="music"] .site-footer {
     grid-template-columns: 1fr;
   }
 
-  .gallery {
+  /* Narrow screens: the collage re-packs into two columns */
+  .collage {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: clamp(220px, 56vw, 380px) clamp(200px, 60vw, 360px);
+    grid-template-rows: repeat(2, 30vw) repeat(5, 38vw);
+    grid-template-areas:
+      "car   car"
+      "car   car"
+      "shirt steve"
+      "shirt bb"
+      "fest  fest"
+      "rs    bell"
+      "rs    rh";
+    gap: 6px;
   }
 
-  .g-main {
-    grid-row: auto;
-    grid-column: 1 / -1;
+  .collage figcaption {
+    padding: 3px 6px;
+    font-size: 0.6875rem;
   }
 }
 

@@ -53,7 +53,7 @@ A Computer Science graduate working day-to-day as an Assistant Data and Insights
 
 ## Evidence on Hand
 
-- Photos: `images/headshot.jpg`, `images/profile.jpg`, `images/music1-3.jpg` (on stage), `images/software.jpg`, `images/trombello.jpg`, `images/soundwave.jpg`, `images/og-image.jpg`.
+- Photos: `images/landing-portrait.jpg` (landing, black-and-white backstage), `images/headshot.jpg` (studio, not currently used), `images/profile.jpg`, `images/music1-3.jpg` (on stage), `images/software.jpg`, `images/trombello.jpg`, `images/soundwave.jpg`, `images/og-image.jpg`.
 - Six software/data case studies: Trombello, RoomSync, SoundWave, InstrumentIQ, TenantTrack, FutureFridges.
 - Education: BSc Computer Science (2:1), Nottingham Trent University, 2025.
 - Current role: Assistant Data and Insights Manager at a construction consultancy (Sheffield and London offices).
