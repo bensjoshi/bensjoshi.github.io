@@ -357,6 +357,118 @@ body[data-room="music"] .site-footer {
   object-position: 65% 30%;
 }
 
+/* Watch: YouTube tiles that load the player only when played */
+
+.watch {
+  display: grid;
+  gap: 32px;
+}
+
+/* Main video and two Shorts share one height: 16:9 at 3.16 parts, 9:16 at 1 part each */
+.watch-top {
+  display: grid;
+  grid-template-columns: minmax(0, 3.16fr) minmax(0, 1fr) minmax(0, 1fr);
+  gap: 12px;
+  align-items: start;
+}
+
+.watch-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.yt-tile {
+  min-width: 0;
+}
+
+.yt,
+.yt-frame {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #05060a;
+  border: 0;
+  overflow: hidden;
+}
+
+.yt-short .yt,
+.yt-short .yt-frame {
+  aspect-ratio: 9 / 16;
+}
+
+.yt img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 300ms ease, transform 600ms var(--ease);
+}
+
+.yt-play {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  background: var(--signal);
+  transition: background 200ms ease, transform 300ms var(--ease);
+}
+
+.yt-short .yt-play {
+  left: 10px;
+  bottom: 10px;
+  width: 46px;
+  height: 46px;
+}
+
+.yt-play svg {
+  width: 22px;
+  height: 22px;
+  fill: #111111;
+  margin-left: 3px;
+}
+
+.yt:hover img {
+  opacity: 0.85;
+  transform: scale(1.02);
+}
+
+.yt:hover .yt-play {
+  background: #ff5a36;
+  transform: scale(1.06);
+}
+
+.yt:focus-visible {
+  outline: 3px solid var(--signal);
+  outline-offset: 3px;
+}
+
+.yt-tile figcaption {
+  margin-top: 10px;
+  font-size: var(--t-small);
+  line-height: 1.4;
+  color: var(--light-2);
+}
+
+.yt-tile figcaption b {
+  display: block;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 /* Qualifications */
 
 .quals {
@@ -512,6 +624,22 @@ body[data-room="music"] .site-footer {
   .g-main {
     grid-row: auto;
     grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 860px) {
+  .watch-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 10px;
+  }
+
+  .watch-top .yt-main {
+    grid-column: 1 / -1;
+  }
+
+  .watch-pair {
+    grid-template-columns: 1fr;
+    gap: 24px;
   }
 }
 

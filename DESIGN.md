@@ -243,8 +243,10 @@ A full-bleed room-ink section with a 3px ink top rule, expanded display heading,
 
 **Composition.**
 - **Hero (split):** text block left (name, "Trombonist based in Sheffield.", then the styles line in signal text), with the booking form pinned to its foot; the solo stage photo fills the right 1.15fr at full colour, no duotone, cropped from the right so the slide and bell stay in frame. Below 1100px the hero stacks with the photo first.
-- **Sections:** title left (1fr), content right (2fr), separated by 1px stage-line rules. Order: About, Bands (The Hoplites featured, previous bands in a three-up row), On stage (one large photo spanning two rows beside two smaller ones, all full colour), Qualifications, then the close.
+- **Sections:** title left (1fr), content right (2fr), separated by 1px stage-line rules. Order: About, Bands (The Hoplites featured, previous bands in a three-up row), Watch, On stage (one large photo spanning two rows beside two smaller ones, all full colour), Qualifications, then the close.
 - **Close:** a full-bleed signal-red section with "Need a trombonist?", the email link and a second booking form.
+
+**Watch.** YouTube videos as click-to-play tiles: a local thumbnail (`images/video/`) with a square signal-red play button in the bottom-left corner, swapped for a `youtube-nocookie.com` player only when clicked; without script each tile is a plain YouTube link. Top row: the main 16:9 live video beside two 9:16 Shorts at the same height; second row: two 16:9 live videos. Captions name the video, the band and, for fan uploads, who filmed it. Official singles and lyric videos stay off the page.
 
 **Booking form.** Date (native date input) and "Band or venue", then a signal **Book me** button. A small inline script turns it into a pre-filled email (subject and opening line); without script it falls back to a plain `mailto:`. A note under it says it opens an email.
 
