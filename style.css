@@ -917,7 +917,9 @@ code {
 .landing {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  grid-template-rows: auto 1fr auto;
+  /* Name and portrait sit straight under the strip; on tall screens the
+     doors take the spare height instead of a gap opening above the name */
+  grid-template-rows: auto auto 1fr;
   column-gap: var(--gap);
   min-height: 100vh;
   min-height: 100svh;
