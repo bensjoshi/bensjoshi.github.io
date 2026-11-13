@@ -258,11 +258,6 @@ body:not([data-room]) :focus-visible,
   text-wrap: balance;
 }
 
-.hero-name em {
-  font-style: normal;
-  color: var(--room);
-}
-
 .hero-desc {
   max-width: 34em;
   font-size: var(--t-lead);
@@ -1100,11 +1095,6 @@ code {
   font-stretch: 112%;
   line-height: 0.9;
   letter-spacing: -0.045em;
-}
-
-.contact-heading em {
-  font-style: normal;
-  color: var(--paper);
 }
 
 .contact-note {

@@ -155,7 +155,7 @@ A printed two-ink palette: one neutral paper, one black with a softer grey for s
 **Character:** One grotesk doing everything, with the width axis as the poster's voice: squeezed and heavy for the subpage hero lines, stretched and heavy for the landing name and the closing call. Body sets with stylistic set 01 enabled.
 
 ### Hierarchy
-- **Display, condensed** (800, clamp(3.6rem, 10.4vw, 10.5rem), 0.88, width 76%): subpage hero h1 over the left seven columns. One word or phrase may take the room ink via `em` (display size only).
+- **Display, condensed** (800, clamp(3.6rem, 10.4vw, 10.5rem), 0.88, width 76%): subpage hero h1 over the left seven columns. Set in plain ink throughout: no highlighted word in the room ink.
 - **Display, expanded** (800, width 112%): the landing name (min(15.5vw, 30vh), line-height 0.84, -0.05em) and the colour-field close heading (clamp(3.4rem, 7.6vw, 8.5rem), 0.9, -0.045em).
 - **Headline** (700, clamp(2.1rem, 3.6vw, 3.5rem), 0.98, -0.035em): section titles in the left four columns.
 - **Intermediate titles** (650, 1.5–2.5rem clamps, ~1.05–1.1, -0.025 to -0.03em): experience role, music cards, qualification titles, door labels. The ensemble name steps up to 800 at clamp(3rem, 7vw, 7rem).
