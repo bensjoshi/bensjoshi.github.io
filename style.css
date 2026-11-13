@@ -1013,10 +1013,10 @@ code {
   grid-row: 2;
   align-self: end;
   justify-self: end;
-  /* Show the whole photo (2:3) so nothing is cropped off the head */
+  /* The whole backstage photo (3:4), printed in black and white */
   height: min(50vh, 460px);
   max-width: 100%;
-  aspect-ratio: 1067 / 1600;
+  aspect-ratio: 3 / 4;
   margin: clamp(24px, 4vh, 56px) var(--m) clamp(28px, 5vh, 48px) 0;
   position: relative;
   background: var(--ink);

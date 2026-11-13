@@ -174,7 +174,7 @@ A printed two-ink palette: one neutral paper, one black with a softer grey for s
 A 12-column grid (`repeat(12, minmax(0, 1fr))`) with fluid outer margin (`margin` token) and gutter (`gap` token). Settings are flush-left, ragged-right.
 
 - **Hero split:** content in columns 1–7, room colour field in columns 8–12 at full viewport height minus the nav.
-- **Landing:** a 100svh poster in three bands: the domain strip on top, then the name (columns 1–8, bottom-aligned) beside the uncropped 2:3 portrait (up to 460px tall, right-aligned, same baseline), then the two doors side by side as equal colour panels across the full width. The doors lead; the portrait supports. On phones it stacks name, a small portrait, then the doors.
+- **Landing:** a 100svh poster in three bands: the domain strip on top, then the name (columns 1–8, bottom-aligned) beside the uncropped 3:4 backstage portrait in black and white (`images/landing-portrait.jpg`, up to 460px tall, right-aligned, same baseline); it shows both rooms in one picture and stays in black ink so the doors keep the only colour, then the two doors side by side as equal colour panels across the full width. The doors lead; the portrait supports. On phones it stacks name, a small portrait, then the doors.
 - **Sections:** heading in columns 1–4, content in 5–12. Wide sections put the heading in 1–5, a lead in 7–12, and the body full width below. Vertical padding is the `section-y` clamp.
 - **Tracklist:** a fixed four-column row (name 3.2fr, description 5fr, stack 2.6fr, 44px toggle). Expanded case studies reuse the same columns, with subheads in column 1 and prose in 2–3.
 - **Close:** heading and note in columns 1–7, contact links stacked in 8–12, bottom-aligned.
