@@ -232,7 +232,7 @@ A full-bleed room-ink section with a 3px ink top rule, expanded display heading,
 
 **North Star: "The stage, lit once."** The Music page is a separate room from the paper poster: a dark stage ground, live photography doing the talking, and signal red spent only on the action. Its job is to get a bandleader or booker to send a date. It lives in `music/music.css`, loaded after `style.css`, which re-points the shared tokens (`--paper`, `--ink`, `--ink-2`, `--hair`) to the stage palette so the nav, focus rings, selection and footer follow.
 
-**Shared spine (kept):** the nav and logo square, Archivo, square edges, stroked SVG arrows, the skip link, the footer, and the cross-room link in the room text colour.
+**Shared spine (kept):** the nav and logo square, Archivo, square edges, stroked SVG arrows, the skip link and the footer. The Music nav has no link to Software; the logo returns to the landing page, where both rooms are offered.
 
 **Palette (Committed: dark ground, one accent).**
 - **Stage** `#0e0f14` ground; **Stage 2** `#16171e` input fills; **Stage line** `#2c2d35` section and nav rules; `#44454d` item rules.
