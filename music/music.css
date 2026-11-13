@@ -330,18 +330,23 @@ body[data-room="music"] .site-footer {
   grid-template-columns: 1fr;
 }
 
+/* Justified rows: each photo keeps its own shape (--a = width / height) and
+   every photo in a row shares one height, so nothing is cropped */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  grid-auto-rows: clamp(200px, 21vw, 300px);
-  grid-auto-flow: dense;
   gap: 10px;
 }
 
-.gallery figure {
+.g-row {
+  display: flex;
+  gap: 10px;
+}
+
+.g-row figure {
   position: relative;
+  flex: var(--a) 1 0;
   min-width: 0;
-  overflow: hidden;
+  aspect-ratio: var(--a);
   background: var(--stage-2);
 }
 
@@ -349,22 +354,20 @@ body[data-room="music"] .site-footer {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 30%;
 }
 
-.gallery .g-wide {
-  grid-column: span 2;
+.g-caption {
+  margin: 2px 0 34px;
+  font-size: var(--t-small);
+  font-weight: 600;
+  color: var(--light-2);
 }
 
-.gallery .g-tall {
-  grid-row: span 2;
+.g-caption:last-child {
+  margin-bottom: 0;
 }
 
-.gallery .g-tall img {
-  object-position: center 20%;
-}
-
-.gallery figcaption {
+.g-row figcaption {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -634,9 +637,15 @@ body[data-room="music"] .site-footer {
     grid-template-columns: 1fr;
   }
 
-  .gallery {
-    grid-template-columns: 1fr 1fr;
-    grid-auto-rows: clamp(150px, 42vw, 260px);
+  /* Narrow screens: the lead pair stays a pair; later rows stack */
+  .g-pair,
+  .g-trio {
+    flex-wrap: wrap;
+  }
+
+  .g-pair figure,
+  .g-trio figure:first-child {
+    flex-basis: 100%;
   }
 }
 
