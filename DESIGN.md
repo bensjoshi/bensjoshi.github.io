@@ -242,7 +242,7 @@ A full-bleed room-ink section with a 3px ink top rule, expanded display heading,
 **Type.** Normal-width Archivo, heavy and tight: the name at clamp(3.4rem, 7.4vw, 6rem) / 850 / -0.04em, section titles on the shared headline size at 750, the current band at clamp(2.2rem, 4vw, 3.4rem) / 850, the close at clamp(2.8rem, 5.6vw, 5.5rem) / 850. Form controls set at 1rem; the form note at 0.8125rem. No condensed or expanded widths on this page.
 
 **Composition.**
-- **Hero (split):** text block left (name, "Trombonist based in Sheffield.", then the styles line in signal text), with the booking form pinned to its foot; the solo stage photo fills the right 1.15fr at full colour, no duotone. On phones the photo goes first and the form stacks.
+- **Hero (split):** text block left (name, "Trombonist based in Sheffield.", then the styles line in signal text), with the booking form pinned to its foot; the solo stage photo fills the right 1.15fr at full colour, no duotone, cropped from the right so the slide and bell stay in frame. Below 1100px the hero stacks with the photo first.
 - **Sections:** title left (1fr), content right (2fr), separated by 1px stage-line rules. Order: About, Bands (The Hoplites featured, previous bands in a three-up row), On stage (one large photo spanning two rows beside two smaller ones, all full colour), Qualifications, then the close.
 - **Close:** a full-bleed signal-red section with "Need a trombonist?", the email link and a second booking form.
 
