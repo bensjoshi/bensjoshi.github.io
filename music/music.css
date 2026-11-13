@@ -330,48 +330,53 @@ body[data-room="music"] .site-footer {
   grid-template-columns: 1fr;
 }
 
-/* Justified rows: each photo keeps its own shape (--a = width / height) and
-   every photo in a row shares one height, so nothing is cropped */
-.gallery {
+/* Collage: one interlocking block of photos, no group labels.
+   Each tile is cropped to its cell, with the crop aimed at the faces. */
+.collage {
   display: grid;
-  gap: 10px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-rows: repeat(2, clamp(150px, 18.5vw, 260px)) clamp(180px, 23vw, 320px) repeat(2, clamp(150px, 18.5vw, 260px));
+  grid-template-areas:
+    "car   car   car   shirt"
+    "car   car   car   shirt"
+    "fest  fest  steve steve"
+    "rs    bb    bb    rh"
+    "rs    bell  bell  rh";
+  gap: 8px;
 }
 
-.g-row {
-  display: flex;
-  gap: 10px;
-}
-
-.g-row figure {
+.collage figure {
   position: relative;
-  flex: var(--a) 1 0;
   min-width: 0;
-  aspect-ratio: var(--a);
+  overflow: hidden;
   background: var(--stage-2);
 }
 
-.gallery img {
+.collage img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.g-caption {
-  margin: 2px 0 34px;
-  font-size: var(--t-small);
-  font-weight: 600;
-  color: var(--light-2);
-}
+.c-car   { grid-area: car; }
+.c-shirt { grid-area: shirt; }
+.c-fest  { grid-area: fest; }
+.c-steve { grid-area: steve; }
+.c-rs    { grid-area: rs; }
+.c-bb    { grid-area: bb; }
+.c-bell  { grid-area: bell; }
+.c-rh    { grid-area: rh; }
 
-.g-caption:last-child {
-  margin-bottom: 0;
-}
+.c-car img   { object-position: center 45%; }
+.c-shirt img { object-position: 55% 30%; }
+.c-fest img  { object-position: center 70%; }
+.c-steve img { object-position: center 45%; }
+.c-rs img    { object-position: 45% 25%; }
+.c-bb img    { object-position: center 30%; }
+.c-bell img  { object-position: center 45%; }
+.c-rh img    { object-position: 78% 35%; }
 
-.g-break {
-  display: none;
-}
-
-.g-row figcaption {
+.collage figcaption {
   position: absolute;
   right: 0;
   bottom: 0;
@@ -641,22 +646,24 @@ body[data-room="music"] .site-footer {
     grid-template-columns: 1fr;
   }
 
-  /* Narrow screens: the lead pair stays a pair, the live pair stacks,
-     and the row of four splits into two pairs */
-  .g-pair,
-  .g-four {
-    flex-wrap: wrap;
+  /* Narrow screens: the collage re-packs into two columns */
+  .collage {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(2, 30vw) repeat(5, 38vw);
+    grid-template-areas:
+      "car   car"
+      "car   car"
+      "shirt steve"
+      "shirt bb"
+      "fest  fest"
+      "rs    bell"
+      "rs    rh";
+    gap: 6px;
   }
 
-  .g-pair figure {
-    flex-basis: 100%;
-  }
-
-  .g-four .g-break {
-    display: block;
-    flex-basis: 100%;
-    height: 0;
-    margin-top: -10px; /* cancel the extra row gap the break adds */
+  .collage figcaption {
+    padding: 3px 6px;
+    font-size: 0.6875rem;
   }
 }
 
