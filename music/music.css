@@ -332,29 +332,47 @@ body[data-room="music"] .site-footer {
 
 .gallery {
   display: grid;
-  grid-template-columns: minmax(0, 1.7fr) minmax(0, 1fr);
-  grid-template-rows: repeat(2, clamp(200px, 22vw, 320px));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-auto-rows: clamp(200px, 21vw, 300px);
+  grid-auto-flow: dense;
   gap: 10px;
+}
+
+.gallery figure {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  background: var(--stage-2);
 }
 
 .gallery img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  background: var(--stage-2);
+  object-position: center 30%;
 }
 
-.g-main {
+.gallery .g-wide {
+  grid-column: span 2;
+}
+
+.gallery .g-tall {
   grid-row: span 2;
-  object-position: 60% center;
 }
 
-.g-portrait {
-  object-position: 50% 24%;
+.gallery .g-tall img {
+  object-position: center 20%;
 }
 
-.g-bigband {
-  object-position: 65% 8%;
+.gallery figcaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 5px 9px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--light);
+  background: var(--stage);
 }
 
 /* Watch: YouTube tiles that load the player only when played */
@@ -618,12 +636,7 @@ body[data-room="music"] .site-footer {
 
   .gallery {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: clamp(220px, 56vw, 380px) clamp(200px, 60vw, 360px);
-  }
-
-  .g-main {
-    grid-row: auto;
-    grid-column: 1 / -1;
+    grid-auto-rows: clamp(150px, 42vw, 260px);
   }
 }
 
