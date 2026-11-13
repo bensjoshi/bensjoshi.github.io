@@ -908,6 +908,21 @@ code {
   color: var(--ink-2);
 }
 
+.ensemble-past-label {
+  margin: 64px 0 14px;
+  font-size: var(--t-small);
+  font-weight: 700;
+  color: var(--room-text);
+}
+
+.music-grid-3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.music-grid-3 .music-card h3 {
+  font-size: clamp(1.25rem, 1.6vw, 1.5rem);
+}
+
 /* Carousel */
 
 .music-carousel {
@@ -1461,8 +1476,13 @@ code {
   }
 
   .music-grid,
+  .music-grid-3,
   .qualifications {
     grid-template-columns: 1fr;
+  }
+
+  .ensemble-past-label {
+    margin-top: 40px;
   }
 
   /* Landing */
