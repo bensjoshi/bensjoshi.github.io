@@ -21,29 +21,20 @@
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Ben Joshi">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="theme-color" content="#0e0f14">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="/music/music.css">
 </head>
 
 
 <body data-room="music">
 
   <a class="skip" href="#main">Skip to content</a>
-
-  <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
-    <filter id="duotone" color-interpolation-filters="sRGB">
-      <feColorMatrix type="saturate" values="0"/>
-      <feComponentTransfer>
-        <feFuncR type="table" tableValues="0.067 0.91 0.961"/>
-        <feFuncG type="table" tableValues="0.067 0.251 0.961"/>
-        <feFuncB type="table" tableValues="0.067 0.122 0.953"/>
-      </feComponentTransfer>
-    </filter>
-  </svg>
 
 
   <!-- =========================
@@ -52,32 +43,14 @@
 
   <nav class="site-nav" aria-label="Site">
 
-    <a href="/" class="nav-logo">
-      Ben Joshi
-    </a>
+    <a href="/" class="nav-logo">Ben Joshi</a>
 
     <div class="nav-links">
-
-      <a href="/software/">
-        Software
-      </a>
-
-      <a href="#about">
-        About
-      </a>
-
-      <a href="#performance">
-        Performance
-      </a>
-
-      <a href="#qualifications">
-        Qualifications
-      </a>
-
-      <a href="#contact">
-        Contact
-      </a>
-
+      <a href="/software/" class="ext">Software</a>
+      <a href="#about">About</a>
+      <a href="#bands">Bands</a>
+      <a href="#photos">Photos</a>
+      <a href="#book">Book me</a>
     </div>
 
   </nav>
@@ -89,90 +62,43 @@
          HERO
     ========================= -->
 
-    <section class="hero">
+    <section class="m-hero">
 
-      <div class="hero-left">
+      <div class="m-hero-text">
 
         <div>
-
-          <h1 class="hero-name">
-            I play<br>
-            trombone.
-          </h1>
-
-          <p class="hero-desc">
-            Trombonist performing across jazz, ska, big band,
-            and brass ensembles, based in Sheffield, UK.
-          </p>
-
-          <div class="hero-tags">
-
-            <span class="tag">Trombone</span>
-            <span class="tag">Jazz</span>
-            <span class="tag">Ska</span>
-            <span class="tag">Big Band</span>
-            <span class="tag">Brass</span>
-            <span class="tag">Live Performance</span>
-
-          </div>
-
-          <div class="hero-ctas">
-
-            <a
-              class="btn btn-primary"
-              href="#performance"
-            >
-              Performance
-              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 1v13M3 9l5 5 5-5"/></svg>
-            </a>
-
-            <a
-              class="btn btn-outline"
-              href="#contact"
-            >
-              Get in touch
-            </a>
-
-          </div>
-
+          <h1 class="m-name">Ben Joshi</h1>
+          <p class="m-lede">Trombonist based in Sheffield.</p>
+          <p class="m-styles">Ska · Big band · Brass band · Jazz</p>
         </div>
 
-      <p class="poster-info">
-          <span>Trombone · Performance · Music</span>
-        </p>
+        <form class="book-form" action="mailto:bensjoshi@gmail.com" method="get">
+          <label>
+            Date
+            <input type="date" name="date">
+          </label>
+          <label>
+            Band or venue
+            <input type="text" name="where" placeholder="e.g. Rock City" autocomplete="off">
+          </label>
+          <button type="submit">
+            Book me
+            <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
+          </button>
+          <p class="form-note">Opens an email to me with these details filled in.</p>
+        </form>
 
       </div>
 
-
-      <div class="field">
-
-        <figure>
-          <div class="duo">
-            <img
-              src="/images/profile.jpg"
-              alt="Ben Joshi performing trombone"
-              width="1200"
-              height="1600"
-            />
-          </div>
-          <figcaption class="field-caption">
-            Trombonist · Live Performance
-          </figcaption>
-        </figure>
-
-        <svg class="motif trombone" viewBox="-62 0 532 162" aria-hidden="true" focusable="false">
-          <path class="horn" d="M150 2Q186 30 250 30M150 62Q186 34 250 34M150 2V62M250 32H452V84H250M462 112H250M462 104V120"/>
-          <path class="slide-outer" d="M440 84H150V112H440"/>
-          <path class="tick" d="M150 132V142"/><text x="150" y="160" text-anchor="middle">1</text>
-          <path class="tick" d="M121 132V142"/><text x="121" y="160" text-anchor="middle">2</text>
-          <path class="tick" d="M91 132V142"/><text x="91" y="160" text-anchor="middle">3</text>
-          <path class="tick" d="M59 132V142"/><text x="59" y="160" text-anchor="middle">4</text>
-          <path class="tick" d="M26 132V142"/><text x="26" y="160" text-anchor="middle">5</text>
-          <path class="tick" d="M-11 132V142"/><text x="-11" y="160" text-anchor="middle">6</text>
-          <path class="tick" d="M-50 132V142"/><text x="-50" y="160" text-anchor="middle">7</text>
-        </svg>
-
-      </div>
+      <figure class="m-hero-photo">
+        <img
+          src="/images/music2.jpg"
+          alt="Ben Joshi playing trombone on stage under blue lights"
+          width="1600"
+          height="1066"
+          fetchpriority="high"
+        >
+      </figure>
 
     </section>
 
@@ -181,121 +107,78 @@
          ABOUT
     ========================= -->
 
-    <section class="block" id="about">
+    <section class="m-sec" id="about">
 
-      <div class="section-inner">
+      <h2>About</h2>
 
-        <div class="section-header">
+      <div class="m-body">
+        <p class="m-lead">
+          I’m a trombonist focused on live, ensemble playing.
+          I’ve played in a youth jazz orchestra, a brass band and a university
+          big band, and now play ska with The Hoplites in Nottingham.
+        </p>
+      </div>
 
-          <h2 class="section-title">
-            About the Music
-          </h2>
-
-        </div>
+    </section>
 
 
-        <div class="intro">
+    <!-- =========================
+         BANDS
+    ========================= -->
+
+    <section class="m-sec" id="bands">
+
+      <h2>Bands</h2>
+
+      <div class="m-body">
+
+        <article class="band-now">
+
+          <div class="band-head">
+            <h3>The Hoplites</h3>
+            <p class="band-meta">Current · Nottingham · Ska, rocksteady &amp; reggae</p>
+          </div>
 
           <p>
-            I’m a <strong>trombonist</strong> focused on live, ensemble playing.
-            I’ve played in a youth jazz orchestra, a brass band and a university
-            big band, and now play ska with The Hoplites in Nottingham.
+            I play trombone in the horn section of The Hoplites, a nine-piece band
+            drawing on first-wave ska, rocksteady and reggae. The band debuted with a
+            double-headline show at Metronome in September 2024, followed by the
+            <cite>River of Change</cite> maxi single and three singles in 2025.
           </p>
 
-        </div>
+          <p>
+            The band has supported The Beat, Sonic Boom Six, Catbite and King Prawn,
+            and played venues including Rock City, Metronome, The Bodega and
+            New Cross Inn.
+          </p>
 
-      </div>
+          <p class="band-links">
+            <a href="https://thehoplites.bandcamp.com/" rel="noopener">
+              Bandcamp
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
+            </a>
+            <a href="https://www.instagram.com/the_hoplites_band/" rel="noopener">
+              Instagram
+              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
+            </a>
+          </p>
 
-    </section>
+        </article>
 
-
-    <!-- =========================
-         PERFORMANCE
-    ========================= -->
-
-    <section class="block" id="performance">
-
-      <div class="section-inner">
-
-        <div class="section-header">
-
-          <h2 class="section-title">
-            Performance
-          </h2>
-
-        </div>
-
-
-        <div class="ensemble">
-
-          <div class="ensemble-meta">
-            Current
-          </div>
-
-          <div>
-
-            <h3 class="ensemble-name">
-              The Hoplites
-            </h3>
-
-            <p class="ensemble-location">
-              Nottingham · Ska, rocksteady &amp; reggae
-            </p>
-
-            <p class="ensemble-description">
-              I play trombone in the horn section of The Hoplites, a nine-piece band
-              drawing on first-wave ska, rocksteady and reggae. The band debuted with a
-              double-headline show at Metronome in September 2024, followed by the
-              <em>River of Change</em> maxi single and three singles in 2025.
-            </p>
-
-            <p class="ensemble-description">
-              The band has supported The Beat, Sonic Boom Six, Catbite and King Prawn,
-              and played venues including Rock City, Metronome, The Bodega and
-              New Cross Inn.
-            </p>
-
-            <p class="ensemble-links">
-              <a href="https://thehoplites.bandcamp.com/" rel="noopener">Bandcamp</a>
-              <a href="https://www.instagram.com/the_hoplites_band/" rel="noopener">Instagram</a>
-            </p>
-
-          </div>
-
-        </div>
-
-
-        <p class="ensemble-past-label">
-          Previously
-        </p>
-
-        <div class="music-grid music-grid-3">
-
-          <div class="music-card">
+        <ul class="band-past" aria-label="Previous bands">
+          <li>
             <h3>Nottingham Trent University Big Band</h3>
-            <div class="tag-row">
-              <span class="genre-tag">Big Band</span>
-              <span class="genre-tag">Nottingham</span>
-            </div>
-          </div>
-
-          <div class="music-card">
+            <p>Big band · Nottingham</p>
+          </li>
+          <li>
             <h3>Armthorpe Elmfield Brass Band</h3>
-            <div class="tag-row">
-              <span class="genre-tag">Brass Band</span>
-              <span class="genre-tag">Doncaster</span>
-            </div>
-          </div>
-
-          <div class="music-card">
+            <p>Brass band · Doncaster</p>
+          </li>
+          <li>
             <h3>Doncaster Youth Jazz Orchestra</h3>
-            <div class="tag-row">
-              <span class="genre-tag">Jazz</span>
-              <span class="genre-tag">Doncaster</span>
-            </div>
-          </div>
-
-        </div>
+            <p>Jazz · Doncaster</p>
+          </li>
+        </ul>
 
       </div>
 
@@ -303,112 +186,38 @@
 
 
     <!-- =========================
-         ON STAGE
+         PHOTOS
     ========================= -->
 
-    <section class="block">
+    <section class="m-sec m-sec-wide" id="photos">
 
-      <div class="section-inner wide">
+      <h2>On stage</h2>
 
-        <div class="section-header">
-
-          <h2 class="section-title">
-            On Stage
-          </h2>
-
-        </div>
-
-
-        <div class="music-carousel">
-
-          <div class="carousel-track">
-
-            <div class="carousel-slide active">
-
-              <img
-                src="/images/music1.jpg"
-                alt="Ben Joshi performing trombone with an ensemble"
-              />
-
-            </div>
-
-
-            <div class="carousel-slide">
-
-              <img
-                src="/images/music2.jpg"
-                alt="Ben Joshi performing trombone on stage"
-              />
-
-            </div>
-
-
-            <div class="carousel-slide">
-
-              <img
-                src="/images/music3.jpg"
-                alt="Trombone section performing on stage"
-              />
-
-            </div>
-
-          </div>
-
-
-          <div class="carousel-bar">
-
-            <div
-              class="carousel-counter"
-              aria-live="polite"
-            >
-              <span id="carousel-current">1</span> / 3
-            </div>
-
-            <div class="carousel-dots">
-
-              <button
-                type="button"
-                class="carousel-dot active"
-                aria-label="Show image 1"
-                aria-current="true"
-              ></button>
-
-              <button
-                type="button"
-                class="carousel-dot"
-                aria-label="Show image 2"
-                aria-current="false"
-              ></button>
-
-              <button
-                type="button"
-                class="carousel-dot"
-                aria-label="Show image 3"
-                aria-current="false"
-              ></button>
-
-            </div>
-
-            <button
-              type="button"
-              class="carousel-button carousel-prev"
-              aria-label="Previous image"
-            >
-              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M15 8H2M7 3L2 8l5 5"/></svg>
-            </button>
-
-            <button
-              type="button"
-              class="carousel-button carousel-next"
-              aria-label="Next image"
-            >
-              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
-            </button>
-
-          </div>
-
-        </div>
-
+      <div class="gallery">
+        <img
+          class="g-main"
+          src="/images/music3.jpg"
+          alt="The Hoplites on stage under blue lights, with Ben in the horn section"
+          width="1704"
+          height="1279"
+          loading="lazy"
+        >
+        <img
+          class="g-portrait"
+          src="/images/profile.jpg"
+          alt="Ben Joshi sitting backstage beside his trombone case"
+          width="1200"
+          height="1600"
+          loading="lazy"
+        >
+        <img
+          class="g-bigband"
+          src="/images/music1.jpg"
+          alt="Ben Joshi playing trombone with a big band"
+          width="1440"
+          height="960"
+          loading="lazy"
+        >
       </div>
 
     </section>
@@ -418,320 +227,101 @@
          QUALIFICATIONS
     ========================= -->
 
-    <section class="block" id="qualifications">
+    <section class="m-sec" id="qualifications">
 
-      <div class="section-inner">
+      <h2>Qualifications</h2>
 
-        <div class="section-header">
-
-          <h2 class="section-title">
-            Qualifications
-          </h2>
-
+      <div class="m-body quals">
+        <div>
+          <h3>ARSM</h3>
+          <p>ABRSM Level 4 performance diploma in trombone</p>
         </div>
-
-
-        <div class="qualifications">
-
-          <div class="qualification">
-
-            <div class="qualification-title">
-              ARSM
-            </div>
-
-            <div class="qualification-label">
-              ABRSM · Level 4 Diploma
-            </div>
-
-            <p class="qualification-description">
-              Associate of the Royal Schools of Music performance diploma in trombone.
-            </p>
-
-          </div>
-
-
-          <div class="qualification">
-
-            <div class="qualification-title">
-              Grade 8 Trombone
-            </div>
-
-            <div class="qualification-label">
-              ABRSM
-            </div>
-
-            <p class="qualification-description">
-              ABRSM Grade 8 in trombone.
-            </p>
-
-          </div>
-
+        <div>
+          <h3>Grade 8</h3>
+          <p>ABRSM trombone</p>
         </div>
-
       </div>
 
     </section>
 
 
     <!-- =========================
-         CONTACT
+         BOOK
     ========================= -->
 
-    <section class="close" id="contact">
+    <section class="m-book" id="book">
 
-      <div class="section-inner">
-
-        <div class="contact">
-
-          <h2 class="contact-heading">
-            Let's make<br>
-            some music.
-          </h2>
-
-
-          <div class="contact-links">
-
-            <a class="mail" href="mailto:bensjoshi@gmail.com">
-              bensjoshi@gmail.com
-              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
-            </a>
-
-            <a href="/">
-              benjoshi.co.uk
-              <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 13L13 3M5 3h8v8"/></svg>
-            </a>
-
-          </div>
-
-        </div>
-
+      <div>
+        <h2>Need a trombonist?</h2>
+        <p>Gigs, deps and section work. Send me a date and the band or venue.</p>
+        <a class="m-mail" href="mailto:bensjoshi@gmail.com">
+          bensjoshi@gmail.com
+          <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
+        </a>
       </div>
+
+      <form class="book-form" action="mailto:bensjoshi@gmail.com" method="get">
+        <label>
+          Date
+          <input type="date" name="date">
+        </label>
+        <label>
+          Band or venue
+          <input type="text" name="where" placeholder="e.g. Rock City" autocomplete="off">
+        </label>
+        <button type="submit">
+          Book me
+          <svg class="i" viewBox="0 0 16 16" aria-hidden="true"><path d="M1 8h13M9 3l5 5-5 5"/></svg>
+        </button>
+        <p class="form-note">Opens an email to me with these details filled in.</p>
+      </form>
 
     </section>
 
   </main>
 
 
-  <!-- =========================
-       FOOTER
-  ========================= -->
-
   <footer class="site-footer">
-
-    <span>
-      © 2026 Ben Joshi
-    </span>
-
-    <span>
-      Trombonist · Sheffield, UK
-    </span>
-
+    <span>© 2026 Ben Joshi</span>
+    <span>Trombonist · Sheffield, UK</span>
   </footer>
 
 
-  <!-- =========================
-       CAROUSEL JAVASCRIPT
-  ========================= -->
-
   <script>
+    // Turn each booking form into a pre-filled email.
+    document.querySelectorAll(".book-form").forEach(function (form) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    document.addEventListener("DOMContentLoaded", function () {
+        var dateValue = form.elements.date.value;
+        var where = form.elements.where.value.trim();
+        var when = "";
 
-      const slides =
-        document.querySelectorAll(".carousel-slide");
-
-      const dots =
-        document.querySelectorAll(".carousel-dot");
-
-      const prevButton =
-        document.querySelector(".carousel-prev");
-
-      const nextButton =
-        document.querySelector(".carousel-next");
-
-      const counter =
-        document.getElementById("carousel-current");
-
-      let currentSlide = 0;
-
-
-      /* =========================
-         SHOW SLIDE
-      ========================= */
-
-      function showSlide(index) {
-
-        if (index >= slides.length) {
-          index = 0;
+        if (dateValue) {
+          var parts = dateValue.split("-");
+          var d = new Date(parts[0], parts[1] - 1, parts[2]);
+          when = d.toLocaleDateString("en-GB", {
+            weekday: "short", day: "numeric", month: "short", year: "numeric"
+          });
         }
 
-        if (index < 0) {
-          index = slides.length - 1;
-        }
+        var subject = "Trombone booking" +
+          (when ? ": " + when : "") +
+          (where ? ", " + where : "");
 
-        currentSlide = index;
+        var body = "Hi Ben,\n\n" +
+          "Are you free to play trombone" + (when ? " on " + when : "") + "?\n\n" +
+          "Band or venue: " + where + "\n" +
+          "Times:\n" +
+          "Set length:\n" +
+          "Fee:\n" +
+          "Music (parts, style):\n\n";
 
-
-        /* Hide all slides */
-
-        slides.forEach(function (slide) {
-          slide.classList.remove("active");
-        });
-
-
-        /* Remove active dots */
-
-        dots.forEach(function (dot) {
-          dot.classList.remove("active");
-          dot.setAttribute("aria-current", "false");
-        });
-
-
-        /* Show current slide */
-
-        slides[currentSlide].classList.add("active");
-
-
-        /* Activate current dot */
-
-        if (dots[currentSlide]) {
-
-          dots[currentSlide].classList.add("active");
-
-          dots[currentSlide].setAttribute(
-            "aria-current",
-            "true"
-          );
-
-        }
-
-
-        /* Update counter */
-
-        counter.textContent = currentSlide + 1;
-
-      }
-
-
-      /* =========================
-         NEXT BUTTON
-      ========================= */
-
-      nextButton.addEventListener("click", function () {
-
-        showSlide(currentSlide + 1);
-
+        window.location.href = "mailto:bensjoshi@gmail.com" +
+          "?subject=" + encodeURIComponent(subject) +
+          "&body=" + encodeURIComponent(body);
       });
-
-
-      /* =========================
-         PREVIOUS BUTTON
-      ========================= */
-
-      prevButton.addEventListener("click", function () {
-
-        showSlide(currentSlide - 1);
-
-      });
-
-
-      /* =========================
-         DOT NAVIGATION
-      ========================= */
-
-      dots.forEach(function (dot, index) {
-
-        dot.addEventListener("click", function () {
-
-          showSlide(index);
-
-        });
-
-      });
-
-
-      /* =========================
-         KEYBOARD NAVIGATION
-      ========================= */
-
-      document.addEventListener("keydown", function (event) {
-
-        if (event.key === "ArrowRight") {
-
-          showSlide(currentSlide + 1);
-
-        }
-
-        if (event.key === "ArrowLeft") {
-
-          showSlide(currentSlide - 1);
-
-        }
-
-      });
-
-
-      /* =========================
-         TOUCH / SWIPE
-      ========================= */
-
-      const carousel =
-        document.querySelector(".music-carousel");
-
-      let touchStartX = 0;
-
-
-      carousel.addEventListener(
-        "touchstart",
-        function (event) {
-
-          touchStartX =
-            event.touches[0].clientX;
-
-        },
-        { passive: true }
-      );
-
-
-      carousel.addEventListener(
-        "touchend",
-        function (event) {
-
-          const touchEndX =
-            event.changedTouches[0].clientX;
-
-          const distance =
-            touchStartX - touchEndX;
-
-
-          if (Math.abs(distance) < 50) {
-            return;
-          }
-
-
-          if (distance > 0) {
-
-            showSlide(currentSlide + 1);
-
-          } else {
-
-            showSlide(currentSlide - 1);
-
-          }
-
-        },
-        { passive: true }
-      );
-
-
-      /* =========================
-         INITIALISE
-      ========================= */
-
-      showSlide(0);
-
     });
-
   </script>
 
 </body>

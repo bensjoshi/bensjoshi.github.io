@@ -24,7 +24,7 @@ Success means:
 - **Job conversations:** a tech visitor emails or messages about software/data engineering roles.
 - **Project credibility:** a tech visitor reads the case studies and leaves convinced of real engineering depth (decisions, trade-offs, honest "what I'd improve" notes), not a list of buzzwords.
 
-What success looks like for the music audience is not yet defined beyond being able to make contact.
+- **Bookings:** a music visitor sends a date for a gig or dep work through the booking form or email.
 
 ## Positioning
 
@@ -34,13 +34,13 @@ A Computer Science graduate working day-to-day as an Assistant Data and Insights
 
 - Landing page (`index.html`): name, portrait, and two doors: Software & Data, and Music.
 - Software & Data (`software/index.html`): intro, selected projects as expandable case studies (overview, architecture, technical highlights, what's next / what I'd improve), current experience, technical skills, about, contact.
-- Music (`music/index.html`): about, performance, current ensemble, on-stage photo carousel, qualifications, contact.
+- Music (`music/index.html`): split hero with a booking form, about, bands (The Hoplites and previous bands), on-stage photos, qualifications, and a booking close. Its goal is a bandleader or booker emailing a date.
 - Visitors typically arrive via direct links (CV, LinkedIn, GitHub, social previews), so Open Graph metadata matters.
 
 ## Capabilities and Constraints
 
 - Static HTML/CSS hosted on GitHub Pages, custom domain `benjoshi.co.uk` (CNAME). No build step or framework.
-- All three pages share the root `style.css` and choose their room with `body[data-room]`. An empty `script.js` also exists at the root, and the Music page keeps its own inline carousel script.
+- All three pages share the root `style.css` and choose their room with `body[data-room]`. The Music page also loads `music/music.css` (its own dark stage design) and a small inline script that turns the booking form into a pre-filled email. An empty `script.js` also exists at the root.
 - Project write-ups expand in place using `<details>` with no JavaScript.
 - Trombello is in active development and its source is not public on GitHub.
 
@@ -57,7 +57,7 @@ A Computer Science graduate working day-to-day as an Assistant Data and Insights
 - Six software/data case studies: Trombello, RoomSync, SoundWave, InstrumentIQ, TenantTrack, FutureFridges.
 - Education: BSc Computer Science (2:1), Nottingham Trent University, 2025.
 - Current role: Assistant Data and Insights Manager at a construction consultancy (Sheffield and London offices).
-- Music: current trombonist with The Hoplites (Nottingham ska band); ABRSM Level 4 Diploma and Grade 8 trombone.
+- Music: current trombonist with The Hoplites (nine-piece Nottingham ska, rocksteady and reggae band); previously Nottingham Trent University Big Band, Armthorpe Elmfield Brass Band and Doncaster Youth Jazz Orchestra; ARSM (ABRSM Level 4 Diploma) and Grade 8 trombone. Live video to follow.
 - Contact: bensjoshi@gmail.com, GitHub, LinkedIn.
 - No testimonials, references, press, recordings/audio, or employer names are on the site. Do not fabricate any.
 

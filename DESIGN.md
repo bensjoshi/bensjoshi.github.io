@@ -110,7 +110,7 @@ components:
 
 The site is set like an International Style gig poster: an engineer's grid and a musician's rhythm in one system. One cool paper stock, black ink, heavy black rules, one grotesk family pushed across its width axis, flush-left ragged-right setting on a 12-column grid. Everything is printed, nothing floats: there are no cards, no radii, no shadows, no gradients.
 
-The site is one person with two rooms. Each room owns exactly one flat ink (ultramarine for Software & Data, signal red for Music) and that ink is spent on the thing that matters in each viewport: the colour field beside the hero, the door band, the close, the active state. The landing has no room ink of its own; it is paper and black, with both inks appearing only as the two doors.
+The site is one person with two rooms. The landing and Software & Data are printed on paper; Music is its own room, a dark photo-led stage (see **Music room** below) that shares only the spine. Each room owns one flat ink (ultramarine for Software & Data, signal red for Music) spent on the thing that matters in each viewport. The landing has no room ink of its own; it is paper and black, with both inks appearing only as the two doors.
 
 Rhythm is carried by two geometric motifs drawn in the text colour of the band or field that carries them: a clock square wave for Software and a geometric side-on trombone for Music, whose slide moves across seven numbered slide-position ticks. They play once on load (the wave draws in; the slide sweeps out to position 7 and back) and advance on door hover. That is the system's one authored motion moment. The world deliberately rejects the dark editorial-serif portfolio and the white card-grid developer portfolio.
 
@@ -130,7 +130,7 @@ A printed two-ink palette: one neutral paper, one black with a softer grey for s
 - **Ultramarine** (`blue`): the Software & Data room ink. Fills the Software door, hero colour field, close section, nav logo square, active underlines and focus rings on that page. Text on it is paper (7.48:1); never set ink on ultramarine (2.31:1). As text colour on paper it passes at any size (7.48:1).
 
 ### Secondary
-- **Signal Red** (`red`): the Music room ink. Fills the Music door, hero colour field, close section, nav logo square, carousel active dot and bullet dashes. Text on it is ink (4.66:1). Red on paper and paper on red are only ~3.7:1, so both are display-size only (the music hero's "trombone." and the close heading).
+- **Signal Red** (`red`): the Music room ink. Fills the Music door on the landing, and on the Music page the booking buttons, the close section and the nav logo square. Text on it is ink (4.66:1). Red on paper and paper on red are only ~3.7:1, so both are display-size only.
 - **Signal Red, Text Cut** (`red-text`): the darker red used for any small red text on paper: meta labels, tag rows, hovered project names, external nav link (5.15:1). It is the Music room's `--room-text`; Software uses ultramarine for the same role.
 
 ### Neutral
@@ -227,6 +227,33 @@ Full-width ink track with crossfading slides (600ms), then a bar with a tabular 
 ### Close (contact)
 A full-bleed room-ink section with a 3px ink top rule, expanded display heading, lead note, and contact links stacked between 2px rules in the current text colour. External-link arrows step diagonally on hover; the mail arrow steps forward.
 
+## Music room
+
+**North Star: "The stage, lit once."** The Music page is a separate room from the paper poster: a dark stage ground, live photography doing the talking, and signal red spent only on the action. Its job is to get a bandleader or booker to send a date. It lives in `music/music.css`, loaded after `style.css`, which re-points the shared tokens (`--paper`, `--ink`, `--ink-2`, `--hair`) to the stage palette so the nav, focus rings, selection and footer follow.
+
+**Shared spine (kept):** the nav and logo square, Archivo, square edges, stroked SVG arrows, the skip link, the footer, and the cross-room link in the room text colour.
+
+**Palette (Committed: dark ground, one accent).**
+- **Stage** `#0e0f14` ground; **Stage 2** `#16171e` input fills; **Stage line** `#2c2d35` section and nav rules; `#44454d` item rules.
+- **Light** `#f3f3f0` headings and lead text (17:1); **Light 2** `#b9b9b2` secondary text (9.7:1).
+- **Signal** `#e8401f` fills (buttons, the close); **Signal text** `#ff6b4a` for small red text on the stage (6.8:1).
+- On the red close: ink `#111111` text (4.66:1), inputs `#f2856c` with ink text and `#3f1409` placeholders (6.35:1).
+
+**Type.** Normal-width Archivo, heavy and tight: the name at clamp(3.4rem, 7.4vw, 6rem) / 850 / -0.04em, section titles on the shared headline size at 750, the current band at clamp(2.2rem, 4vw, 3.4rem) / 850, the close at clamp(2.8rem, 5.6vw, 5.5rem) / 850. Form controls set at 1rem; the form note at 0.8125rem. No condensed or expanded widths on this page.
+
+**Composition.**
+- **Hero (split):** text block left (name, "Trombonist based in Sheffield.", then the styles line in signal text), with the booking form pinned to its foot; the solo stage photo fills the right 1.15fr at full colour, no duotone, cropped from the right so the slide and bell stay in frame. Below 1100px the hero stacks with the photo first.
+- **Sections:** title left (1fr), content right (2fr), separated by 1px stage-line rules. Order: About, Bands (The Hoplites featured, previous bands in a three-up row), On stage (one large photo spanning two rows beside two smaller ones, all full colour), Qualifications, then the close.
+- **Close:** a full-bleed signal-red section with "Need a trombonist?", the email link and a second booking form.
+
+**Booking form.** Date (native date input) and "Band or venue", then a signal **Book me** button. A small inline script turns it into a pre-filled email (subject and opening line); without script it falls back to a plain `mailto:`. A note under it says it opens an email.
+
+**Motion.** One authored moment: the hero photo opens with a right-to-left `clip-path` wipe and a slight settle (1100ms), disabled under reduced motion. Buttons and arrows keep the shared hover nudges. No carousel and no trombone motif on this page; the motif lives on the landing door.
+
+**Later.** When live video exists, a video panel replaces the solo photo in the hero.
+
+**Don't** bring the paper poster's devices (3px rules, duotones, condensed hero type, colour field) onto the Music page, or the stage's dark ground onto the other pages.
+
 ## Do's and Don'ts
 
 ### Do:
@@ -236,7 +263,7 @@ A full-bleed room-ink section with a 3px ink top rule, expanded display heading,
 - **Do** separate sections with 3px ink rules, items with 1px ink rules, and case-study subsections with hairlines.
 - **Do** set hero lines condensed (width 76%) and names and closing calls expanded (width 112%), both at 800.
 - **Do** print photos on a colour field as true two-colour duotones (ink, room ink, paper) via the `#duotone` SVG filter. Never multiply a photo onto the field, because that floods the highlights and hides the subject.
-- **Do** keep the square wave for Software and the sliding trombone for Music, played once on load and advanced on door hover; disable all of it under reduced motion.
+- **Do** keep the square wave for Software and the sliding trombone for Music, played once on load and advanced on door hover; disable all of it under reduced motion. On subpages the motif appears only on Software; Music uses its photo reveal instead.
 - **Do** put meta labels (dates, "Current") beside headings on desktop and after them on mobile.
 
 ### Don't:
@@ -246,4 +273,4 @@ A full-bleed room-ink section with a 3px ink top rule, expanded display heading,
 - **Don't** add eyebrows, kickers or section numbers above headings; a heading stands alone.
 - **Don't** add tracked uppercase or monospace labels; labels are bold sentence case.
 - **Don't** introduce a second typeface; Archivo's width axis supplies the contrast.
-- **Don't** add motion beyond the load wipes, motif draw-in, door advance, case-study open and carousel crossfade.
+- **Don't** add motion beyond the load wipes, motif draw-in, door advance, case-study open and the Music hero photo reveal.
