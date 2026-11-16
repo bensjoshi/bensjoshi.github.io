@@ -915,11 +915,17 @@ code {
    ========================= */
 
 .landing {
+  /* One size drives the name and the portrait: the name fills the left eight
+     columns, the portrait matches its height, and the height cap keeps the
+     doors on screen */
+  --door-min: clamp(200px, 34svh, 320px);
+  --name-mt: clamp(28px, 5svh, 56px);
+  --name-pad: clamp(28px, 5svh, 48px);
+  --F: min(21vw, calc((100svh - var(--door-min) - var(--name-mt) - var(--name-pad)) / 1.68));
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  /* Name and portrait sit straight under the strip; on tall screens the
-     doors take the spare height instead of a gap opening above the name */
-  grid-template-rows: auto auto 1fr;
+  /* Name and portrait first, then the doors, which take any spare height */
+  grid-template-rows: auto 1fr;
   column-gap: var(--gap);
   min-height: 100vh;
   min-height: 100svh;
@@ -930,19 +936,13 @@ code {
   display: contents;
 }
 
-.landing .poster-info {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  margin: clamp(20px, 3vw, 36px) var(--m) 0;
-}
-
 .name {
   grid-column: 1 / 9;
-  grid-row: 2;
+  grid-row: 1;
   align-self: end;
-  margin: clamp(24px, 4vh, 56px) 0 0 var(--m);
-  padding-bottom: clamp(28px, 5vh, 48px);
-  font-size: min(13vw, 26vh);
+  margin: var(--name-mt) 0 0 var(--m);
+  padding-bottom: var(--name-pad);
+  font-size: var(--F);
   font-weight: 800;
   font-stretch: 112%;
   line-height: 0.84;
@@ -956,7 +956,7 @@ code {
 /* The two doors lead: equal panels across the full width */
 .links {
   grid-column: 1 / -1;
-  grid-row: 3;
+  grid-row: 2;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -966,7 +966,7 @@ code {
   grid-template-columns: minmax(0, 1fr);
   align-content: space-between;
   gap: 32px;
-  min-height: clamp(200px, 34vh, 320px);
+  min-height: var(--door-min);
   padding: clamp(22px, 3vh, 32px) var(--m) clamp(24px, 3.4vh, 36px);
   background: var(--door);
   color: var(--door-on);
@@ -988,14 +988,16 @@ code {
   display: inline-flex;
   align-items: center;
   gap: 14px;
-  font-size: clamp(1.6rem, 2.6vw, 2.5rem);
+  font-size: clamp(2rem, 3.4vw, 3.5rem);
   font-weight: 650;
   line-height: 1;
   letter-spacing: -0.03em;
 }
 
+/* Both symbols sit on the panel's right edge. The trombone's slide needs spare
+   room to its left to swing, so it can't sit flush under the label. */
 .door .motif {
-  justify-self: start;
+  justify-self: end;
   width: min(100%, 340px);
   max-height: 96px;
 }
@@ -1009,17 +1011,17 @@ code {
   outline-color: var(--paper);
 }
 
-/* The portrait supports the name rather than competing with the doors */
+/* The portrait locks onto the name: same height, top on the cap line of "Ben",
+   bottom on the baseline of "Joshi" */
 .landing .portrait {
   grid-column: 9 / -1;
-  grid-row: 2;
+  grid-row: 1;
   align-self: end;
   justify-self: end;
-  /* The whole backstage photo (3:4), printed in black and white */
-  height: min(50vh, 460px);
+  height: calc(var(--F) * 1.526);
   max-width: 100%;
-  aspect-ratio: 3 / 4;
-  margin: clamp(24px, 4vh, 56px) var(--m) clamp(28px, 5vh, 48px) 0;
+  aspect-ratio: 4 / 5;
+  margin: 0 var(--m) calc(var(--name-pad) + var(--F) * 0.087) 0;
   position: relative;
   background: var(--ink);
 }
@@ -1237,39 +1239,45 @@ code {
     order: 2;
     padding-top: 0;
   }
+}
 
-  /* Landing */
-
+/* Landing on phones: one column. The name, the photo and the door labels all
+   start on the same left margin, and the photo and the door symbols end on the
+   same right margin. The doors stretch to fill the screen. */
+@media (max-width: 640px) {
   .landing {
+    --F: clamp(4rem, 24vw, 9rem);
     display: flex;
     flex-direction: column;
-    min-height: 0;
-  }
-
-  .landing .poster-info {
-    order: 1;
   }
 
   .name {
-    order: 2;
+    order: 1;
     align-self: stretch;
-    margin: 40px var(--m) 0;
+    margin: 36px var(--m) 0;
     padding-bottom: 24px;
-    font-size: clamp(4rem, 24vw, 9rem);
   }
 
   .landing .portrait {
-    order: 3;
-    align-self: flex-start;
+    order: 2;
+    align-self: stretch;
     justify-self: auto;
-    width: clamp(140px, 40vw, 220px);
+    width: auto;
     height: auto;
-    margin: 0 var(--m) 32px;
+    max-width: none;
+    aspect-ratio: 3 / 2;
+    margin: 0 var(--m) 28px;
+  }
+
+  .landing .portrait img {
+    object-position: center 8%;
   }
 
   .links {
-    order: 4;
+    order: 3;
+    flex: 1 1 auto;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
 
   .door {
