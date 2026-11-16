@@ -1241,13 +1241,14 @@ code {
   }
 }
 
-/* Landing on phones: name, then the portrait stepped to the right, then the doors */
+/* Landing on phones: one column. The name, the photo and the door labels all
+   start on the same left margin, and the photo and the door symbols end on the
+   same right margin. The doors stretch to fill the screen. */
 @media (max-width: 640px) {
   .landing {
     --F: clamp(4rem, 24vw, 9rem);
     display: flex;
     flex-direction: column;
-    min-height: 0;
   }
 
   .name {
@@ -1259,16 +1260,24 @@ code {
 
   .landing .portrait {
     order: 2;
-    align-self: flex-end;
+    align-self: stretch;
     justify-self: auto;
-    width: clamp(160px, 56vw, 280px);
+    width: auto;
     height: auto;
-    margin: 0 var(--m) 32px 0;
+    max-width: none;
+    aspect-ratio: 3 / 2;
+    margin: 0 var(--m) 28px;
+  }
+
+  .landing .portrait img {
+    object-position: center 8%;
   }
 
   .links {
     order: 3;
+    flex: 1 1 auto;
     grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
   }
 
   .door {
