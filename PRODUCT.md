@@ -32,7 +32,7 @@ A Computer Science graduate working day-to-day as an Assistant Data and Insights
 
 ## Operating Context
 
-- Landing page (`index.html`): name, portrait, and two doors: Software & Data, and Music.
+- Landing page (`index.html`): name, a portrait locked to the name's height, and two doors: Software & Data, and Music.
 - Software & Data (`software/index.html`): intro, selected projects as expandable case studies (overview, architecture, technical highlights, what's next / what I'd improve), current experience, technical skills, about, contact.
 - Music (`music/index.html`): split hero with a booking form, about, bands (The Hoplites and previous bands), on-stage photos, qualifications, and a booking close. Its goal is a bandleader or booker emailing a date.
 - Visitors typically arrive via direct links (CV, LinkedIn, GitHub, social previews), so Open Graph metadata matters.

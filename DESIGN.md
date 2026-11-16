@@ -174,7 +174,7 @@ A printed two-ink palette: one neutral paper, one black with a softer grey for s
 A 12-column grid (`repeat(12, minmax(0, 1fr))`) with fluid outer margin (`margin` token) and gutter (`gap` token). Settings are flush-left, ragged-right.
 
 - **Hero split:** content in columns 1–7, room colour field in columns 8–12 at full viewport height minus the nav.
-- **Landing:** a 100svh poster in three bands: the domain strip on top, then the name (columns 1–8, bottom-aligned) beside the uncropped 3:4 backstage portrait in black and white (`images/landing-portrait.jpg`, up to 460px tall, right-aligned, same baseline); it shows both rooms in one picture and stays in black ink so the doors keep the only colour, then the two doors side by side as equal colour panels across the full width, which grow to fill any spare screen height so the name never drifts down the page. The doors lead; the portrait supports. On phones it stacks name, a small portrait, then the doors.
+- **Landing:** a 100svh poster in two bands. The top band is the name (columns 1–8, "Ben" over "Joshi") beside a 4:5 head-and-shoulders crop of the backstage photo in black and white (`images/landing-portrait.jpg`), locked to the name: the portrait is exactly as tall as the name, its top on the cap line of "Ben" and its bottom on the baseline of "Joshi", with its right edge on the page margin. One size drives both (`--F`: the name fills the left eight columns, capped so the doors keep their minimum height on short screens), so the pair scales together. The second band is the two doors side by side as equal colour panels across the full width, which take any spare screen height. The doors lead; the portrait supports. On phones (≤640px) it stacks: name, the portrait stepped to the right, then the doors.
 - **Sections:** heading in columns 1–4, content in 5–12. Wide sections put the heading in 1–5, a lead in 7–12, and the body full width below. Vertical padding is the `section-y` clamp.
 - **Tracklist:** a fixed four-column row (name 3.2fr, description 5fr, stack 2.6fr, 44px toggle). Expanded case studies reuse the same columns, with subheads in column 1 and prose in 2–3.
 - **Close:** heading and note in columns 1–7, contact links stacked in 8–12, bottom-aligned.
@@ -207,7 +207,7 @@ Every edge is square (0px radius) by default and by declaration. Form comes from
 - Mobile (≤860px): static, logo above a wrapping row of links.
 
 ### Doors (landing signature)
-Two equal colour panels side by side across the full width (stacked on phones), one per room: label (650, clamp(1.6rem, 2.6vw, 2.5rem)) with arrow at the top, the room's motif at the foot (max 340px wide, 96px tall). They wipe in from the left on load (Music 120ms behind). Hover advances the motif and nudges the arrow. Focus is a 3px inset outline in the band's text colour.
+Two equal colour panels side by side across the full width (stacked on phones), one per room: label (650, clamp(2rem, 3.4vw, 3.5rem)) with arrow at the top-left, the room's motif at the bottom-right (max 340px wide, 96px tall). Both motifs share the panel's right edge; the trombone cannot sit flush under the label because its slide needs spare room to its left to swing. They wipe in from the left on load (Music 120ms behind). Hover advances the motif and nudges the arrow. Focus is a 3px inset outline in the band's text colour.
 
 ### Colour Field (subpage signature)
 The right five hero columns filled with the room ink. Holds a photo printed as a true two-colour duotone by an inline SVG gradient-map filter (`filter: url(#duotone)`: desaturate, then map shadows to `--ink`, midtones to the room ink and highlights to `--paper`; each page defines `#duotone` with its own room ink), an optional 1.2rem caption, and the room motif drawn below in `--on-room`. It wipes in from the right on load.
@@ -220,7 +220,7 @@ The right five hero columns filled with the room ink. Holds a photo printed as a
 A `<details>` list between 3px rules, rows split by 1px ink rules. A 32px square toggle with a 2px ink border draws a plus that rotates to a minus when open. Hover and open state turn the name to room text and fill the toggle with the room ink. Case studies fade down 6px over 500ms. List bullets are 10px room-ink dashes.
 
 ### Poster Info Strip
-A small bold label line bounded by a 1px ink rule, carrying identifying text only (the domain on the landing, the room's subjects on subpages). It sits at the poster's edge: top of the landing, foot of the subpage hero.
+A small bold label line bounded by a 1px ink rule, carrying identifying text only (the room's subjects). It sits at the foot of the subpage hero. The landing has no strip: the name is the first thing on the page.
 
 ### Carousel
 Full-width ink track with crossfading slides (600ms), then a bar with a tabular counter, 36px x 4px dash indicators (hair at rest, graphite on hover, room ink when active), and 48px square ink buttons that take the room ink on hover. Closed by a 3px ink rule.
